@@ -39,9 +39,14 @@ export default function Projects() {
           <Link
             to={`/states/${item.id}`}
             className="col-md-12"
-            style={{ textDecoration: "none" }}
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            <div className="card mb-5 mt-5">
+            <div className="card mb-5 mt-5" width="100%">
               <video width="100%" autoPlay muted>
                 <source src={`${item.service_video}`} type="video/mp4" />
               </video>
@@ -64,26 +69,7 @@ export default function Projects() {
       <h1 className="text-center fw-bold mb-4">Services</h1>
       <div className="bg-custom">
         <div className="container" id="services">
-          <div className="row">
-            {userA ? (
-              dataDepartmentShow
-            ) : !localStorage.getItem("email") ? (
-              <>
-                <h1 className="text-center">Register To See Services</h1>
-                <Link to="/Register" style={{ textAlign: "center" }}>
-                  {" "}
-                  <div
-                    className="btn roundrd-circle main-btn btn-login text-center"
-                    style={{ marginLeft: "10px" }}
-                  >
-                    Register
-                  </div>
-                </Link>
-              </>
-            ) : (
-              <div className="text-center">You Are Not Accepted Yet</div>
-            )}
-          </div>
+          <div className="row">{dataDepartmentShow}</div>
         </div>
       </div>
     </>

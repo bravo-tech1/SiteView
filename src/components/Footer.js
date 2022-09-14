@@ -1,42 +1,150 @@
 export default function Footer() {
   return (
-    <footer class="bg-light text-center text-lg-start mt-4">
-      {/* <!-- Grid container --> */}
-      <div class="container p-4">
-        {/* <!--Grid row--> */}
-        <div class="row">
-         
-
-          {/* <!--Grid column--> */}
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Travel With Us</h5>
-
-            <p style={{color: 'black'}}>
-              It is a newly-designed system which provides B2B-B2C-B2E. It
-              comprises all the technological modern features in developing the
-              tourist sciences and used air booking, hotel booking and tourist
-              programs. Many experts have been employed in Bravo from all the
-              five continents to help in the way we flourish the luxury for the
-              Iraqi tourist.
-            </p>
-          </div>
-          {/* <!--Grid column--> */}
+    // <!-- Footer -->
+    <footer class=" text-lg-start bg-light text-muted">
+      {/* <!-- Section: Social media --> */}
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container">
+        {/* <!-- Left --> */}
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
         </div>
-        {/* <!--Grid row--> */}
-      </div>
-      {/* <!-- Grid container --> */}
+        {/* <!-- Left --> */}
+
+        {/* <!-- Right --> */}
+        <div>
+          <a href="https://facebook.com/bravooiq" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="mailto:hello@bravoo.travel" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="https://instagram.com/bravoo.travel" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        {/* <!-- Right --> */}
+      </section>
+      {/* <!-- Section: Social media --> */}
+
+      {/* <!-- Section: Links  --> */}
+      <section class="">
+        <div class="container text-md-start mt-5">
+          {/* <!-- Grid row --> */}
+          <div class="row mt-3">
+            {/* <!-- Grid column --> */}
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              {/* <!-- Content --> */}
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>Company name
+              </h6>
+              <p style={{ color: "black" }}>
+                More than 100 corporate clients in portfolio. Bravoo specializes
+                in corporate travel. Sales to corporate clients generate circa
+                85% of the agency's overall income
+              </p>
+            </div>
+            {/* <!-- Grid column --> */}
+
+            {/* <!-- Grid column --> */}
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              {/* <!-- Links --> */}
+              <h6 class="text-uppercase fw-bold mb-4">Pages</h6>
+              <p>
+                <a href="/about" class="text-reset">
+                  About
+                </a>
+              </p>
+              <p>
+                <a href="/contact" class="text-reset">
+                  Contact Us
+                </a>
+              </p>
+              <p>
+                <a href="/career" class="text-reset">
+                  Careers
+                </a>
+              </p>
+            </div>
+            {/* <!-- Grid column --> */}
+
+            {/* <!-- Grid column --> */}
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              {/* <!-- Links --> */}
+              <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+              <p>
+                <a href="/login" class="text-reset">
+                  Login
+                </a>
+              </p>
+              <p>
+                <a href="/register" class="text-reset">
+                  Register
+                </a>
+              </p>
+            </div>
+            {/* <!-- Grid column --> */}
+
+            {/* <!-- Grid column --> */}
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              {/* <!-- Links --> */}
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p className="text-reset-2">
+                <a
+                  href="https://facebook.com/bravooiq"
+                  style={{ textDecoration: "none" }}
+                >
+                  {" "}
+                  <i class="fab fa-facebook-f me-3"></i> facebook.com/bravooiq
+                </a>
+              </p>
+              <p className="text-reset-2">
+                <a
+                  href="https://facebook.com/bravooiq"
+                  style={{ textDecoration: "none" }}
+                >
+                  {" "}
+                  <i class="fab fa-google me-3"></i> hello@bravoo.travel
+                </a>
+              </p>
+              <p className="text-reset-2">
+                <a
+                  href="https://instagram.com/bravoo.travel"
+                  style={{ textDecoration: "none" }}
+                >
+                  {" "}
+                  <i class="fab fa-instagram me-3"></i> bravoo.travel
+                </a>
+              </p>
+            </div>
+            {/* <!-- Grid column --> */}
+          </div>
+          {/* <!-- Grid row --> */}
+        </div>
+      </section>
+      {/* <!-- Section: Links  --> */}
 
       {/* <!-- Copyright --> */}
       <div
-        class="text-center p-3"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+        class="text-center p-4"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
-        © 2020 Copyright:
-        <a class="text-dark" href="#">
-          Bravoo
+        BRAVOO © 2022 - All Rights Reserved. BRAVOO is registered trademark of
+        Bravoo Holidays (IRAQ) . Powered by
+        <a
+          class=" fw-bold"
+          href="https://icom-digital.com/"
+          target="__blank"
+          style={{
+            color: "#ff5959",
+            textDecoration: "none",
+            marginLeft: "5px",
+          }}
+        >
+          icom-digital.com
         </a>
       </div>
       {/* <!-- Copyright --> */}
     </footer>
+    // <!-- Footer -->
   );
 }

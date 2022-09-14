@@ -4,8 +4,6 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function Careers() {
-
-
   const [name, setname] = useState("");
   const [academic_qualification, setacademic_qualification] = useState("");
   const [mobile, setmobile] = useState("");
@@ -24,41 +22,62 @@ export default function Careers() {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-     let res = await axios("http://127.0.0.1:8000/api/career/create",{
-        method: "POST",
-        data: {
-         name,academic_qualification,mobile,address,birthday,email,q1,q2,q3,q4,q5,q6,q7,q8
-        },
-        headers: {
-            'content-type': 'multipart/form-data'
-          }
-     },);
+      let res = await axios(
+        "https://test.emkanfinances.net/api/career/create",
+        {
+          method: "POST",
+          data: {
+            name,
+            academic_qualification,
+            mobile,
+            address,
+            birthday,
+            email,
+            q1,
+            q2,
+            q3,
+            q4,
+            q5,
+            q6,
+            q7,
+            q8,
+          },
+          headers: {
+            "content-type": "multipart/form-data",
+          },
+        }
+      );
       if (res.status === 200) {
-      window.location.href = "/"
+        window.location.href = "/";
       } else {
         console.log("Some error occured");
       }
     } catch (err) {
       console.log(err.response.data);
     }
- }
+  };
 
   return (
     <>
-        <Header/>
+      <Header />
       <div class="container pt-4 mt-5">
         <p class="mb-4">
           We are constantly looking for ambitious candidates who can participate
           in our growth.
         </p>
-        <form action="" class="d-flex flex-wrap justify-content-between" style={{boxShadow: '0 2px 15px rgb(0 0 0 / 10%)', padding: '20px'}} onSubmit={handleSubmit}>
+        <form
+          action=""
+          class="d-flex flex-wrap justify-content-between"
+          style={{ boxShadow: "0 2px 15px rgb(0 0 0 / 10%)", padding: "20px" }}
+          onSubmit={handleSubmit}
+        >
           <div class="row border-bottom mb-5 pb-4">
             <div class="col-lg-3 col-md-6">
               <label class="d-column w-100 mb-1" for="name">
                 Name :
               </label>
               <input
-              required
+                required
                 class="mb-4 w-75"
                 id="name"
                 type="text"
@@ -72,7 +91,7 @@ export default function Careers() {
                 Academic qualification :
               </label>
               <input
-              required
+                required
                 class="mb-4 w-75"
                 id="qualification"
                 type="text"
@@ -86,7 +105,7 @@ export default function Careers() {
                 Mobile :
               </label>
               <input
-              required
+                required
                 class="mb-4 w-75"
                 id="mobile"
                 name="mobile"
@@ -101,7 +120,7 @@ export default function Careers() {
                 Email :
               </label>
               <input
-              required
+                required
                 class="mb-4 w-75"
                 id="email"
                 type="text"
@@ -115,7 +134,7 @@ export default function Careers() {
                 Date of birth :
               </label>
               <input
-              required
+                required
                 class="mb-4 w-75"
                 id="date"
                 name="date"
@@ -130,7 +149,7 @@ export default function Careers() {
                 Address :
               </label>
               <input
-              required
+                required
                 class="mb-4 w-75 w-lg-100 flex-grow-1"
                 id="address"
                 name="address"
@@ -147,7 +166,6 @@ export default function Careers() {
                 1. Do you have a vision? How?
               </label>
               <textarea
-
                 class="w-100 h-textarea mb-3"
                 required
                 id="vision"
@@ -258,14 +276,16 @@ export default function Careers() {
             </div>
           </div>
           <div class="row w-100 d-flex justify-content-center pb-4 mb-5">
-            <button type="submit" class="btn roundrd-circle main-btn btn-business w-sub">
+            <button
+              type="submit"
+              class="btn roundrd-circle main-btn btn-business w-sub"
+            >
               Send
             </button>
-          
           </div>
         </form>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

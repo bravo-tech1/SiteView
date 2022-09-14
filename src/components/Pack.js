@@ -68,7 +68,7 @@ export default function Pack() {
             </div>
           </Link>
         </div>
-        <img src={item.package_image} width={"50%"} />
+        <img src={item.package_image} width={"500px"} height="300px" />
       </div>
     </div>
   ));

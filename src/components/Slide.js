@@ -144,6 +144,16 @@ function Slide({ slide, offset }) {
 export default function FinalSlide() {
   const [data, setData] = useState([]);
   const [slides, setSlides] = useState([]);
+  const user = localStorage.getItem("email");
+  const [userA, setUserA] = useState(0);
+
+  useEffect(() => {
+    fetch("https://test.emkanfinances.net/api/user/show")
+      .then((res) => res.json())
+      .then((dataRes) =>
+        setUserA(dataRes.find((item) => `"${item.email}"` === user).accepted)
+      );
+  }, []);
 
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/state/show")
@@ -176,41 +186,71 @@ export default function FinalSlide() {
 
   const [state, dispatch] = React.useReducer(slidesReducer, initialState);
 
-  return /*#__PURE__*/ React.createElement(
-    "div",
-    { className: "slides-father" } /*#__PURE__*/,
-
+  return userA ? (
     React.createElement(
       "div",
-      { className: "slides" } /*#__PURE__*/,
-      React.createElement(
-        "button",
-        { onClick: () => dispatch({ type: "PREV" }) },
-        "\u2039"
-      ),
+      { className: "slides-father" } /*#__PURE__*/,
 
-      [...slides, ...slides, ...slides].map((slide, i) => {
-        let offset = slides.length + (state.slideIndex - i);
-        return (
-          <Link
-            to={`cities/${slide.id}`}
-            className="slide"
-            style={{ textDecoration: "none" }}
-          >
-            {" "}
-            {React.createElement(Slide, {
-              slide: slide,
-              offset: offset,
-              key: i,
-            })}{" "}
-          </Link>
-        );
-      }) /*#__PURE__*/,
       React.createElement(
-        "button",
-        { onClick: () => dispatch({ type: "NEXT" }) },
-        "\u203A"
+        "div",
+        { className: "slides" } /*#__PURE__*/,
+        React.createElement(
+          "button",
+          { onClick: () => dispatch({ type: "PREV" }) },
+          "\u2039"
+        ),
+
+        [...slides, ...slides, ...slides].map((slide, i) => {
+          let offset = slides.length + (state.slideIndex - i);
+          return (
+            <Link
+              to={`cities/${slide.id}`}
+              className="slide"
+              style={{ textDecoration: "none" }}
+            >
+              {" "}
+              {React.createElement(Slide, {
+                slide: slide,
+                offset: offset,
+                key: i,
+              })}{" "}
+            </Link>
+          );
+        }) /*#__PURE__*/,
+        React.createElement(
+          "button",
+          { onClick: () => dispatch({ type: "NEXT" }) },
+          "\u203A"
+        )
       )
     )
+  ) : !localStorage.getItem("email") ? (
+    <>
+      <h1 className="text-center">Register To See Services</h1>
+      <Link to="/Register" style={{ textAlign: "center" }}>
+        {" "}
+        <div
+          className="btn roundrd-circle main-btn btn-login text-center"
+          style={{ marginLeft: "10px" }}
+        >
+          Register
+        </div>
+      </Link>
+    </>
+  ) : (
+    <div
+      className="text-center"
+      style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div>
+        <h1>You Are Not Accepted Yet</h1>
+        <a href="/">Back To Home</a>
+      </div>
+    </div>
   );
 }
