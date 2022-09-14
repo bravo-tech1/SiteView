@@ -60,10 +60,7 @@ export default function Careers() {
   return (
     <>
       <HeaderAr />
-      <div class="container pt-4 mt-5">
-        <p class="mb-4">
-          نحن نبحث باستمرار عن مرشحين طموحين يمكنهم المشاركة في نمونا.
-        </p>
+      <div class="container pt-4 mt-5" style={{ marginBottom: "3rem" }}>
         <form
           action=""
           class="d-flex flex-wrap justify-content-between"

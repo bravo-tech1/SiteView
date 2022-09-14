@@ -36,27 +36,35 @@ export default function Projects() {
       <h1 className="text-center">{x.dep_name_ar}</h1>
       {data.map((item) =>
         item.department_id === x.id ? (
-          <Link
-            to={`/states/${item.id}/ar`}
-            className="col-md-12"
-            style={{
-              textDecoration: "none",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div className="card mb-5 mt-5" width="100%">
-              <video width="100%" autoPlay muted>
-                <source src={`${item.service_video}`} type="video/mp4" />
-              </video>
-              <div className="card-body">
-                <h1 className="card-text text-center">
-                  {item.service_text_ar}
-                </h1>
+          <>
+            <h2 className="card-text text-center mt-5">
+              {item.service_text_ar}
+            </h2>
+            <div>
+              <div
+                className="col-md-12"
+                style={{
+                  textDecoration: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <div>
+                  <div className="card mb-5 mt-5" width="100%">
+                    <Link to={`/states/${item.id}`}>
+                      <video width="100%" autoPlay muted>
+                        <source
+                          src={`${item.service_video}`}
+                          type="video/mp4"
+                        />
+                      </video>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-          </Link>
+          </>
         ) : (
           ""
         )
@@ -66,7 +74,7 @@ export default function Projects() {
 
   return (
     <>
-      <h1 className="text-center fw-bold mb-4">Services</h1>
+      <h1 className="text-center fw-bold mb-4">الخدمات</h1>
       <div className="bg-custom">
         <div className="container" id="services">
           <div className="row">{dataDepartmentShow}</div>

@@ -99,7 +99,7 @@ export default function Footer() {
               </p>
               <p className="text-reset-2">
                 <a
-                  href="https://facebook.com/bravooiq"
+                  href="mailto:hello@bravoo.travel"
                   style={{ textDecoration: "none" }}
                 >
                   {" "}

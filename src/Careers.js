@@ -60,11 +60,7 @@ export default function Careers() {
   return (
     <>
       <Header />
-      <div class="container pt-4 mt-5">
-        <p class="mb-4">
-          We are constantly looking for ambitious candidates who can participate
-          in our growth.
-        </p>
+      <div class="container pt-4 mt-5" style={{ marginBottom: "3rem" }}>
         <form
           action=""
           class="d-flex flex-wrap justify-content-between"

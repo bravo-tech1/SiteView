@@ -68,7 +68,7 @@ export default function About() {
               https://instagram.com/bravoo.travel
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6" style={{ marginBottom: "2rem" }}>
             <form
               action=""
               class="form-contact mt-sm-5 mt-lg-0"
