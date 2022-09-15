@@ -10,7 +10,7 @@ import { useEffect } from "react";
 export default function Pack() {
   const [data, setData] = useState([]);
 
-  const id = Number(window.location.pathname.substr(-1));
+  const id = Number(window.location.pathname.split("/").slice(-1)[0]);
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/package/show")
       .then((res) => res.json())

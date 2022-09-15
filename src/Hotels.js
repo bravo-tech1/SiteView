@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function About() {
   const [data, setData] = useState([]);
 
-  const id = Number(window.location.pathname.substr(-1));
+  const id = Number(window.location.pathname.split("/").slice(-1)[0]);
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/hotel/show")
       .then((res) => res.json())
