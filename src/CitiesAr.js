@@ -18,11 +18,11 @@ export default function About() {
       );
   }, []);
 
-  const id = Number(window.location.pathname.substr(-1));
+  const id = Number(window.location.pathname.split("/").slice(-1)[0]);
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/city/show")
       .then((res) => res.json())
-      .then((dataRes) => setData(dataRes.filter((x) => x.state_id === id)));
+      .then((data) => setData(data.filter((item) => item.state_id === id)));
   }, []);
 
   const items = data.map((item) => (
@@ -33,7 +33,7 @@ export default function About() {
         textAlign: "center",
       }}
     >
-      <div class="card" style={{ width: "24rem" }}>
+      <div class="card" style={{ width: "24rem", height: "60vh" }}>
         <img class="card-img-top" src={item.city_image} alt="Card image cap" />
         <div class="card-body">
           <h3 class="card-text" style={{ fontWeight: "bold" }}>

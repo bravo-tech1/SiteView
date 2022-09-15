@@ -18,12 +18,11 @@ export default function About() {
       );
   }, []);
 
-  const id = Number(window.location.pathname.substr(-1));
-
+  const id = Number(window.location.pathname.split("/").slice(-1)[0]);
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/city/show")
       .then((res) => res.json())
-      .then((data) => setData(data.filter((x) => x.state_id !== id)));
+      .then((data) => setData(data.filter((item) => item.state_id === id)));
   }, []);
 
   const items = data.map((item) => (
