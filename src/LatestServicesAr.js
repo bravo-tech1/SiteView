@@ -19,20 +19,20 @@ export default function Latest() {
             alt="..."
             style={{ width: "100%", height: "30vw", objectFit: "cover" }}
           />
-          <div class="card-body">
+          <div class="card-body" dir="rtl">
             <h5 class="card-title">{item.details_title_ar}</h5>
 
             <p class="card-text">
               <i class="fa-solid fa-location-dot"> </i>
               <span style={{ color: "#fdac53", fontWeight: "bold" }}>
-                City:{" "}
+                المدينة:{" "}
               </span>{" "}
               {item.city_name_ar}
             </p>
             <p class="card-text">
               <i class="fa-solid fa-clock"> </i>
               <span style={{ color: "#ff5959", fontWeight: "bold" }}>
-                Period:{" "}
+                المدة:{" "}
               </span>{" "}
               {item.package_period}
             </p>
@@ -55,7 +55,7 @@ export default function Latest() {
         >
           <div class="carousel-inner">
             <div className="carousel-item active">
-              <div class="card">
+              <div class="card" dir="rtl">
                 <img
                   src={dataSliedItem.map((item) => item.package_image)}
                   class="card-img-top"
@@ -64,19 +64,19 @@ export default function Latest() {
                 />
                 <div class="card-body">
                   <h5 class="card-title">
-                    {dataSliedItem.map((item) => item.title_name_ar)}
+                    {dataSliedItem.map((item) => item.details_title_ar)}
                   </h5>
                   <p class="card-text">
                     <i class="fa-solid fa-location-dot"> </i>
                     <span style={{ color: "#fdac53", fontWeight: "bold" }}>
-                      City:{" "}
+                      المدينة:{" "}
                     </span>{" "}
                     {dataSliedItem.map((item) => item.city_name_ar)}
                   </p>
                   <p class="card-text">
                     <i class="fa-solid fa-clock"> </i>
                     <span style={{ color: "#ff5959", fontWeight: "bold" }}>
-                      Period:{" "}
+                      المدة:{" "}
                     </span>{" "}
                     {dataSliedItem.map((item) => item.package_period)}
                   </p>

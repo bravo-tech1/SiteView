@@ -310,6 +310,16 @@ body{
   justify-content: space-between;
   position: relative;
 }
+@media(max-width: 768px){
+  .pakeg{
+    flex-direction: column-reverse;
+
+  }
+  .pakeg img{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
 .border{
   position: absolute;
   bottom: 30%;

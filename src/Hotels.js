@@ -24,7 +24,7 @@ export default function About() {
         <div class="card-body text-center">
           <img
             class="card-img-top mb-2"
-            style={{ width: "100%", height: "20vw", objectFit: "cover" }}
+            style={{ width: "100%", objectFit: "cover" }}
             src={item.hotel_image}
             alt="Card cap"
           />
