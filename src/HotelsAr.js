@@ -21,7 +21,11 @@ export default function About() {
           <img
             class="card-img-top mb-2"
             src={item.hotel_image}
-            style={{ width: "100%", objectFit: "cover" }}
+            style={{
+              width: "500px",
+              height: "300px",
+              objectFit: "cover",
+            }}
             alt="Card  cap"
           />
           <h3 class="card-text">{item.hotel_name_ar}</h3>
@@ -39,6 +43,8 @@ export default function About() {
           alignItems: "center",
           justifyContent: "center",
           flexWrap: "wrap",
+          margin: "5rem 0",
+          gap: "20px",
         }}
       >
         {items}
