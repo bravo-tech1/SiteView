@@ -42,20 +42,17 @@ export default function Projects() {
                 className="col-md-12"
                 style={{
                   textDecoration: "none",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div
                     className="card mb-5 mt-5 service-card"
                     style={{
-                      width: "800px",
+                      width: "100%",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      flexDirection: "row-reverse",
+                      flexDirection: "row",
                     }}
                   >
                     <Link
