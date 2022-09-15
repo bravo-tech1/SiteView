@@ -50,7 +50,7 @@ export default function Projects() {
                     style={{
                       width: "100%",
                       display: "flex",
-                      alignItems: "center",
+
                       justifyContent: "center",
                       flexDirection: "row",
                     }}
@@ -72,12 +72,15 @@ export default function Projects() {
                         />
                       </video>
                     </Link>
-                    <div class="card-body text-center">
+                    <div class="card-body ">
                       <h2 style={{ color: "black", fontWeight: "bold" }}>
                         {" "}
                         {item.service_text_en}
                       </h2>
-                      <p class="card-text">{item.service_text_en}</p>
+                      <p class="card-text">
+                        Click On The Service To See The Whole Information About
+                        This Service
+                      </p>
                     </div>
                   </div>
                 </div>

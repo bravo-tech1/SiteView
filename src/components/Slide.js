@@ -129,7 +129,7 @@ export default function FinalSlide() {
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/state/show")
       .then((res) => res.json())
-      .then((data) => setSlides(data.filter((x) => x.service_id !== id)));
+      .then((data) => console.log(data.filter((x) => x.service_id === id)));
   }, []);
 
   const slidesReducer = (state, event) => {

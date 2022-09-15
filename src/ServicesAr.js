@@ -50,7 +50,7 @@ export default function Projects() {
                     style={{
                       width: "100%",
                       display: "flex",
-                      alignItems: "center",
+
                       justifyContent: "center",
                       flexDirection: "row",
                     }}
@@ -77,7 +77,9 @@ export default function Projects() {
                         {" "}
                         {item.service_text_ar}
                       </h2>
-                      <p class="card-text">{item.service_text_ar}</p>
+                      <p class="card-text">
+                        اضغط على الخدمة لرؤية كل المعلومات حول هذه الخدمة
+                      </p>
                     </div>
                   </div>
                 </div>
