@@ -64,7 +64,7 @@ export default function Latest() {
                 />
                 <div class="card-body">
                   <h5 class="card-title">
-                    {dataSliedItem.map((item) => item.title_name_en)}
+                    {dataSliedItem.map((item) => item.details_title_en)}
                   </h5>
                   <p class="card-text">
                     <i class="fa-solid fa-location-dot"> </i>
