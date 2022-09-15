@@ -59,7 +59,7 @@ export default function Projects() {
                     }}
                   >
                     <Link
-                      to={`/states/${item.id}`}
+                      to={`/states/${item.id}/ar`}
                       width="100%"
                       style={{ display: "flex" }}
                     >
