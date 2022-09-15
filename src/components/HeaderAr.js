@@ -54,6 +54,11 @@ export default function Header() {
                   التوظيف
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/featured/ar">
+                  اخر العروض
+                </Link>
+              </li>
             </ul>
             {!localStorage.getItem("email") && (
               <Link to="/login">

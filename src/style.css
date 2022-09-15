@@ -27,9 +27,13 @@ body{
 .navbar{
   box-shadow: 0 0 10px #ddd;
 }
+.nav-link{
+  font-size: 17px;
+}
 .navbar ul li .active{
   color: var(--blue-color) !important;
   border-bottom: 1px solid var(--blue-color);
+
 }
 .navbar ul .nav-link:hover,.navbar ul .nav-link:focus{
   color: var(--red-color);
@@ -296,7 +300,6 @@ body{
 
 .header{
   background-color: #5928C8;
-  border-radius: 20px;
   text-align: center;
   color: white;
   width: 100%;
@@ -308,7 +311,11 @@ body{
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
   position: relative;
+}
+.pakeg img{
+  margin-right: 1rem;
 }
 @media(max-width: 768px){
   .pakeg{

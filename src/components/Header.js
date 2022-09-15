@@ -47,6 +47,11 @@ export default function Header() {
                   Careers
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/featured">
+                  Featured Listings
+                </Link>
+              </li>
             </ul>
             {!localStorage.getItem("email") && (
               <Link to="/login">

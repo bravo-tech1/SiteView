@@ -19,6 +19,8 @@ import Contact from "./ContactUs";
 import ContactAr from "./ContactUsAr";
 import Careers from "./Careers";
 import CareersAr from "./CareersAr";
+import Featured from "./Featured";
+import FeaturedAr from "./FeaturedAr";
 import Register from "./Register";
 import Login from "./Login";
 import Forget from "./Forget";
@@ -74,8 +76,9 @@ ReactDOM.render(
       ></Route>
 
       <Route path="/careers" element={<Careers />} />
-
       <Route path="/careers/ar" element={<CareersAr />} />
+      <Route path="/featured" element={<Featured />} />
+      <Route path="/featured/ar" element={<FeaturedAr />} />
       <Route path="/Register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forget" element={<Forget />} />

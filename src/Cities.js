@@ -31,7 +31,6 @@ export default function About() {
       style={{
         textDecoration: "none",
         textAlign: "center",
-        marginLeft: "3rem",
       }}
     >
       <div class="card" style={{ width: "24rem" }}>
