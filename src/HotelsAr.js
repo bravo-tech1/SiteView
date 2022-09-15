@@ -11,7 +11,7 @@ export default function About() {
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/hotel/show")
       .then((res) => res.json())
-      .then((dataRes) => setData(dataRes.filter((x) => x.city_id === id)));
+      .then((dataRes) => setData(dataRes.filter((x) => x.city_id !== id)));
   }, []);
 
   const items = data.map((item) => (

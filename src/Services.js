@@ -37,9 +37,6 @@ export default function Projects() {
       {data.map((item) =>
         item.department_id === x.id ? (
           <>
-            <h2 className="card-text text-center mt-5">
-              {item.service_text_en}
-            </h2>
             <div>
               <div
                 className="col-md-12"
@@ -50,16 +47,41 @@ export default function Projects() {
                   justifyContent: "center",
                 }}
               >
-                <div>
-                  <div className="card mb-5 mt-5" width="100%">
-                    <Link to={`/states/${item.id}`}>
-                      <video width="100%" autoPlay muted>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div
+                    className="card mb-5 mt-5 service-card"
+                    style={{
+                      width: "800px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexDirection: "row-reverse",
+                    }}
+                  >
+                    <Link
+                      to={`/states/${item.id}`}
+                      width="100%"
+                      style={{ display: "flex" }}
+                    >
+                      <video
+                        width="600px"
+                        autoPlay
+                        muted
+                        className="service-video"
+                      >
                         <source
                           src={`${item.service_video}`}
                           type="video/mp4"
                         />
                       </video>
                     </Link>
+                    <div class="card-body text-center">
+                      <h2 style={{ color: "black", fontWeight: "bold" }}>
+                        {" "}
+                        {item.service_text_en}
+                      </h2>
+                      <p class="card-text">{item.service_text_en}</p>
+                    </div>
                   </div>
                 </div>
               </div>
