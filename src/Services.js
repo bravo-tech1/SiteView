@@ -61,7 +61,7 @@ export default function Projects() {
                       style={{ display: "flex" }}
                     >
                       <video
-                        width="600px"
+                        width="900px"
                         autoPlay
                         muted
                         className="service-video"
