@@ -42,7 +42,7 @@ body{
 .btn-login{
   background-color: #ff5959;
   color: white;
-  font-weight: bold;
+
 }
 .btn-business{
   background-color: var(--yellow-color);
@@ -624,7 +624,7 @@ body{
   
 }
 .custom-input::placeholder{
-  font-size: 14px;
+  font-size: 13px;
   padding: 11px 19px;
   
 }
@@ -635,8 +635,12 @@ body{
   outline: none;
   
 }
+select option:disabled {
+  color: gray;
+  font-weight: normal;
+}
 .custom-input-2::placeholder{
-  font-size: 14px;
+  font-size: 13px;
 
   
 }

@@ -261,7 +261,7 @@ export default function Careers() {
                 8. ما هي الخبرة السابقة التي لديك؟
               </label>
               <textarea
-                class="w-100 h-textarea mb-3"
+                class="w-100 h-textarea"
                 required
                 id="q8"
                 cols="30"

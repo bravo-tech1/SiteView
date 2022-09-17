@@ -158,6 +158,7 @@ export default function About() {
                   empty=" اختر دولة"
                   onChange={(e) => setcountry(e.target.value)}
                   class=" custom-input col-lg-4 w-100 pt-2 pb-2 ps-2"
+                  style={{ color: "gray", fontSize: "13px" }}
                   required
                 />
               </div>
@@ -170,6 +171,7 @@ export default function About() {
                   onChange={(e) => setRole(e.target.value)}
                   value={role}
                   placeholder="Selcet"
+                  style={{ color: "gray", fontSize: "13px" }}
                   required
                 >
                   <option value="" disabled selected style={{ color: "gray" }}>

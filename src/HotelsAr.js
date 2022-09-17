@@ -1,6 +1,6 @@
-import Header from "./components/Header";
+import HeaderAr from "./components/HeaderAr";
 
-import Footer from "./components/Footer";
+import FooterAr from "./components/FooterAr";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -36,7 +36,7 @@ export default function About() {
   ));
   return (
     <div>
-      <Header />
+      <HeaderAr />
       <div
         style={{
           display: "flex",
@@ -49,7 +49,7 @@ export default function About() {
       >
         {items}
       </div>
-      <Footer />
+      <FooterAr />
     </div>
   );
 }

@@ -16,10 +16,7 @@ export default function About() {
   }, []);
 
   const items = data.map((item) => (
-    <Link
-      to={`packages/${item.id}`}
-      style={{ textDecoration: "none", marginLeft: "3rem" }}
-    >
+    <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
       <div class="card" style={{ width: "24rem" }}>
         <div class="card-body text-center">
           <img

@@ -65,7 +65,7 @@ export default function Header() {
               <button
                 className="btn roundrd-circle main-btn btn-login"
                 onClick={handleLogOut}
-                style={{ width: "12%" }}
+                style={{ width: "130px" }}
               >
                 LogOut
               </button>
