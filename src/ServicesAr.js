@@ -33,7 +33,7 @@ export default function Projects() {
 
   const dataDepartmentShow = dataDepartment.map((x) => (
     <div className="mb-5">
-      <h1 className="text-center">{x.dep_name_en}</h1>
+      <h1 className="text-center">{x.dep_name_ar}</h1>
       {data.map((item) =>
         item.department_id === x.id ? (
           <>
@@ -95,7 +95,7 @@ export default function Projects() {
 
   return (
     <>
-      <h1 className="text-center fw-bold mb-4">Services</h1>
+      <h1 className="text-center fw-bold mb-4">الخدمات</h1>
       <div className="bg-custom">
         <div className="container" id="services">
           <div className="row">{dataDepartmentShow}</div>

@@ -75,7 +75,7 @@ export default function Careers() {
               </label>
               <input
                 required
-                class="mb-4 w-75"
+                class="custom-input-2 h-50 mb-4 w-75"
                 id="name"
                 type="text"
                 placeholder="الاسم..."
@@ -89,7 +89,7 @@ export default function Careers() {
               </label>
               <input
                 required
-                class="mb-4 w-75"
+                class="custom-input-2 h-50 mb-4 w-75"
                 id="qualification"
                 type="text"
                 placeholder="المؤهل العلمي..."
@@ -103,7 +103,7 @@ export default function Careers() {
               </label>
               <input
                 required
-                class="mb-4 w-75"
+                class="custom-input-2 h-50 mb-4 w-75"
                 id="mobile"
                 name="mobile"
                 type="text"
@@ -118,7 +118,7 @@ export default function Careers() {
               </label>
               <input
                 required
-                class="mb-4 w-75"
+                class="custom-input-2 h-50 mb-4 w-75"
                 id="email"
                 type="text"
                 placeholder="البريد الالكتروني..."
@@ -132,7 +132,7 @@ export default function Careers() {
               </label>
               <input
                 required
-                class="mb-4 w-75"
+                class="custom-input-2 h-50 mb-4 w-75"
                 id="date"
                 name="date"
                 type="text"
@@ -147,7 +147,7 @@ export default function Careers() {
               </label>
               <input
                 required
-                class="mb-4 w-75 w-lg-100 flex-grow-1"
+                class="custom-input-2 h-50 mb-4 w-75 w-lg-100 flex-grow-1"
                 id="address"
                 name="address"
                 type="text"

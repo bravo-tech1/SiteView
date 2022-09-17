@@ -8,7 +8,8 @@
   --blue-color:#7ab5bd;
 }
 body{
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Poppins', sans-serif;
+
 
 }
 .text-reset{
@@ -26,10 +27,10 @@ body{
 }
 .navbar{
   box-shadow: 0 0 10px #ddd;
+  border-bottom: 5px solid #ffad5a;
+
 }
-.nav-link{
-  font-size: 17px;
-}
+
 .navbar ul li .active{
   color: var(--blue-color) !important;
   border-bottom: 1px solid var(--blue-color);
@@ -613,4 +614,46 @@ body{
     align-items: center;
     justify-content: center;
   }
+}
+
+.custom-input{
+  background-color: rgba(222, 222, 222, .3);
+  border: medium none;
+  border-radius: 14px;
+  outline: none;
+  
+}
+.custom-input::placeholder{
+  font-size: 14px;
+  padding: 11px 19px;
+  
+}
+.custom-input-2{
+  background-color: rgba(222, 222, 222, .3);
+  border: medium none;
+  border-radius: 14px;
+  outline: none;
+  
+}
+.custom-input-2::placeholder{
+  font-size: 14px;
+
+  
+}
+.custom-input-2{
+  text-indent: 30px;
+}
+.parag{
+  color: #2c2c2c;
+  margin-top: 15px;
+}
+.checkBox{
+  margin-top: 12px;
+
+}
+.checkBoxLabel{
+  margin-left: 4px;
+}
+.checkAr{
+  margin-right: 4px;
 }

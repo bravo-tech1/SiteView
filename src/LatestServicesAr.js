@@ -46,7 +46,7 @@ export default function Latest() {
 
   return (
     <div class="container pt-5 pb-5">
-      <h3 class="fw-bold pt-5 text-center mb-5">Featured Listings</h3>
+      <h3 class="fw-bold pt-5 text-center mb-5">اخر العروض</h3>
       <div className="slide-father-flex">
         <div
           id="carouselExampleControls"

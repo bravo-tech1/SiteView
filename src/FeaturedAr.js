@@ -1,6 +1,6 @@
-import Header from "./components/Header";
+import HeaderAr from "./components/HeaderAr";
 import { useState, useEffect } from "react";
-import Footer from "./components/Footer";
+import FooterAr from "./components/FooterAr";
 
 export default function About() {
   const [data, setData] = useState([]);
@@ -41,7 +41,7 @@ export default function About() {
   ));
   return (
     <div>
-      <Header />
+      <HeaderAr />
       <div
         className="container"
         style={{ marginTop: "5rem", marginBottom: "5rem" }}
@@ -50,7 +50,7 @@ export default function About() {
           {items}
         </div>
       </div>
-      <Footer />
+      <FooterAr />
     </div>
   );
 }

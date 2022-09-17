@@ -3,10 +3,10 @@ export default function Footer() {
     // <!-- Footer -->
     <footer class=" text-lg-start bg-light text-muted">
       {/* <!-- Section: Social media --> */}
-      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container">
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container flex-row-reverse">
         {/* <!-- Left --> */}
         <div class="me-5 d-none d-lg-block">
-          <span>Get connected with us on social networks:</span>
+          <span>تواصل معنا عبر الشبكات الاجتماعية</span>
         </div>
         {/* <!-- Left --> */}
 

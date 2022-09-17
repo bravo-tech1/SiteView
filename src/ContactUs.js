@@ -12,6 +12,13 @@ export default function About() {
   const [companyName, setCompanyName] = useState("");
   const [country, setcountry] = useState("");
   const [role, setRole] = useState("");
+  const [travel, settravel] = useState("");
+  const [tour, settour] = useState("");
+  const [online, setonline] = useState("");
+  const [b2c, setb2c] = useState("");
+  const [corporate, setcorporate] = useState("");
+  const [agree_recive, setagree_recive] = useState("");
+  const [agree_store, setagree_store] = useState("");
 
   let handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,11 +60,7 @@ export default function About() {
         <div class="row d-flex justify-content-between">
           <div class="contact-info col-lg-4 mt-sm-5 mt-md-5 mt-lg-0">
             <h4 class="mb-4">CONTACT INFORMATION</h4>
-            <p>
-              Office Asddres: Arasaat Alhindia St. beside IDB Bank, Baghdad –
-              Iraq
-            </p>
-            <p>Tel: 07704425346, 07704425348</p>
+
             <div class="contact-soc">
               <i class="fa-solid fa-envelope"></i> E-mail: hello@bravoo.travel
               <br />
@@ -68,13 +71,14 @@ export default function About() {
               https://instagram.com/bravoo.travel
             </div>
           </div>
-          <div class="col-lg-6" style={{ marginBottom: "2rem" }}>
+          <div class="col-lg-6 " style={{ marginBottom: "2rem" }}>
             <form
               action=""
-              class="form-contact mt-sm-5 mt-lg-0"
+              class="form-contact mt-sm-5 mt-lg-0 row"
               onSubmit={handleSubmit}
+              style={{ color: "var(--yellow-color)" }}
             >
-              <div class="col-lg-6 d-column w-100">
+              <div class="mb-3 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
                 <label for="f-name" class="m-100 mb-1">
                   First Name :
                 </label>
@@ -84,11 +88,11 @@ export default function About() {
                   onChange={(e) => setfirstName(e.target.value)}
                   value={firstName}
                   required
-                  class="col-lg-4 w-100 pt-2 pb-2 ps-2"
-                  placeholder="Enter First Your Name"
+                  class=" custom-input col-lg-4 w-100 pt-2 pb-2 ps-2"
+                  placeholder="First Name...."
                 />
               </div>
-              <div class="mt-3">
+              <div class="mb-3 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <label for="l-name" class="m-100 mb-1">
                   Last Name :
                 </label>
@@ -98,74 +102,78 @@ export default function About() {
                   onChange={(e) => setlastName(e.target.value)}
                   value={lastName}
                   required
-                  class="col-lg-4 w-100 pt-2 pb-2 ps-2"
-                  placeholder="Enter Last Your Name"
+                  class=" custom-input col-lg-4 w-100 pt-2 pb-2 ps-2"
+                  placeholder="Last Name...."
                 />
               </div>
-              <div class="mt-3">
+              <div class="mb-3 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <label for="email" class="m-100 mb-1">
                   Enter Your Email :
                 </label>
                 <input
-                  placeholder="Enter Your Email "
+                  placeholder="Email...."
                   type="email"
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   required
-                  class="col-lg-4 w-100 pt-2 pb-2 ps-2"
+                  class=" custom-input col-lg-4 w-100 pt-2 pb-2 ps-2"
                 />
               </div>
-              <div class="mt-3 mb-5">
+              <div class="mb-3 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <label class="m-100 mb-1 " for="number">
                   Phone Number
                 </label>
                 <input
-                  placeholder="Phone Number"
+                  placeholder="Mobile...."
                   type="number"
                   id="number"
                   onChange={(e) => setmobileNumber(e.target.value)}
                   value={mobileNumber}
                   required
-                  class="col-lg-4 w-100 pt-2 pb-2 ps-2"
+                  class=" custom-input col-lg-4 w-100 pt-2 pb-2 ps-2"
                 />
               </div>
-              <div class="mt-3">
+              <div class="mb-3 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <label for="company" class="m-100 mb-1">
                   Company Name
                 </label>
                 <input
-                  placeholder="Company Name "
+                  placeholder="Company Name.... "
                   type="text"
                   id="company"
                   onChange={(e) => setCompanyName(e.target.value)}
                   value={companyName}
                   required
-                  class="col-lg-4 w-100 pt-2 pb-2 ps-2"
+                  class=" custom-input col-lg-4 w-100 pt-2 pb-2 ps-2"
                 />
               </div>
-              <div class="mt-3">
+              <div class="mb-3 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <label for="country" class="m-100 mb-1">
                   Country
                 </label>
                 <Countries
                   name="country"
-                  empty=" -- Select country --"
+                  empty=" select country..."
                   onChange={(e) => setcountry(e.target.value)}
-                  class="col-lg-4 w-100 pt-2 pb-2 ps-2"
+                  class=" custom-input col-lg-4 w-100 pt-2 pb-2 ps-2"
                   required
                 />
               </div>
-              <div class="mt-3">
+              <div class="mb-3 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <label for="role" class="m-100 mb-1">
                   Role
                 </label>
                 <select
-                  class="col-lg-4 w-100 pt-2 pb-2 ps-2"
+                  class=" custom-input col-lg-4 w-100 pt-2 pb-2 ps-2"
                   onChange={(e) => setRole(e.target.value)}
                   value={role}
+                  placeholder="Selcet"
                   required
                 >
+                  <option value="" disabled selected style={{ color: "gray" }}>
+                    Role in company...
+                  </option>
                   <option value={"CEO/Owner"}>CEO/Owner</option>
                   <option value={"VP/Director"}>VP/Director</option>
                   <option value={"CTO/IT Manager"}>CTO/IT Manager</option>
@@ -179,9 +187,137 @@ export default function About() {
                   <option value={"External Advisor"}>External Advisor</option>
                 </select>
               </div>
+              <div
+                class="col-12"
+                style={{ color: "#2c2c2c", fontSize: "13px" }}
+              >
+                <span class="form-title">Software Type</span>
+                <br />
+
+                <input
+                  class="checkBox"
+                  type="checkbox"
+                  id="software1"
+                  name="software1"
+                  value="Travel ERP software"
+                  style={{ marginTop: "15px" }}
+                />
+                <label class="checkBoxLabel" for="software1">
+                  Travel ERP software
+                </label>
+                <br />
+
+                <input
+                  class="checkBox"
+                  type="checkbox"
+                  id="software2"
+                  name="software2"
+                  value="Tour operator solution"
+                />
+                <label class="checkBoxLabel" for="software2">
+                  Tour operator solution
+                </label>
+                <br />
+
+                <input
+                  class="checkBox"
+                  type="checkbox"
+                  id="software3"
+                  name="software3"
+                  value="Online booking system"
+                />
+                <label class="checkBoxLabel" for="software3">
+                  Online booking system
+                </label>
+                <br />
+
+                <input
+                  class="checkBox"
+                  type="checkbox"
+                  id="software4"
+                  name="software4"
+                  value="B2C online selling platform"
+                />
+                <label class="checkBoxLabel" for="software4">
+                  B2C online selling platform
+                </label>
+                <br />
+
+                <input
+                  class="checkBox"
+                  type="checkbox"
+                  id="software5"
+                  name="software5"
+                  value="Corporate Self Booking Tool"
+                />
+                <label class="checkBoxLabel" for="software5">
+                  Corporate Self Booking Tool
+                </label>
+                <br />
+
+                <p class="parag">
+                  From time to time, we would like to contact you about our
+                  products and services, as well as other content that may be of
+                  interest to you. If you consent to us contacting you for this
+                  purpose, please tick below to say how you would like us to
+                  contact you :
+                </p>
+
+                <input
+                  class="checkBox"
+                  type="checkbox"
+                  id="agreerecieve"
+                  name="agreerecieve"
+                  value="I agree to receive other communications from Bravoo"
+                />
+                <label class="checkBoxLabel" for="agreerecieve">
+                  I agree to receive other communications from Bravoo.
+                </label>
+                <br />
+
+                <p class="parag">
+                  By clicking submit below, you consent to allow Bravoo to store
+                  and process the personal information submitted above to
+                  provide you the content requested.
+                </p>
+
+                <input
+                  class="checkBox"
+                  type="checkbox"
+                  id="agreeallow"
+                  name="agreeallow"
+                  value="I agree to allow Bravoo to store and process my personal data"
+                />
+                <label class="checkBoxLabel" for="agreeallow">
+                  I agree to allow Bravoo to store and process my personal data.
+                </label>
+                <br />
+
+                <p class="parag">
+                  You may unsubscribe from these communications at any time. For
+                  more information on how to unsubscribe, our privacy practices,
+                  and how we are committed to protecting and respecting your
+                  privacy, please review our{" "}
+                  <a
+                    href="https://bravoo.travel/content/46660411/Bravoo/Privacy-Policy"
+                    style={{
+                      color: "var(--yellow-color)",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </p>
+              </div>
               <button
                 type="submit"
-                className="mt-3 btn btn-primary col-lg-4 w-100 pt-2 pb-2 ps-2"
+                className="mt-3 btn btn-primary col-lg-4 pt-2 pb-2 ps-2"
+                style={{
+                  backgroundColor: "#f0ad00",
+                  border: "none",
+                  width: "50%",
+                }}
               >
                 Send
               </button>
