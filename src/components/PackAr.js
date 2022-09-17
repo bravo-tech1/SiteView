@@ -26,8 +26,17 @@ export default function Pack() {
         padding: "10px",
       }}
     >
-      <div class="header">
-        <p style={{ marginBottom: "0" }}>حزمة</p>
+      <div
+        className="w-100"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div class="header">
+          <p style={{ marginBottom: "0" }}>حزمة</p>
+        </div>
       </div>
       <div class="pakeg" style={{ flexDirection: "row-reverse" }}>
         <div class="content ">
