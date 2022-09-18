@@ -56,7 +56,10 @@ export default function Header() {
             {!localStorage.getItem("email") && (
               <Link to="/login">
                 {" "}
-                <div className="btn roundrd-circle main-btn btn-login">
+                <div
+                  className="btn roundrd-circle main-btn btn-login"
+                  style={{ width: "130px" }}
+                >
                   Login
                 </div>
               </Link>
