@@ -661,3 +661,6 @@ select option:disabled {
 .checkAr{
   margin-right: 4px;
 }
+.label-font{
+  font-size: 13px;
+}

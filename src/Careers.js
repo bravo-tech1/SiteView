@@ -69,8 +69,8 @@ export default function Careers() {
         >
           <div class="row border-bottom mb-5 pb-4">
             <div class="col-lg-3 col-md-6">
-              <label class="d-column w-100 mb-1" for="name">
-                Name :
+              <label class="d-column w-100 label-font mb-2" for="name">
+                Name
               </label>
               <input
                 required
@@ -83,8 +83,8 @@ export default function Careers() {
               />
             </div>
             <div class="col-lg-3 col-md-6">
-              <label class="d-column w-100 mb-1" for="qualification">
-                Academic qualification :
+              <label class="d-column w-100 label-font mb-2" for="qualification">
+                Academic qualification
               </label>
               <input
                 required
@@ -97,8 +97,8 @@ export default function Careers() {
               />
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-              <label class="d-column w-100 mb-1" for="mobile">
-                Mobile :
+              <label class="d-column w-100 label-font mb-2" for="mobile">
+                Mobile
               </label>
               <input
                 required
@@ -112,8 +112,8 @@ export default function Careers() {
               />
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-              <label class="d-column w-100 mb-1" for="email">
-                Email :
+              <label class="d-column w-100 label-font mb-2" for="email">
+                Email
               </label>
               <input
                 required
@@ -126,8 +126,8 @@ export default function Careers() {
               />
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-              <label class="d-column w-100 mb-1" for="date">
-                Date of birth :
+              <label class="d-column w-100 label-font mb-2" for="date">
+                Date of birth
               </label>
               <input
                 required
@@ -141,8 +141,8 @@ export default function Careers() {
               />
             </div>
             <div class="col-lg-9 col-md-6 col-sm-12">
-              <label class="d-column w-100 mb-1" for="address">
-                Address :
+              <label class="d-column w-100 label-font mb-2" for="address">
+                Address
               </label>
               <input
                 required
