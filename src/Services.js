@@ -78,8 +78,7 @@ export default function Projects() {
                         {item.service_text_en}
                       </h2>
                       <p class="card-text">
-                        Click On The Service To See The Whole Information About
-                        This Service
+                        {item.service_desc_en}
                       </p>
                     </div>
                   </div>

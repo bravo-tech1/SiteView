@@ -45,13 +45,13 @@ ReactDOM.render(
       <Route path="/contact" element={<Contact />}></Route>
       <Route path="/contact/ar" element={<ContactAr />}></Route>
       <Route path="/states/:statesId" element={<States />}></Route>
-      <Route path="/states/:statesId/ar" element={<StatesAr />}></Route>
+      <Route path="/states/ar/:statesId" element={<StatesAr />}></Route>
       <Route
         path="/states/:statesId/cities/:citiesId"
         element={<Cities />}
       ></Route>
       <Route
-        path="/states/:statesId/ar/cities/:citiesId"
+        path="/states/ar/:statesId/cities/:citiesId"
         element={<CitiesAr />}
       ></Route>
       <Route
@@ -59,7 +59,7 @@ ReactDOM.render(
         element={<Hotels />}
       ></Route>
       <Route
-        path="/states/:statesId/ar/cities/:citiesId/hotels/:hotelsId"
+        path="/states/ar/:statesId/cities/:citiesId/hotels/:hotelsId"
         element={<HotelsAr />}
       ></Route>
       <Route
@@ -67,7 +67,7 @@ ReactDOM.render(
         element={<Pack />}
       ></Route>
       <Route
-        path="/states/:statesId/ar/cities/:citiesId/hotels/:hotelsId/packages/:packagesId"
+        path="/states/ar/:statesId/cities/:citiesId/hotels/:hotelsId/packages/:packagesId"
         element={<PackAr />}
       ></Route>
       <Route

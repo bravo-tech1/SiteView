@@ -56,7 +56,7 @@ export default function Projects() {
                     }}
                   >
                     <Link
-                      to={`/states/${item.id}/ar`}
+                      to={`/states/ar/${item.id}`}
                       width="100%"
                       style={{ display: "flex" }}
                     >
@@ -72,13 +72,13 @@ export default function Projects() {
                         />
                       </video>
                     </Link>
-                    <div class="card-body" dir="rtl">
+                    <div class="card-body ">
                       <h2 style={{ color: "black", fontWeight: "bold" }}>
                         {" "}
                         {item.service_text_ar}
                       </h2>
                       <p class="card-text">
-                        اضغط على الخدمة لرؤية كل المعلومات حول هذه الخدمة
+                        {item.service_desc_ar}
                       </p>
                     </div>
                   </div>
@@ -95,7 +95,7 @@ export default function Projects() {
 
   return (
     <>
-      <h1 className="text-center fw-bold mb-4">الخدمات</h1>
+      <h1 className="text-center fw-bold mb-4">Services</h1>
       <div className="bg-custom">
         <div className="container" id="services">
           <div className="row">{dataDepartmentShow}</div>
