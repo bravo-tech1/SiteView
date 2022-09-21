@@ -189,7 +189,8 @@ export default function FinalSlide() {
       )
     )
   ) : !localStorage.getItem("email") ? (
-    <>
+
+    <div style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
       <h1 className="text-center">Register To See Services</h1>
       <Link to="/Register" style={{ textAlign: "center" }}>
         {" "}
@@ -200,7 +201,8 @@ export default function FinalSlide() {
           Register
         </div>
       </Link>
-    </>
+      </div>
+
   ) : (
     <div
       className="text-center"

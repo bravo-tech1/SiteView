@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import { Link } from "react-router-dom";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css'
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -31,8 +33,12 @@ export default function Register() {
       );
       if (res.status === 200) {
         // storing input name
-        localStorage.setItem("email", JSON.stringify(email));
-        window.location.href = "/";
+        setTimeout( () => window.location.href = '/',5000)
+          localStorage.setItem("email", JSON.stringify(email));
+          document.querySelector('.clicked-button').click()
+          document.querySelector('.modal').style.display = "block"
+          
+          
       } else {
         console.log("Some error occured");
       }
@@ -43,6 +49,21 @@ export default function Register() {
 
   return (
     <>
+    <div className="pop-up-content">
+      <Popup
+    trigger={<button className="button clicked-button"> Open Modal </button>}
+    modal
+    nested
+    
+  >
+     <div className="header-css">Your request has been sent and will be reviewed as soon as possible</div>
+    {close => (
+      <div className="modal">
+       
+      </div>
+    )}
+  </Popup>
+  </div>
       <Header />
 
       <section
