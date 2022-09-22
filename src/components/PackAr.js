@@ -54,7 +54,7 @@ export default function Pack() {
               {item.package_price}$
             </span>
           </p>
-          <div>
+          <div dir="rtl"> 
             <p class="paragraph" dir="rtl">
               الوصف:{" "}
               <span style={{ color: "var(--yellow-color)" }}>
@@ -67,6 +67,15 @@ export default function Pack() {
                 {item.details_text2_ar}
               </span>
             </p>
+            <Link to={`deatils/${item.id}`} >
+            <div
+              className="btn roundrd-circle main-btn btn-login"
+              
+              style={{ marginLeft: "10px" }}
+            >
+              التفاصيل
+            </div>
+          </Link>
           </div>
         </div>
         <img src={item.package_image} width={"50%"} />

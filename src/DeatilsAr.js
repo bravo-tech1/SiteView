@@ -24,10 +24,10 @@ export default function Pack() {
   }, []);
 
   const items = data.map((item) => (
-    <div>
-      <h1>{item.city_name_en}</h1>
-      <h1>{item.details_title_en}</h1>
-      <h2 style={{ color: "black" }}>{item.details_text2_en}</h2>
+    <div dir="rtl">
+      <h1>{item.city_name_ar}</h1>
+      <h1>{item.details_title_ar}</h1>
+      <h2 style={{ color: "black" }}>{item.details_text2_ar}</h2>
       <div className="row">
         {images.map((itm) => (
           <img src={itm.img} className="col-md-4" alt="countrys" />
