@@ -41,13 +41,13 @@ export default function Pack() {
           <img src={itm.img} className="col-md-4" alt="countrys" />
         ))}
       </div>
-      <div className="row">
+      <div className="row" style={{marginTop: '2rem', marginBottom: '2rem', rowGap: '10px'}}>
     {videos.map((itm) => (
        <video
         className="col-md-6"
        autoPlay
        muted
-       style={{marginTop: '2rem', marginBottom: '2rem'}}
+
      >
        <source
          src={`${itm.video}`}
