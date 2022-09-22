@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import HeaderAr from "./components/HeaderAr";
 
 import Footer from "./components/Footer";
 import { useEffect } from "react";
@@ -45,7 +45,7 @@ export default function About() {
   ));
   return (
     <div>
-      <Header />
+      <HeaderAr />
       {userA ? (
         <div
           style={{
