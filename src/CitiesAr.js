@@ -1,6 +1,6 @@
 import HeaderAr from "./components/HeaderAr";
 
-import Footer from "./components/Footer";
+import FooterAr from "./components/FooterAr";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -74,7 +74,7 @@ export default function About() {
       ) : (
         <div className="text-center">You Are Not Accepted Yet</div>
       )}
-      <Footer />
+      <FooterAr />
     </div>
   );
 }

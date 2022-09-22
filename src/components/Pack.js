@@ -61,12 +61,7 @@ export default function Pack() {
                 {item.details_text1_en}
               </span>
             </p>
-            <p class="paragraph">
-              Brif:{" "}
-              <span style={{ color: "var(--yellow-color)" }}>
-                {item.details_text2_en}
-              </span>
-            </p>
+            
           </div>
           <Link to={`deatils/${item.id}`}>
             <div

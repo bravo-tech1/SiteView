@@ -61,12 +61,7 @@ export default function Pack() {
                 {item.details_text1_ar}
               </span>
             </p>
-            <p class="paragraph" dir="rtl">
-              وصف ثاني:{" "}
-              <span style={{ color: "var(--yellow-color)" }}>
-                {item.details_text2_ar}
-              </span>
-            </p>
+            
             <Link to={`deatils/${item.id}`} >
             <div
               className="btn roundrd-circle main-btn btn-login"
