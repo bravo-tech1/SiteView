@@ -44,7 +44,7 @@ export default function Pack() {
       <div className="row">
     {videos.map((itm) => (
        <video
-     
+       className="col-md-6"
        autoPlay
        muted
        style={{marginTop: '2rem', marginBottom: '2rem'}}
