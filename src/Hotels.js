@@ -25,8 +25,31 @@ export default function About() {
             src={item.hotel_image}
             alt="Card cap"
           />
-          <h3 class="card-text">{item.hotel_name_en}</h3>
-          <h3 class="card-text">{item.hotel_location_en}</h3>
+          <h3
+            class="card-text"
+            style={{ fontWeight: "bold", color: "#ff5959" }}
+          >
+            {item.hotel_name_en}
+          </h3>
+          <h3 class="card-text">
+            {item.hotel_location_en !== "undefined" ? (
+              <>
+                {" "}
+                <i
+                  class="fa-solid fa-location-dot"
+                  style={{ color: "var(--yellow-color)" }}
+                >
+                  {" "}
+                </i>{" "}
+                <span style={{ fontSize: "22px" }}>
+                  {" "}
+                  {item.hotel_location_en}
+                </span>
+              </>
+            ) : (
+              ""
+            )}
+          </h3>
         </div>
       </div>
     </Link>
