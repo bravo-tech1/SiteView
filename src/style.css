@@ -706,3 +706,12 @@ select option:disabled {
   width: 70%;
   height: 25vh;
 }
+
+
+/* Word Style */
+.ql-align-center{
+  text-align: center;
+}
+.WordStyle img{
+  width: 100%;
+}

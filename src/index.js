@@ -31,7 +31,6 @@ import AppAr from "./AppAr";
 
 import "./style.css";
 import "./all.css";
-import "./admin.css";
 
 // Router
 
@@ -77,7 +76,7 @@ ReactDOM.render(
       ></Route>
       <Route
         path="/states/ar/:statesId/cities/:citiesId/hotels/:hotelsId/packages/:packagesId/deatils/:deatilsId"
-        element={<DeatilsAr/>}
+        element={<DeatilsAr />}
       ></Route>
 
       <Route path="/careers" element={<Careers />} />
