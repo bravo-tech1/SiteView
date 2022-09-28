@@ -712,6 +712,15 @@ select option:disabled {
 .ql-align-center{
   text-align: center;
 }
+.ql-align-right{
+  text-align: right;
+}
+.ql-align-left{
+  text-align: left;
+}
 .WordStyle img{
   width: 100%;
+}
+.WordStyle p, .WordStyle h1, .WordStyle h2, .WordStyle h3{
+  color: black;
 }
