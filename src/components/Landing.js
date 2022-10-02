@@ -1,14 +1,18 @@
+import { useEffect, useState } from "react";
+
 export default function Landing() {
-  return (
-    <div class="landind text-center">
-      <img
-        class="img-fluid images"
-        src={require("../assets/images/landding.jpg")}
-        alt=""
-      />
-      <div class="contect">
-        <h1>Exploring The World In Comfort .</h1>
-      </div>
-    </div>
-  );
+  const [video, setVideo] = useState([]);
+
+  useEffect(() => {
+    fetch("https://test.emkanfinances.net/api/website/showbyid/1")
+      .then((res) => res.json())
+      .then((dataRes) => setVideo(dataRes));
+  }, []);
+
+  const videoShow = video.map((item) => (
+    <video width="100%" autoPlay muted>
+      <source src={item.website_image} type="video/mp4" />
+    </video>
+  ));
+  return <div class="landind text-center">{videoShow}</div>;
 }
