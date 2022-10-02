@@ -1,14 +1,23 @@
+import { useEffect, useState } from "react";
+
 export default function Landing() {
-  return (
-    <div class="landind text-center">
+  const [section, setSection] = useState([]);
+
+  useEffect(() => {
+    fetch("https://test.emkanfinances.net/api/website/showbyid/1")
+      .then((res) => res.json())
+      .then((dataRes) => setSection(dataRes));
+  }, []);
+
+  const SectionShow = section.map((item) => (
+    <div>
       <img
-        class="img-fluid images"
-        src={require("../assets/images/landding.jpg")}
-        alt=""
+        src={item.website_image}
+        alt="landing img"
+        className=" img-fluid images"
       />
-      <div class="contect">
-        <h1>استكشاف العالم براحة</h1>
-      </div>
+      <h1 className="contect"> {item.title_ar} </h1>
     </div>
-  );
+  ));
+  return <div class="landind text-center">{SectionShow}</div>;
 }

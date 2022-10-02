@@ -9,6 +9,7 @@ export default function Latest() {
       .then((dataRes) => setData(dataRes));
   }, []);
   const dataEdit = data.splice(1);
+
   const items = dataEdit.map((item) => (
     <>
       <div className={`carousel-item`}>
@@ -70,7 +71,9 @@ export default function Latest() {
       </div>
     </>
   ));
+
   const dataSliedItem = data.slice(!1);
+  console.log(dataSliedItem.map((item) => item.package_rate));
 
   return (
     <div class="container pt-5 pb-5">

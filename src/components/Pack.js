@@ -104,7 +104,7 @@ export default function Pack() {
           </Link>
           <div
             className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
-            style={{ marginLeft: "10px" }}
+            style={{ marginLeft: "10px", width: "80px" }}
           >
             Book
           </div>
