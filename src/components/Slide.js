@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 import "../cover.css";
 
 function useTilt(active) {
@@ -106,10 +107,9 @@ function Slide({ slide, offset }) {
 }
 
 export default function FinalSlide() {
-  const [data, setData] = useState([]);
   const [slides, setSlides] = useState([]);
   const user = localStorage.getItem("email");
-  const [userA, setUserA] = useState(0);
+  const [userA, setUserA] = useState("");
 
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/user/show")
@@ -117,12 +117,6 @@ export default function FinalSlide() {
       .then((dataRes) =>
         setUserA(dataRes.find((item) => `"${item.email}"` === user).accepted)
       );
-  }, []);
-
-  useEffect(() => {
-    fetch("https://test.emkanfinances.net/api/state/show")
-      .then((res) => res.json())
-      .then((dataRes) => setData(dataRes));
   }, []);
 
   const id = Number(window.location.pathname.replace("/states/", ""));
@@ -189,8 +183,15 @@ export default function FinalSlide() {
       )
     )
   ) : !localStorage.getItem("email") ? (
-
-    <div style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
+    >
       <h1 className="text-center">Register To See Services</h1>
       <Link to="/Register" style={{ textAlign: "center" }}>
         {" "}
@@ -201,9 +202,8 @@ export default function FinalSlide() {
           Register
         </div>
       </Link>
-      </div>
-
-  ) : (
+    </div>
+  ) : userA === 0 ? (
     <div
       className="text-center"
       style={{
@@ -217,6 +217,10 @@ export default function FinalSlide() {
         <h1>You Are Not Accepted Yet</h1>
         <a href="/">Back To Home</a>
       </div>
+    </div>
+  ) : (
+    <div>
+      <Loading />
     </div>
   );
 }

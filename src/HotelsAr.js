@@ -4,14 +4,19 @@ import FooterAr from "./components/FooterAr";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "./components/Loading";
 
 export default function About() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const id = Number(window.location.pathname.split("/").slice(-1)[0]);
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/hotel/show")
       .then((res) => res.json())
-      .then((dataRes) => setData(dataRes.filter((x) => x.city_id === id)));
+      .then((dataRes) => {
+        setData(dataRes.filter((x) => x.city_id === id));
+        setLoading(false);
+      });
   }, []);
 
   const items = data.map((item) => (
@@ -47,7 +52,14 @@ export default function About() {
                 </i>{" "}
                 <span style={{ fontSize: "22px" }}>
                   {" "}
-                  {item.hotel_location_ar}
+                  <a
+                    href={item.location_url}
+                    target="_blank"
+                    style={{ textDecoration: "none" }}
+                  >
+                    {" "}
+                    {item.hotel_location_ar}
+                  </a>
                 </span>
               </>
             ) : (
@@ -61,6 +73,11 @@ export default function About() {
   return (
     <div>
       <HeaderAr />
+      {loading && (
+        <div style={{ height: "100vh" }}>
+          <Loading />
+        </div>
+      )}
       <div
         style={{
           display: "flex",

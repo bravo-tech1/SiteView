@@ -18,7 +18,7 @@ export default function About() {
         alt="..."
         style={{ width: "100%", height: "30vw", objectFit: "cover" }}
       />
-      <div class="card-body">
+      <div class="card-body" dir="rtl">
         <h5 class="card-title">{item.details_title_ar}</h5>
 
         <p class="card-text">
@@ -26,14 +26,52 @@ export default function About() {
           <span style={{ color: "#fdac53", fontWeight: "bold" }}>
             المدينة:{" "}
           </span>{" "}
-          {item.city_name_en}
+          {item.city_name_ar}
         </p>
         <p class="card-text">
-          <i class="fa-solid fa-clock"> </i>
-          <span style={{ color: "#ff5959", fontWeight: "bold" }}>
-            المدة:{" "}
-          </span>{" "}
-          {item.package_period}
+          <p class="balneo" dir="rtl">
+            مدة البكج: <span style={{ fontWeight: "blod" }}> من </span>
+            <span style={{ color: "#ff5959" }}> {item.period_from}</span>
+            <span style={{ fontWeight: "blod" }}> الى </span>{" "}
+            <span style={{ color: "#ff5959" }}> {item.period_to}</span>
+          </p>
+          <div dir="rtl">
+            <p class="paragraph">
+              <span style={{ color: "var(--yellow-color)" }}>
+                {item.package_rate === 0 || item.package_rate === null ? (
+                  ""
+                ) : item.package_rate === 1 ? (
+                  <i class="fa-solid fa-star"></i>
+                ) : item.package_rate === 2 ? (
+                  <>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </>
+                ) : item.package_rate === 3 ? (
+                  <>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </>
+                ) : item.package_rate === 4 ? (
+                  <>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </>
+                ) : (
+                  <>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </>
+                )}
+              </span>
+            </p>
+          </div>
         </p>
         <p class="card-text">{item.city_details_text1_ar}</p>
       </div>

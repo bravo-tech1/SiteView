@@ -30,11 +30,49 @@ export default function Latest() {
               {item.city_name_ar}
             </p>
             <p class="card-text">
-              <i class="fa-solid fa-clock"> </i>
-              <span style={{ color: "#ff5959", fontWeight: "bold" }}>
-                المدة:{" "}
-              </span>{" "}
-              {item.package_period}
+              <p class="balneo" dir="rtl">
+                مدة البكج: <span style={{ fontWeight: "blod" }}> من </span>
+                <span style={{ color: "#ff5959" }}> {item.period_from}</span>
+                <span style={{ fontWeight: "blod" }}> الى </span>{" "}
+                <span style={{ color: "#ff5959" }}> {item.period_to}</span>
+              </p>
+              <div dir="rtl">
+                <p class="paragraph">
+                  <span style={{ color: "var(--yellow-color)" }}>
+                    {item.package_rate === 0 || item.package_rate === null ? (
+                      ""
+                    ) : item.package_rate === 1 ? (
+                      <i class="fa-solid fa-star"></i>
+                    ) : item.package_rate === 2 ? (
+                      <>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </>
+                    ) : item.package_rate === 3 ? (
+                      <>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </>
+                    ) : item.package_rate === 4 ? (
+                      <>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </>
+                    ) : (
+                      <>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </>
+                    )}
+                  </span>
+                </p>
+              </div>
             </p>
             <p class="card-text">{item.city_details_text1_ar}</p>
           </div>
@@ -67,18 +105,69 @@ export default function Latest() {
                     {dataSliedItem.map((item) => item.details_title_ar)}
                   </h5>
                   <p class="card-text">
-                    <i class="fa-solid fa-location-dot"> </i>
-                    <span style={{ color: "#fdac53", fontWeight: "bold" }}>
-                      المدينة:{" "}
-                    </span>{" "}
-                    {dataSliedItem.map((item) => item.city_name_ar)}
-                  </p>
-                  <p class="card-text">
-                    <i class="fa-solid fa-clock"> </i>
-                    <span style={{ color: "#ff5959", fontWeight: "bold" }}>
-                      المدة:{" "}
-                    </span>{" "}
-                    {dataSliedItem.map((item) => item.package_period)}
+                    <p class="balneo" dir="rtl">
+                      مدة البكج:{" "}
+                      <span style={{ fontWeight: "blod" }}> من </span>
+                      <span style={{ color: "#ff5959" }}>
+                        {" "}
+                        {dataSliedItem.map((item) => item.period_from)}
+                      </span>
+                      <span style={{ fontWeight: "blod" }}> الى </span>{" "}
+                      <span style={{ color: "#ff5959" }}>
+                        {" "}
+                        {dataSliedItem.map((item) => item.period_to)}
+                      </span>
+                    </p>
+                    <div dir="rtl">
+                      <p class="paragraph">
+                        <span style={{ color: "var(--yellow-color)" }}>
+                          {dataSliedItem.map(
+                            (item) => item.package_rate === 0
+                          ) ||
+                          dataSliedItem.map(
+                            (item) => item.package_rate === null
+                          ) ? (
+                            ""
+                          ) : dataSliedItem.map(
+                              (item) => item.package_rate === 1
+                            ) ? (
+                            <i class="fa-solid fa-star"></i>
+                          ) : dataSliedItem.map(
+                              (item) => item.package_rate === 2
+                            ) ? (
+                            <>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </>
+                          ) : dataSliedItem.map(
+                              (item) => item.package_rate === 3
+                            ) ? (
+                            <>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </>
+                          ) : dataSliedItem.map(
+                              (item) => item.package_rate === 4
+                            ) ? (
+                            <>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </>
+                          ) : (
+                            <>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </>
+                          )}
+                        </span>
+                      </p>
+                    </div>
                   </p>
                 </div>
               </div>

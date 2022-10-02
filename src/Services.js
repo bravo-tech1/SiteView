@@ -1,12 +1,14 @@
 import React from "react";
 import "reactjs-popup/dist/index.css";
 import "react-image-lightbox/style.css";
+import Loading from "./components/Loading";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 
 export default function Projects() {
+  const [loading, setLoading] = useState(true);
   const [dataDepartment, setdataDepartment] = useState([]);
   const [data, setData] = useState([]);
   const user = localStorage.getItem("email");
@@ -15,7 +17,10 @@ export default function Projects() {
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/service/show")
       .then((res) => res.json())
-      .then((dataRes) => setData(dataRes));
+      .then((dataRes) => {
+        setData(dataRes);
+        setLoading(false);
+      });
   }, []);
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/Department/show")
@@ -77,9 +82,7 @@ export default function Projects() {
                         {" "}
                         {item.service_text_en}
                       </h2>
-                      <p class="card-text">
-                        {item.service_desc_en}
-                      </p>
+                      <p class="card-text">{item.service_desc_en}</p>
                     </div>
                   </div>
                 </div>
@@ -98,7 +101,10 @@ export default function Projects() {
       <h1 className="text-center fw-bold mb-4">Services</h1>
       <div className="bg-custom">
         <div className="container" id="services">
-          <div className="row">{dataDepartmentShow}</div>
+          <div className="row" style={{ position: "relative" }}>
+            {loading && <Loading />}
+            {dataDepartmentShow}
+          </div>
         </div>
       </div>
     </>

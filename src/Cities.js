@@ -4,8 +4,10 @@ import Footer from "./components/Footer";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "./components/Loading";
 
 export default function About() {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const user = localStorage.getItem("email");
   const [userA, setUserA] = useState(0);
@@ -22,7 +24,10 @@ export default function About() {
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/city/show")
       .then((res) => res.json())
-      .then((data) => setData(data.filter((item) => item.state_id === id)));
+      .then((data) => {
+        setData(data.filter((item) => item.state_id === id));
+        setLoading(false);
+      });
   }, []);
 
   const items = data.map((item) => (
@@ -33,7 +38,7 @@ export default function About() {
         textAlign: "center",
       }}
     >
-      <div class="card" style={{ width: "24rem", height: "60vh" }}>
+      <div class="card" style={{ width: "24rem" }}>
         <img class="card-img-top" src={item.city_image} alt="Card image cap" />
         <div class="card-body">
           <h3 class="card-text" style={{ fontWeight: "bold" }}>
@@ -46,14 +51,20 @@ export default function About() {
   return (
     <div>
       <Header />
+      {loading && (
+        <div style={{ height: "100vh" }}>
+          <Loading />
+        </div>
+      )}
       {userA ? (
         <div
           style={{
-            height: "100vh",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             flexWrap: "wrap",
+            margin: "5rem 0",
+            gap: "20px",
           }}
         >
           {items}

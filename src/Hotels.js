@@ -4,21 +4,26 @@ import Footer from "./components/Footer";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "./components/Loading";
 
 export default function About() {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   const id = Number(window.location.pathname.split("/").slice(-1)[0]);
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/hotel/show")
       .then((res) => res.json())
-      .then((dataRes) => setData(dataRes.filter((x) => x.city_id === id)));
+      .then((dataRes) => {
+        setData(dataRes.filter((x) => x.city_id === id));
+        setLoading(false);
+      });
   }, []);
 
   const items = data.map((item) => (
-    <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
-      <div class="card" style={{ width: "24rem" }}>
-        <div class="card-body text-center">
+    <div class="card" style={{ width: "24rem" }}>
+      <div class="card-body text-center">
+        <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
           <img
             class="card-img-top mb-2"
             style={{ width: "500px", height: "300px", objectFit: "cover" }}
@@ -31,32 +36,44 @@ export default function About() {
           >
             {item.hotel_name_en}
           </h3>
-          <h3 class="card-text">
-            {item.hotel_location_en !== "undefined" ? (
-              <>
+        </Link>
+        <h3 class="card-text">
+          {item.hotel_location_en !== "undefined" ? (
+            <>
+              {" "}
+              <i
+                class="fa-solid fa-location-dot"
+                style={{ color: "var(--yellow-color)" }}
+              >
                 {" "}
-                <i
-                  class="fa-solid fa-location-dot"
-                  style={{ color: "var(--yellow-color)" }}
+              </i>{" "}
+              <span style={{ fontSize: "22px" }}>
+                {" "}
+                <a
+                  href={item.location_url}
+                  target="_blank"
+                  style={{ textDecoration: "none" }}
                 >
                   {" "}
-                </i>{" "}
-                <span style={{ fontSize: "22px" }}>
-                  {" "}
                   {item.hotel_location_en}
-                </span>
-              </>
-            ) : (
-              ""
-            )}
-          </h3>
-        </div>
+                </a>
+              </span>
+            </>
+          ) : (
+            ""
+          )}
+        </h3>
       </div>
-    </Link>
+    </div>
   ));
   return (
     <div>
       <Header />
+      {loading && (
+        <div style={{ height: "100vh" }}>
+          <Loading />
+        </div>
+      )}
       <div
         style={{
           display: "flex",
