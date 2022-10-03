@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import parse from "html-react-parser";
 
 export default function Landing() {
   const [section, setSection] = useState([]);
@@ -16,7 +17,7 @@ export default function Landing() {
         alt="landing img"
         className=" img-fluid images"
       />
-      <h1 className="contect"> {item.title_en} </h1>
+      <h1 className="contect"> {parse(item.title_en)} </h1>
     </div>
   ));
   return <div class="landind text-center">{SectionShow}</div>;
