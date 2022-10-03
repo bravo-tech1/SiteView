@@ -55,7 +55,7 @@ export default function Projects() {
                     style={{
                       width: "100%",
                       display: "flex",
-
+                      alignItems: "center",
                       justifyContent: "center",
                       flexDirection: "row",
                     }}

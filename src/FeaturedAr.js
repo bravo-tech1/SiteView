@@ -22,13 +22,6 @@ export default function About() {
         <h5 class="card-title">{item.details_title_ar}</h5>
 
         <p class="card-text">
-          <i class="fa-solid fa-location-dot"> </i>
-          <span style={{ color: "#fdac53", fontWeight: "bold" }}>
-            المدينة:{" "}
-          </span>{" "}
-          {item.city_name_ar}
-        </p>
-        <p class="card-text">
           <p class="balneo" dir="rtl">
             مدة البكج: <span style={{ fontWeight: "blod" }}> من </span>
             <span style={{ color: "#ff5959" }}> {item.period_from}</span>

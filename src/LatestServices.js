@@ -73,7 +73,7 @@ export default function Latest() {
   ));
 
   const dataSliedItem = data.slice(!1);
-  console.log(dataSliedItem.map((item) => item.package_rate));
+  console.log(dataSliedItem.map((item) => item.package_rate === 5).toString());
 
   return (
     <div class="container pt-5 pb-5">
@@ -113,47 +113,39 @@ export default function Latest() {
                   <div>
                     <p class="paragraph">
                       <span style={{ color: "var(--yellow-color)" }}>
-                        {dataSliedItem.map((item) => item.package_rate === 0) ||
-                        dataSliedItem.map(
-                          (item) => item.package_rate === null
-                        ) ? (
-                          ""
-                        ) : dataSliedItem.map(
-                            (item) => item.package_rate === 1
-                          ) ? (
-                          <i class="fa-solid fa-star"></i>
-                        ) : dataSliedItem.map(
-                            (item) => item.package_rate === 2
-                          ) ? (
-                          <>
+                        {dataSliedItem.map((item) =>
+                          item.package_rate === 0 ||
+                          item.package_rate === null ? (
+                            ""
+                          ) : item.package_rate === 1 ? (
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                          </>
-                        ) : dataSliedItem.map(
-                            (item) => item.package_rate === 3
-                          ) ? (
-                          <>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                          </>
-                        ) : dataSliedItem.map(
-                            (item) => item.package_rate === 4
-                          ) ? (
-                          <>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                          </>
-                        ) : (
-                          <>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                          </>
+                          ) : item.package_rate === 2 ? (
+                            <>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </>
+                          ) : item.package_rate === 3 ? (
+                            <>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </>
+                          ) : item.package_rate === 4 ? (
+                            <>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </>
+                          ) : (
+                            <>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </>
+                          )
                         )}
                       </span>
                     </p>
