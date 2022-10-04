@@ -38,14 +38,23 @@ export default function Pack() {
             <img
               src={item.detailimages[0].image}
               class="d-block w-100"
+              height={"600px"}
               alt="img"
             />
           </div>
-          {item.detailimages.map((nice) => (
-            <div class="carousel-item">
-              <img src={nice.image} class="d-block w-100" alt="img" />
-            </div>
-          ))}
+          {deatils
+            .map((item) => item.detailimages)[0]
+            .slice(1)
+            .map((nice) => (
+              <div class="carousel-item">
+                <img
+                  src={nice.image}
+                  class="d-block w-100"
+                  height={"600px"}
+                  alt="img"
+                />
+              </div>
+            ))}
         </div>
         <button
           class="carousel-control-prev"
@@ -69,7 +78,7 @@ export default function Pack() {
         </button>
       </div>
       <div>
-        <div className="WordStyle">{parse(item.text_ar)}</div>
+        <div className="WordStyle">{parse(item.text2_ar)}</div>
       </div>
     </>
   ));

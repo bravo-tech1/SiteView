@@ -38,14 +38,23 @@ export default function Pack() {
             <img
               src={item.detailimages[0].image}
               class="d-block w-100"
+              height={"600px"}
               alt="img"
             />
           </div>
-          {item.detailimages.map((nice) => (
-            <div class="carousel-item">
-              <img src={nice.image} class="d-block w-100" alt="img" />
-            </div>
-          ))}
+          {deatils
+            .map((item) => item.detailimages)[0]
+            .slice(1)
+            .map((nice) => (
+              <div class="carousel-item">
+                <img
+                  src={nice.image}
+                  class="d-block w-100"
+                  height={"600px"}
+                  alt="img"
+                />
+              </div>
+            ))}
         </div>
         <button
           class="carousel-control-prev"
@@ -62,14 +71,14 @@ export default function Pack() {
           type="button"
           data-bs-target="#carouselExampleControls"
           data-bs-slide="next"
-          style={{ right: "-10%" }}
+          style={{ right: "-10%", color: "var(--yellow-color)" }}
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
       <div>
-        <div className="WordStyle">{parse(item.text_en)}</div>
+        <div className="WordStyle">{parse(item.text2_en)}</div>
       </div>
     </>
   ));

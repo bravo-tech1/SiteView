@@ -593,7 +593,7 @@ body{
 }
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: #e1e1e1;
+  background-color: var(--yellow-color);
   width: 5vh;
   height: 5vh;
   border-radius: 50%;
