@@ -11,12 +11,12 @@ export default function About() {
       .then((dataRes) => setData(dataRes));
   }, []);
   const items = data.map((item) => (
-    <div class="card col-md-4" dir="rtl" style={{ marginBottom: "1rem" }}>
+    <div class="card" dir="rtl" style={{ width: "24rem" }}>
       <img
         src={item.package_image}
-        class="card-img-top"
+        class="card-img-top  featured-img"
         alt="..."
-        style={{ width: "100%", height: "30vw", objectFit: "cover" }}
+        style={{ width: "100%", height: "20vw", objectFit: "cover" }}
       />
       <div class="card-body" dir="rtl">
         <h5 class="card-title">{item.details_title_ar}</h5>
@@ -77,7 +77,17 @@ export default function About() {
         className="container"
         style={{ marginTop: "5rem", marginBottom: "5rem" }}
       >
-        <div className="row" dir="rtl">
+        <div
+          className="row"
+          style={{
+            gap: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+          dir="rtl"
+        >
           {items}
         </div>
       </div>

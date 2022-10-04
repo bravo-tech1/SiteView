@@ -751,3 +751,11 @@ select option:disabled {
 }
 
 }
+
+/* Featured  */
+
+@media(max-width: 768px){
+.featured-img{
+  height:35vh !important;
+}
+}
