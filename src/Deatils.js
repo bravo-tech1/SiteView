@@ -94,7 +94,8 @@ export default function Pack() {
     <>
       <Header />
       <div class="container" style={{ marginTop: "10%" }}>
-        {items};<div className="row">{videosI}</div>
+        {items}
+        <div className="row">{videosI}</div>
       </div>
       <Footer />
     </>
