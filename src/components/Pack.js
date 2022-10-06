@@ -109,7 +109,12 @@ export default function Pack() {
             Book
           </div>
         </div>
-        <img src={item.package_image} width={"500px"} height="300px" />
+        <img
+          src={item.package_image}
+          width={"500px"}
+          height="300px"
+          alt={"img"}
+        />
       </div>
     </div>
   ));
