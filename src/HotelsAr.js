@@ -71,7 +71,7 @@ export default function About() {
     </Link>
   ));
   return (
-    <div>
+    <div className="arabic">
       <HeaderAr />
       {loading && (
         <div style={{ height: "100vh" }}>

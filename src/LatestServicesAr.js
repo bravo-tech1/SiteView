@@ -83,7 +83,7 @@ export default function Latest() {
   const dataSliedItem = data.slice(!1);
 
   return (
-    <div class="container pt-5 pb-5">
+    <div class="container pt-5 pb-5 arabic">
       <h3 class="fw-bold pt-5 text-center mb-5">اخر العروض</h3>
       <div className="slide-father-flex">
         <div

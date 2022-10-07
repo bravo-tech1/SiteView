@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     // <!-- Footer -->
-    <footer class=" text-lg-start bg-light text-muted">
+    <footer class=" text-lg-start bg-light text-muted arabic">
       {/* <!-- Section: Social media --> */}
       <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container flex-row-reverse">
         {/* <!-- Left --> */}

@@ -20,7 +20,7 @@ export default function App() {
         </div>
       }
     >
-      <div className="father">
+      <div className="father arabic">
         <HeaderAr />
         <LandingAr />
         <LatestAr />

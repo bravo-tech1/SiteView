@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <div>
       <nav
-        className="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+        className="navbar navbar-expand-lg navbar-light bg-light fixed-top arabic"
         dir="rtl"
       >
         <div className="container d-flex justify-content-between align-items-center">

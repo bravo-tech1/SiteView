@@ -12,6 +12,10 @@ body{
 
 
 }
+.arabic{
+  font-family: 'Tajawal', sans-serif;
+
+}
 .text-reset{
   color: gray !important;
   text-decoration: none;

@@ -85,7 +85,7 @@ function Slide({ slide, offset }) {
 
       React.createElement(
         "div",
-        { className: "slideContentInner" } /*#__PURE__*/,
+        { className: "slideContentInner arabic" } /*#__PURE__*/,
         React.createElement(
           "h2",
           { className: "slideTitle" },

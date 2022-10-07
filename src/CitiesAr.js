@@ -58,6 +58,7 @@ export default function About() {
       )}
       {userA ? (
         <div
+          className="arabic"
           style={{
             display: "flex",
             alignItems: "center",

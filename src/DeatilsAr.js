@@ -1,7 +1,7 @@
 import { useState } from "react";
 import parse from "html-react-parser";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import HeaderAr from "./components/HeaderAr";
+import FooterAr from "./components/FooterAr";
 
 import { useEffect } from "react";
 
@@ -92,12 +92,12 @@ export default function Pack() {
   ));
   return (
     <>
-      <Header />
-      <div class="container" style={{ marginTop: "10%" }}>
+      <HeaderAr />
+      <div class="container arabic" style={{ marginTop: "10%" }}>
         {items}
         <div className="row">{videosI}</div>
       </div>
-      <Footer />
+      <FooterAr />
     </>
   );
 }
