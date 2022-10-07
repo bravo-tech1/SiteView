@@ -82,7 +82,11 @@ export default function Projects() {
                         {" "}
                         {item.service_text_en}
                       </h2>
-                      <p class="card-text">{item.service_desc_en}</p>
+                      <p class="card-text">
+                        {item.service_desc_en === "null"
+                          ? ""
+                          : item.service_desc_en}
+                      </p>
                     </div>
                   </div>
                 </div>
