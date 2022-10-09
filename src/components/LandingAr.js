@@ -12,11 +12,10 @@ export default function Landing() {
 
   const SectionShow = section.map((item) => (
     <div>
-      <img
-        src={item.website_image}
-        alt="landing img"
+      <div
+        style={{ background: `url(${item.website_image})` }}
         className=" img-fluid images"
-      />
+      ></div>
       <h1 className="contect"> {parse(item.title_ar)} </h1>
     </div>
   ));

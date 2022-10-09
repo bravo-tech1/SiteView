@@ -1,18 +1,17 @@
 import React from "react";
 import "reactjs-popup/dist/index.css";
 import "react-image-lightbox/style.css";
+import Loading from "./components/Loading";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import Loading from "./components/Loading";
 
 export default function Projects() {
   const [loading, setLoading] = useState(true);
   const [dataDepartment, setdataDepartment] = useState([]);
   const [data, setData] = useState([]);
   const user = localStorage.getItem("email");
-  const [userA, setUserA] = useState(0);
 
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/service/show")
@@ -28,14 +27,6 @@ export default function Projects() {
       .then((dataRes) => setdataDepartment(dataRes));
   }, []);
 
-  useEffect(() => {
-    fetch("https://test.emkanfinances.net/api/user/show")
-      .then((res) => res.json())
-      .then((dataRes) =>
-        setUserA(dataRes.find((item) => `"${item.email}"` === user).accepted)
-      );
-  }, []);
-
   const dataDepartmentShow = dataDepartment.map((x) => (
     <div className="mb-5">
       <h1 className="text-center">{x.dep_name_ar}</h1>
@@ -49,11 +40,16 @@ export default function Projects() {
                   textDecoration: "none",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <div
                     className="card mb-5 mt-5 service-card"
                     style={{
-                      width: "100%",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -61,7 +57,7 @@ export default function Projects() {
                     }}
                   >
                     <Link
-                      to={`/states/ar/${item.id}`}
+                      to={`/states/${item.id}`}
                       width="100%"
                       style={{ display: "flex" }}
                     >
@@ -76,14 +72,24 @@ export default function Projects() {
                           type="video/mp4"
                         />
                       </video>
-                    </Link>
-                    <div class="card-body " dir="rtl">
-                      <h2 style={{ color: "black", fontWeight: "bold" }}>
+                      <h4
+                        style={{
+                          color: "gray",
+                          fontWeight: "bold",
+                          position: "absolute",
+                          top: "0",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          background: "white",
+                          padding: "10px",
+                          width: "240px",
+                          textAlign: "center",
+                        }}
+                      >
                         {" "}
                         {item.service_text_ar}
-                      </h2>
-                      <p class="card-text">{item.service_desc_ar}</p>
-                    </div>
+                      </h4>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -98,7 +104,7 @@ export default function Projects() {
 
   return (
     <>
-      <h1 className="text-center fw-bold mb-4">Services</h1>
+      <h1 className="text-center fw-bold mb-4">الخدمات</h1>
       <div className="bg-custom">
         <div className="container" id="services">
           <div className="row" style={{ position: "relative" }}>

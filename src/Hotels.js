@@ -19,6 +19,7 @@ export default function About() {
         setLoading(false);
       });
   }, []);
+  console.log(data);
 
   const items = data.map((item) => (
     <div class="card" style={{ width: "24rem" }}>

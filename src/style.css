@@ -440,6 +440,12 @@ body{
 .foot-text-travel{
   width: 100%;
 }
+footer{
+  background-image: url('./assets/images/footerImage.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* End About Footer */
 /* Start Contact */
 @media (max-width: 768px) {
@@ -755,7 +761,11 @@ select option:disabled {
 }
 
 }
+/* Slider */
 
+.rec-pagination{
+  display: none !important;
+}
 /* Featured  */
 
 @media(max-width: 768px){
