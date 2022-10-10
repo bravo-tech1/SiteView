@@ -21,7 +21,7 @@ export default function About() {
 
   const items = data.map(
     (item) =>
-      item.hotel_show && (
+      item.hotel_show === "yes" && (
         <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
           <div className="card" style={{ width: "24rem" }}>
             <div className="card-body text-center">

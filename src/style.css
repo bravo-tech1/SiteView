@@ -9,8 +9,9 @@
 }
 body{
   font-family: 'Poppins', sans-serif;
-
-
+}
+.guIbWC {
+  overflow: visible !important;
 }
 .arabic{
   font-family: 'Tajawal', sans-serif;
@@ -766,9 +767,7 @@ select option:disabled {
 .rec-pagination{
   display: none !important;
 }
-.guIbWC {
-  overflow: visible !important;
-}
+
 /* Featured  */
 
 @media(max-width: 768px){
