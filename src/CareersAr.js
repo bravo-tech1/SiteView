@@ -60,22 +60,22 @@ export default function Careers() {
   return (
     <>
       <HeaderAr />
-      <div class="container pt-4 mt-5" style={{ marginBottom: "3rem" }}>
+      <div className="container pt-4 mt-5" style={{ marginBottom: "3rem" }}>
         <form
           action=""
-          class="d-flex flex-wrap justify-content-between"
+          className="d-flex flex-wrap justify-content-between"
           style={{ boxShadow: "0 2px 15px rgb(0 0 0 / 10%)", padding: "20px" }}
           onSubmit={handleSubmit}
           dir="rtl"
         >
-          <div class="row border-bottom mb-5 pb-4">
-            <div class="col-lg-3 col-md-6">
-              <label class="d-column w-100 label-font mb-2" for="name">
+          <div className="row border-bottom mb-5 pb-4">
+            <div className="col-lg-3 col-md-6">
+              <label className="d-column w-100 label-font mb-2" for="name">
                 الاسم
               </label>
               <input
                 required
-                class="custom-input-2 h-50 mb-4 w-75"
+                className="custom-input-2 h-50 mb-4 w-75"
                 id="name"
                 type="text"
                 placeholder="الاسم..."
@@ -83,13 +83,16 @@ export default function Careers() {
                 value={name}
               />
             </div>
-            <div class="col-lg-3 col-md-6">
-              <label class="d-column w-100 label-font mb-2" for="qualification">
+            <div className="col-lg-3 col-md-6">
+              <label
+                className="d-column w-100 label-font mb-2"
+                for="qualification"
+              >
                 المؤهل العلمي
               </label>
               <input
                 required
-                class="custom-input-2 h-50 mb-4 w-75"
+                className="custom-input-2 h-50 mb-4 w-75"
                 id="qualification"
                 type="text"
                 placeholder="المؤهل العلمي..."
@@ -97,13 +100,13 @@ export default function Careers() {
                 value={academic_qualification}
               />
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <label class="d-column w-100 label-font mb-2" for="mobile">
+            <div className="col-lg-3 col-md-6 col-sm-12">
+              <label className="d-column w-100 label-font mb-2" for="mobile">
                 رقم الهاتف
               </label>
               <input
                 required
-                class="custom-input-2 h-50 mb-4 w-75"
+                className="custom-input-2 h-50 mb-4 w-75"
                 id="mobile"
                 name="mobile"
                 type="text"
@@ -112,13 +115,13 @@ export default function Careers() {
                 value={mobile}
               />
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <label class="d-column w-100 label-font mb-2" for="email">
+            <div className="col-lg-3 col-md-6 col-sm-12">
+              <label className="d-column w-100 label-font mb-2" for="email">
                 البريد الالكتروني
               </label>
               <input
                 required
-                class="custom-input-2 h-50 mb-4 w-75"
+                className="custom-input-2 h-50 mb-4 w-75"
                 id="email"
                 type="text"
                 placeholder="البريد الالكتروني..."
@@ -126,13 +129,13 @@ export default function Careers() {
                 value={email}
               />
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <label class="d-column w-100 label-font mb-2" for="date">
+            <div className="col-lg-3 col-md-6 col-sm-12">
+              <label className="d-column w-100 label-font mb-2" for="date">
                 تاريخ الميلاد
               </label>
               <input
                 required
-                class="custom-input-2 h-50 mb-4 w-75"
+                className="custom-input-2 h-50 mb-4 w-75"
                 id="date"
                 name="date"
                 type="text"
@@ -141,13 +144,13 @@ export default function Careers() {
                 value={birthday}
               />
             </div>
-            <div class="col-lg-9 col-md-6 col-sm-12">
-              <label class="d-column w-100 label-font mb-2" for="address">
+            <div className="col-lg-9 col-md-6 col-sm-12">
+              <label className="d-column w-100 label-font mb-2" for="address">
                 العنوان
               </label>
               <input
                 required
-                class="custom-input-2 h-50 mb-4 w-75 w-lg-100 flex-grow-1"
+                className="custom-input-2 h-50 mb-4 w-75 w-lg-100 flex-grow-1"
                 id="address"
                 name="address"
                 type="text"
@@ -157,13 +160,13 @@ export default function Careers() {
               />
             </div>
           </div>
-          <div class="row w-100 mb-5">
-            <div class="col-lg-6">
-              <label class="d-column mb-1" for="vision">
+          <div className="row w-100 mb-5">
+            <div className="col-lg-6">
+              <label className="d-column mb-1" for="vision">
                 1. هل لديك رؤية? كيف?
               </label>
               <textarea
-                class="w-100 h-textarea mb-3"
+                className="w-100 h-textarea mb-3"
                 required
                 id="vision"
                 cols="30"
@@ -172,12 +175,12 @@ export default function Careers() {
                 value={q1}
               ></textarea>
             </div>
-            <div class="col-lg-6">
-              <label class="d-column mb-1" for="q2">
+            <div className="col-lg-6">
+              <label className="d-column mb-1" for="q2">
                 2. هل تبحث عن تحد جديد؟ كيف؟
               </label>
               <textarea
-                class="w-100 h-textarea mb-3"
+                className="w-100 h-textarea mb-3"
                 required
                 id="q2"
                 cols="30"
@@ -186,12 +189,12 @@ export default function Careers() {
                 value={q2}
               ></textarea>
             </div>
-            <div class="col-lg-6">
-              <label class="d-column mb-1" for="q3">
+            <div className="col-lg-6">
+              <label className="d-column mb-1" for="q3">
                 3. هل تسعى للتعلم في بيئة متعددة الاستخدامات؟ كيف؟
               </label>
               <textarea
-                class="w-100 h-textarea mb-3"
+                className="w-100 h-textarea mb-3"
                 required
                 id="q3"
                 cols="30"
@@ -200,12 +203,12 @@ export default function Careers() {
                 value={q3}
               ></textarea>
             </div>
-            <div class="col-lg-6">
-              <label class="d-column mb-1" for="q4">
+            <div className="col-lg-6">
+              <label className="d-column mb-1" for="q4">
                 4. ما هي المهارات التي لديك؟
               </label>
               <textarea
-                class="w-100 h-textarea mb-3"
+                className="w-100 h-textarea mb-3"
                 required
                 id="q4"
                 cols="30"
@@ -214,12 +217,12 @@ export default function Careers() {
                 value={q4}
               ></textarea>
             </div>
-            <div class="col-lg-6">
-              <label class="d-column mb-1" for="q5">
+            <div className="col-lg-6">
+              <label className="d-column mb-1" for="q5">
                 5. هل تؤمن بجعل السفر مهما؟ كيف؟
               </label>
               <textarea
-                class="w-100 h-textarea mb-3"
+                className="w-100 h-textarea mb-3"
                 required
                 id="q5"
                 cols="30"
@@ -228,12 +231,12 @@ export default function Careers() {
                 value={q5}
               ></textarea>
             </div>
-            <div class="col-lg-6">
-              <label class="d-column mb-1" for="q6">
+            <div className="col-lg-6">
+              <label className="d-column mb-1" for="q6">
                 6. هل تؤمن بتطوير علامتنا التجارية وتنميتها؟ كيف؟
               </label>
               <textarea
-                class="w-100 h-textarea mb-3"
+                className="w-100 h-textarea mb-3"
                 required
                 id="q6"
                 cols="30"
@@ -242,12 +245,12 @@ export default function Careers() {
                 value={q6}
               ></textarea>
             </div>
-            <div class="col-lg-6">
-              <label class="d-column mb-1" for="q7">
+            <div className="col-lg-6">
+              <label className="d-column mb-1" for="q7">
                 7. ما هو الموقف الذي تعتقد أنه يناسبك مؤهلات؟
               </label>
               <textarea
-                class="w-100 h-textarea mb-3"
+                className="w-100 h-textarea mb-3"
                 required
                 id="q7"
                 cols="30"
@@ -256,12 +259,12 @@ export default function Careers() {
                 value={q7}
               ></textarea>
             </div>
-            <div class="col-lg-6">
-              <label class="d-column mb-1" for="q8">
+            <div className="col-lg-6">
+              <label className="d-column mb-1" for="q8">
                 8. ما هي الخبرة السابقة التي لديك؟
               </label>
               <textarea
-                class="w-100 h-textarea"
+                className="w-100 h-textarea"
                 required
                 id="q8"
                 cols="30"
@@ -271,10 +274,10 @@ export default function Careers() {
               ></textarea>
             </div>
           </div>
-          <div class="row w-100 d-flex justify-content-center pb-4 mb-5">
+          <div className="row w-100 d-flex justify-content-center pb-4 mb-5">
             <button
               type="submit"
-              class="btn roundrd-circle main-btn btn-business w-sub"
+              className="btn roundrd-circle main-btn btn-business w-sub"
             >
               ارسال
             </button>

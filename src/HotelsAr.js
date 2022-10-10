@@ -21,10 +21,10 @@ export default function About() {
 
   const items = data.map((item) => (
     <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
-      <div class="card" style={{ width: "24rem" }}>
-        <div class="card-body text-center">
+      <div className="card" style={{ width: "24rem" }}>
+        <div className="card-body text-center">
           <img
-            class="card-img-top mb-2"
+            className="card-img-top mb-2"
             src={item.hotel_image}
             style={{
               width: "500px",
@@ -34,18 +34,18 @@ export default function About() {
             alt="Card  cap"
           />
           <h3
-            class="card-text"
+            className="card-text"
             style={{ fontWeight: "bold", color: "#ff5959" }}
             dir="rtl"
           >
             {item.hotel_name_ar}
           </h3>
-          <h3 class="card-text" dir="rtl">
+          <h3 className="card-text" dir="rtl">
             {item.hotel_location_ar !== "undefined" ? (
               <>
                 {" "}
                 <i
-                  class="fa-solid fa-location-dot"
+                  className="fa-solid fa-location-dot"
                   style={{ color: "var(--yellow-color)" }}
                 >
                   {" "}

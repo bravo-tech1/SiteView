@@ -5,16 +5,19 @@ export default function Landing() {
   const [section, setSection] = useState([]);
 
   useEffect(() => {
-    const controller = new AbortController(); // <-- create controller
-    const { signal } = controller; // <-- get signal for request
-    fetch("https://test.emkanfinances.net/api/website/showbyid/1", {
-      signal,
-    })
+    let isApiSubscribed = true;
+    fetch("https://test.emkanfinances.net/api/website/showbyid/1")
       .then((res) => res.json())
-      .then((dataRes) => setSection(dataRes));
-    return () => controller.abort();
+      .then((dataRes) => {
+        if (isApiSubscribed) {
+          setSection(dataRes);
+        }
+      });
+    return () => {
+      // cancel the subscription
+      isApiSubscribed = false;
+    };
   }, []);
-
   const SectionShow = section.map((item) => (
     <div>
       <div
@@ -28,5 +31,5 @@ export default function Landing() {
       <h1 className="contect"> {parse(item.title_en)} </h1>
     </div>
   ));
-  return <div class="landind text-center">{SectionShow}</div>;
+  return <div className="landind text-center">{SectionShow}</div>;
 }

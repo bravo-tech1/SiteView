@@ -37,58 +37,58 @@ export default function Pack() {
           justifyContent: "center",
         }}
       >
-        <div class="header">
+        <div className="header">
           <p style={{ marginBottom: "0" }}>Package</p>
         </div>
       </div>
-      <div class="pakeg">
-        <div class="content">
+      <div className="pakeg">
+        <div className="content">
           <h1>{item.details_title_en}</h1>
 
-          <p class="balneo">
+          <p className="balneo">
             Package Period: <span style={{ fontWeight: "blod" }}> From </span>
             <span style={{ color: "#ff5959" }}> {item.period_from}</span>
             <span style={{ fontWeight: "blod" }}> To </span>{" "}
             <span style={{ color: "#ff5959" }}> {item.period_to}</span>
           </p>
-          <p class="balneo">
+          <p className="balneo">
             Package Price:{" "}
             <span style={{ color: "var(--yellow-color)" }}>
               {item.package_price}$
             </span>
           </p>
           <div>
-            <p class="paragraph">
+            <p className="paragraph">
               <span style={{ color: "var(--yellow-color)" }}>
                 {item.package_rate === 0 || item.package_rate === null ? (
                   ""
                 ) : item.package_rate === 1 ? (
-                  <i class="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
                 ) : item.package_rate === 2 ? (
                   <>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </>
                 ) : item.package_rate === 3 ? (
                   <>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </>
                 ) : item.package_rate === 4 ? (
                   <>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </>
                 ) : (
                   <>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </>
                 )}
               </span>
@@ -126,7 +126,7 @@ export default function Pack() {
         </div>
       )}
       <Header />
-      <div class="container" style={{ marginTop: "5rem" }}>
+      <div className="container" style={{ marginTop: "5rem" }}>
         {items}
       </div>
       <Footer />

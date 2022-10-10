@@ -19,75 +19,75 @@ export default function Latest() {
 
   const datashow = data.map((item) => (
     <>
-      <div class="card">
+      <div className="card">
         <img
           src={item.package_image}
-          class="card-img-top"
+          className="card-img-top"
           alt="..."
           style={{ width: "100%", height: "20vw", objectFit: "cover" }}
         />
-        <div class="card-body">
-          <h5 class="card-title">{item.details_title_en}</h5>
+        <div className="card-body">
+          <h5 className="card-title">{item.details_title_en}</h5>
           <p className="balneo">
             <i
-              class="fa-solid fa-location-dot"
+              className="fa-solid fa-location-dot"
               style={{ paddingRight: "5px" }}
             ></i>
             {item.city_name_en}
           </p>
 
-          <p class="balneo">
+          <p className="balneo">
             Package Period: <span style={{ fontWeight: "blod" }}> From </span>
             <span style={{ color: "#ff5959" }}> {item.period_from}</span>
             <span style={{ fontWeight: "blod" }}> To </span>{" "}
             <span style={{ color: "#ff5959" }}> {item.period_to}</span>
           </p>
           <div>
-            <p class="paragraph">
+            <p className="paragraph">
               <span style={{ color: "var(--yellow-color)" }}>
                 {item.package_rate === 0 || item.package_rate === null ? (
                   ""
                 ) : item.package_rate === 1 ? (
-                  <i class="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
                 ) : item.package_rate === 2 ? (
                   <>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </>
                 ) : item.package_rate === 3 ? (
                   <>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </>
                 ) : item.package_rate === 4 ? (
                   <>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </>
                 ) : (
                   <>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </>
                 )}
               </span>
             </p>
           </div>
-          <p class="card-text">{item.city_details_text1_en}</p>
+          <p className="card-text">{item.city_details_text1_en}</p>
         </div>
       </div>
     </>
   ));
 
   return (
-    <div class="container pt-5 pb-5">
-      <h3 class="fw-bold pt-5 text-center mb-5">Featured Listings</h3>
+    <div className="container pt-5 pb-5">
+      <h3 className="fw-bold pt-5 text-center mb-5">Featured Listings</h3>
       <Carousel breakPoints={breakPoints} enableAutoPlay autoPlaySpeed={3000}>
         {datashow}
       </Carousel>

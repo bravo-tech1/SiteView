@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     // <!-- Footer -->
     <footer
-      class=" text-lg-start bg-light text-muted arabic"
+      className=" text-lg-start bg-light text-muted arabic"
       style={{
         display: "flex",
         alignItems: "center",
@@ -19,26 +19,26 @@ export default function Footer() {
         }}
       >
         {/* <!-- Section: Social media --> */}
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container flex-row-reverse">
+        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom container flex-row-reverse">
           {/* <!-- Left --> */}
-          <div class="me-5 d-none d-lg-block">
+          <div className="me-5 d-none d-lg-block">
             <span>تواصل معنا عبر الشبكات الاجتماعية</span>
           </div>
           {/* <!-- Left --> */}
 
           {/* <!-- Right --> */}
           <div>
-            <a href="https://facebook.com/bravooiq" class="me-4 text-reset">
-              <i class="fab fa-facebook-f"></i>
+            <a href="https://facebook.com/bravooiq" className="me-4 text-reset">
+              <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="mailto:hello@bravoo.travel" class="me-4 text-reset">
-              <i class="fab fa-google"></i>
+            <a href="mailto:hello@bravoo.travel" className="me-4 text-reset">
+              <i className="fab fa-google"></i>
             </a>
             <a
               href="https://instagram.com/bravoo.travel"
-              class="me-4 text-reset"
+              className="me-4 text-reset"
             >
-              <i class="fab fa-instagram"></i>
+              <i className="fab fa-instagram"></i>
             </a>
           </div>
           {/* <!-- Right --> */}
@@ -46,15 +46,15 @@ export default function Footer() {
         {/* <!-- Section: Social media --> */}
 
         {/* <!-- Section: Links  --> */}
-        <section class="" dir="rtl">
-          <div class="container text-md-end mt-5">
+        <section className="" dir="rtl">
+          <div className="container text-md-end mt-5">
             {/* <!-- Grid row --> */}
-            <div class="row mt-3">
+            <div className="row mt-3">
               {/* <!-- Grid column --> */}
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 {/* <!-- Content --> */}
-                <h6 class="text-uppercase fw-bold mb-4">
-                  <i class="fas fa-gem me-3"></i>الشركة
+                <h6 className="text-uppercase fw-bold mb-4">
+                  <i className="fas fa-gem me-3"></i>الشركة
                 </h6>
                 <p style={{ color: "black" }}>
                   أكثر من 100 شركة من عملاء المحفظة. Bravoo متخصص في سفر
@@ -65,21 +65,21 @@ export default function Footer() {
               {/* <!-- Grid column --> */}
 
               {/* <!-- Grid column --> */}
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 {/* <!-- Links --> */}
-                <h6 class="text-uppercase fw-bold mb-4">الصفحات</h6>
+                <h6 className="text-uppercase fw-bold mb-4">الصفحات</h6>
                 <p>
-                  <a href="/about" class="text-reset">
+                  <a href="/about" className="text-reset">
                     عن الشركة
                   </a>
                 </p>
                 <p>
-                  <a href="/contact" class="text-reset">
+                  <a href="/contact" className="text-reset">
                     تواصل معنا
                   </a>
                 </p>
                 <p>
-                  <a href="/career" class="text-reset">
+                  <a href="/career" className="text-reset">
                     التوظيف
                   </a>
                 </p>
@@ -87,16 +87,16 @@ export default function Footer() {
               {/* <!-- Grid column --> */}
 
               {/* <!-- Grid column --> */}
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 {/* <!-- Links --> */}
-                <h6 class="text-uppercase fw-bold mb-4">روابط مفيدة</h6>
+                <h6 className="text-uppercase fw-bold mb-4">روابط مفيدة</h6>
                 <p>
-                  <a href="/login" class="text-reset">
+                  <a href="/login" className="text-reset">
                     تسجيل الدخول
                   </a>
                 </p>
                 <p>
-                  <a href="/register" class="text-reset">
+                  <a href="/register" className="text-reset">
                     تسجيل
                   </a>
                 </p>
@@ -104,16 +104,17 @@ export default function Footer() {
               {/* <!-- Grid column --> */}
 
               {/* <!-- Grid column --> */}
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 {/* <!-- Links --> */}
-                <h6 class="text-uppercase fw-bold mb-4">وسائل التواصل</h6>
+                <h6 className="text-uppercase fw-bold mb-4">وسائل التواصل</h6>
                 <p className="text-reset-2">
                   <a
                     href="https://facebook.com/bravooiq"
                     style={{ textDecoration: "none" }}
                   >
                     {" "}
-                    <i class="fab fa-facebook-f me-3"></i> facebook.com/bravooiq
+                    <i className="fab fa-facebook-f me-3"></i>{" "}
+                    facebook.com/bravooiq
                   </a>
                 </p>
                 <p className="text-reset-2">
@@ -122,7 +123,7 @@ export default function Footer() {
                     style={{ textDecoration: "none" }}
                   >
                     {" "}
-                    <i class="fab fa-google me-3"></i> hello@bravoo.travel
+                    <i className="fab fa-google me-3"></i> hello@bravoo.travel
                   </a>
                 </p>
                 <p className="text-reset-2">
@@ -131,7 +132,7 @@ export default function Footer() {
                     style={{ textDecoration: "none" }}
                   >
                     {" "}
-                    <i class="fab fa-instagram me-3"></i> bravoo.travel
+                    <i className="fab fa-instagram me-3"></i> bravoo.travel
                   </a>
                 </p>
               </div>
@@ -144,13 +145,13 @@ export default function Footer() {
 
         {/* <!-- Copyright --> */}
         <div
-          class="text-center p-4"
+          className="text-center p-4"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
         >
           BRAVOO © 2022 - All Rights Reserved. BRAVOO is registered trademark of
           Bravoo Holidays (IRAQ) . Powered by
           <a
-            class=" fw-bold"
+            className=" fw-bold"
             href="https://icom-digital.com/"
             target="__blank"
             style={{

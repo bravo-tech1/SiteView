@@ -38,10 +38,14 @@ export default function About() {
         textAlign: "center",
       }}
     >
-      <div class="card" style={{ width: "24rem" }}>
-        <img class="card-img-top" src={item.city_image} alt="Card image cap" />
-        <div class="card-body">
-          <h3 class="card-text" style={{ fontWeight: "bold" }}>
+      <div className="card" style={{ width: "24rem" }}>
+        <img
+          className="card-img-top"
+          src={item.city_image}
+          alt="Card image cap"
+        />
+        <div className="card-body">
+          <h3 className="card-text" style={{ fontWeight: "bold" }}>
             {item.city_name_en}
           </h3>
         </div>

@@ -29,15 +29,15 @@ export default function Pack() {
       </div>
       <div
         id="carouselExampleControls"
-        class="carousel slide custom-detail"
+        className="carousel slide custom-detail"
         data-bs-ride="carousel"
         style={{ width: "70%", margin: "0 auto" }}
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
             <img
               src={item.detailimages[0].image}
-              class="d-block w-100"
+              className="d-block w-100"
               height={"600px"}
               alt="img"
             />
@@ -46,10 +46,10 @@ export default function Pack() {
             .map((item) => item.detailimages)[0]
             .slice(1)
             .map((nice) => (
-              <div class="carousel-item">
+              <div className="carousel-item">
                 <img
                   src={nice.image}
-                  class="d-block w-100"
+                  className="d-block w-100"
                   height={"600px"}
                   alt="img"
                 />
@@ -57,24 +57,30 @@ export default function Pack() {
             ))}
         </div>
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleControls"
           data-bs-slide="prev"
           style={{ left: "-10%" }}
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleControls"
           data-bs-slide="next"
           style={{ right: "-10%", color: "var(--yellow-color)" }}
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
       <div>
@@ -93,7 +99,7 @@ export default function Pack() {
   return (
     <>
       <Header />
-      <div class="container" style={{ marginTop: "10%" }}>
+      <div className="container" style={{ marginTop: "10%" }}>
         {items}
         <div className="row">{videosI}</div>
       </div>
