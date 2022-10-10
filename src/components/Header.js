@@ -77,7 +77,7 @@ export default function Header() {
               Business B2B
             </div>
             <div className="lang d-flex align-items-center ms-1 text-black-50">
-              <Link to="/ar">AR</Link>
+              <Link to="/ar">AR </Link>
             </div>
           </div>
         </div>

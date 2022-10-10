@@ -28,7 +28,9 @@ export default function Services() {
 
   const dataDepartmentShow = dataDepartment.map((x, key) => (
     <div className="mb-5" key={key}>
-      <h1 className="text-center">{x.dep_name_en}</h1>
+      <h1 className="text-center titel-photo-p" style={{ zIndex: "2" }}>
+        {x.dep_name_en}
+      </h1>
       {data.map((item, key) =>
         item.department_id === x.id ? (
           <div key={key}>
@@ -98,7 +100,7 @@ export default function Services() {
 
   return (
     <>
-      <h1 className="text-center fw-bold mb-4">Services</h1>
+      <h1 className="text-center fw-bold mb-4 title-photo-s">Services</h1>
       <div className="bg-custom">
         <div className="container" id="services">
           <div className="row" style={{ position: "relative" }}>

@@ -147,6 +147,63 @@ body{
 .fw-bold{
   color: var(--yellow-color);
 }
+.title-photo{
+  position: relative;
+}
+.title-photo::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-image: url('./assets/images/Asset\ 4@3x.png');
+  background-size: contain;
+
+  width: 156px;
+  z-index: -1;
+  background-position: bottom;
+  height: 114px;
+  background-repeat: no-repeat;
+
+}
+
+.title-photo-s{
+  position: relative;
+}
+.title-photo-s::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-image: url('./assets/images/Asset\ 4@3x.png');
+  background-size: contain;
+
+  width: 156px;
+  z-index: -1;
+  background-position: bottom;
+  height: 100%;
+  background-repeat: no-repeat;
+
+}
+.titel-photo-p{
+  position: relative;
+}
+.titel-photo-p::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-image: url('./assets/images/Asset\ 5@3x.png');
+  background-size: contain;
+
+  width: 156px;
+  z-index: -1;
+  background-position: bottom;
+  height: 100%;
+  background-repeat: no-repeat;
+}
 .location-color{
   color: #4F9DA7;
   font-weight: bold;
