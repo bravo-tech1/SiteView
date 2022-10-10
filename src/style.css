@@ -766,6 +766,9 @@ select option:disabled {
 .rec-pagination{
   display: none !important;
 }
+.guIbWC {
+  overflow: visible !important;
+}
 /* Featured  */
 
 @media(max-width: 768px){
