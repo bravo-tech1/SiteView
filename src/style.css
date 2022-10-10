@@ -21,8 +21,8 @@ body{
   text-decoration: none;
   font-weight: bold;
 }
-.text-reset-2{
-  color: #4F9DA7 !important;
+.text-reset-2 a, .text-reset-2 i{
+  color:gray !important;
 
 }
 /* Start Navbar */
@@ -165,7 +165,7 @@ body{
 .bg-custom{
   background-color: #ececec;
   padding: 4rem 0;
-  margin: 2rem 0;
+
 }
 
 

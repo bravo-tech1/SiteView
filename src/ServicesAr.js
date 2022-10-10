@@ -11,7 +11,6 @@ export default function Projects() {
   const [loading, setLoading] = useState(true);
   const [dataDepartment, setdataDepartment] = useState([]);
   const [data, setData] = useState([]);
-  const user = localStorage.getItem("email");
 
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/service/show")

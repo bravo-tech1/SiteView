@@ -5,9 +5,14 @@ export default function Landing() {
   const [section, setSection] = useState([]);
 
   useEffect(() => {
-    fetch("https://test.emkanfinances.net/api/website/showbyid/1")
+    const controller = new AbortController(); // <-- create controller
+    const { signal } = controller; // <-- get signal for request
+    fetch("https://test.emkanfinances.net/api/website/showbyid/1", {
+      signal,
+    })
       .then((res) => res.json())
       .then((dataRes) => setSection(dataRes));
+    return () => controller.abort();
   }, []);
 
   const SectionShow = section.map((item) => (
