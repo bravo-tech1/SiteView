@@ -13,6 +13,7 @@ body{
 .guIbWC, .jiaani {
   overflow: visible !important;
 }
+
 .arabic{
   font-family: 'Tajawal', sans-serif;
 
@@ -127,6 +128,9 @@ body{
   .eWjCzc{
     min-width: 40px !important;
     height: 45px !important;
+  }
+  .hJJzxj{
+    display: none;
   }
 }
 
