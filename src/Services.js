@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export default function Projects() {
+export default function Services() {
   const [loading, setLoading] = useState(true);
   const [dataDepartment, setdataDepartment] = useState([]);
   const [data, setData] = useState([]);
@@ -26,74 +26,69 @@ export default function Projects() {
       .then((dataRes) => setdataDepartment(dataRes));
   }, []);
 
-  const dataDepartmentShow = dataDepartment.map((x) => (
-    <div className="mb-5">
+  const dataDepartmentShow = dataDepartment.map((x, key) => (
+    <div className="mb-5" key={key}>
       <h1 className="text-center">{x.dep_name_en}</h1>
-      {data.map((item) =>
+      {data.map((item, key) =>
         item.department_id === x.id ? (
-          <>
-            <div>
+          <div key={key}>
+            <div
+              className="col-md-12"
+              style={{
+                textDecoration: "none",
+              }}
+            >
               <div
-                className="col-md-12"
                 style={{
-                  textDecoration: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
                 <div
+                  className="card mb-5 mt-5 service-card"
                   style={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    flexDirection: "row",
                   }}
                 >
-                  <div
-                    className="card mb-5 mt-5 service-card"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexDirection: "row",
-                    }}
+                  <Link
+                    to={`/states/${item.id}`}
+                    width="100%"
+                    style={{ display: "flex" }}
                   >
-                    <Link
-                      to={`/states/${item.id}`}
-                      width="100%"
-                      style={{ display: "flex" }}
+                    <video
+                      width="900px"
+                      autoPlay
+                      muted
+                      className="service-video"
                     >
-                      <video
-                        width="900px"
-                        autoPlay
-                        muted
-                        className="service-video"
-                      >
-                        <source
-                          src={`${item.service_video}`}
-                          type="video/mp4"
-                        />
-                      </video>
-                      <h4
-                        style={{
-                          color: "gray",
-                          fontWeight: "bold",
-                          position: "absolute",
-                          top: "0",
-                          left: "50%",
-                          transform: "translateX(-50%)",
-                          background: "white",
-                          padding: "10px",
-                          width: "240px",
-                          textAlign: "center",
-                        }}
-                      >
-                        {" "}
-                        {item.service_text_en}
-                      </h4>
-                    </Link>
-                  </div>
+                      <source src={`${item.service_video}`} type="video/mp4" />
+                    </video>
+                    <h4
+                      style={{
+                        color: "gray",
+                        fontWeight: "bold",
+                        position: "absolute",
+                        top: "0",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        background: "white",
+                        padding: "10px",
+                        width: "240px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {" "}
+                      {item.service_text_en}
+                    </h4>
+                  </Link>
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ) : (
           ""
         )

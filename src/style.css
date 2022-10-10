@@ -120,6 +120,16 @@ body{
   border: none;
   transition: 0.3s;
 }
+@media(max-width:668px){
+  .latest-img{
+    height: 46vw !important;
+  }
+  .eWjCzc{
+    min-width: 40px !important;
+    height: 45px !important;
+  }
+}
+
 .card-title{
   font-weight: bold;
 }

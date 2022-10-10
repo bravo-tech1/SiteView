@@ -18,8 +18,8 @@ export default function Landing() {
     };
   }, []);
 
-  const SectionShow = section.map((item) => (
-    <div>
+  const SectionShow = section.map((item, key) => (
+    <div key={key}>
       <div
         style={{
           background: `url(${item.website_image})`,
@@ -28,7 +28,7 @@ export default function Landing() {
         }}
         className=" img-fluid images"
       ></div>
-      <h1 className="contect"> {parse(item.title_ar)} </h1>
+      <div className="contect"> {parse(item.title_ar)} </div>
     </div>
   ));
   return <div className="landind text-center">{SectionShow}</div>;
