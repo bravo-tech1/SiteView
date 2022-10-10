@@ -19,57 +19,60 @@ export default function About() {
       });
   }, []);
 
-  const items = data.map((item) => (
-    <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
-      <div className="card" style={{ width: "24rem" }}>
-        <div className="card-body text-center">
-          <img
-            className="card-img-top mb-2"
-            src={item.hotel_image}
-            style={{
-              width: "500px",
-              height: "300px",
-              objectFit: "cover",
-            }}
-            alt="Card  cap"
-          />
-          <h3
-            className="card-text"
-            style={{ fontWeight: "bold", color: "#ff5959" }}
-            dir="rtl"
-          >
-            {item.hotel_name_ar}
-          </h3>
-          <h3 className="card-text" dir="rtl">
-            {item.hotel_location_ar !== "undefined" ? (
-              <>
-                {" "}
-                <i
-                  className="fa-solid fa-location-dot"
-                  style={{ color: "var(--yellow-color)" }}
-                >
-                  {" "}
-                </i>{" "}
-                <span style={{ fontSize: "22px" }}>
-                  {" "}
-                  <a
-                    href={item.location_url}
-                    target="_blank"
-                    style={{ textDecoration: "none" }}
-                  >
+  const items = data.map(
+    (item) =>
+      item.hotel_show && (
+        <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
+          <div className="card" style={{ width: "24rem" }}>
+            <div className="card-body text-center">
+              <img
+                className="card-img-top mb-2"
+                src={item.hotel_image}
+                style={{
+                  width: "500px",
+                  height: "300px",
+                  objectFit: "cover",
+                }}
+                alt="Card  cap"
+              />
+              <h3
+                className="card-text"
+                style={{ fontWeight: "bold", color: "#ff5959" }}
+                dir="rtl"
+              >
+                {item.hotel_name_ar}
+              </h3>
+              <h3 className="card-text" dir="rtl">
+                {item.hotel_location_ar !== "undefined" ? (
+                  <>
                     {" "}
-                    {item.hotel_location_ar}
-                  </a>
-                </span>
-              </>
-            ) : (
-              ""
-            )}
-          </h3>
-        </div>
-      </div>
-    </Link>
-  ));
+                    <i
+                      className="fa-solid fa-location-dot"
+                      style={{ color: "var(--yellow-color)" }}
+                    >
+                      {" "}
+                    </i>{" "}
+                    <span style={{ fontSize: "22px" }}>
+                      {" "}
+                      <a
+                        href={item.location_url}
+                        target="_blank"
+                        style={{ textDecoration: "none" }}
+                      >
+                        {" "}
+                        {item.hotel_location_ar}
+                      </a>
+                    </span>
+                  </>
+                ) : (
+                  ""
+                )}
+              </h3>
+            </div>
+          </div>
+        </Link>
+      )
+  );
   return (
     <div className="arabic">
       <HeaderAr />

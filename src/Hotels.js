@@ -21,52 +21,55 @@ export default function About() {
   }, []);
   console.log(data);
 
-  const items = data.map((item) => (
-    <div className="card" style={{ width: "24rem" }}>
-      <div className="card-body text-center">
-        <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
-          <img
-            className="card-img-top mb-2"
-            style={{ width: "500px", height: "300px", objectFit: "cover" }}
-            src={item.hotel_image}
-            alt="Card cap"
-          />
-          <h3
-            className="card-text"
-            style={{ fontWeight: "bold", color: "#ff5959" }}
-          >
-            {item.hotel_name_en}
-          </h3>
-        </Link>
-        <h3 className="card-text">
-          {item.hotel_location_en !== "undefined" ? (
-            <>
-              {" "}
-              <i
-                className="fa-solid fa-location-dot"
-                style={{ color: "var(--yellow-color)" }}
+  const items = data.map(
+    (item) =>
+      item.hotel_show && (
+        <div className="card" style={{ width: "24rem" }}>
+          <div className="card-body text-center">
+            <Link to={`packages/${item.id}`} style={{ textDecoration: "none" }}>
+              <img
+                className="card-img-top mb-2"
+                style={{ width: "500px", height: "300px", objectFit: "cover" }}
+                src={item.hotel_image}
+                alt="Card cap"
+              />
+              <h3
+                className="card-text"
+                style={{ fontWeight: "bold", color: "#ff5959" }}
               >
-                {" "}
-              </i>{" "}
-              <span style={{ fontSize: "22px" }}>
-                {" "}
-                <a
-                  href={item.location_url}
-                  target="_blank"
-                  style={{ textDecoration: "none" }}
-                >
+                {item.hotel_name_en}
+              </h3>
+            </Link>
+            <h3 className="card-text">
+              {item.hotel_location_en !== "undefined" ? (
+                <>
                   {" "}
-                  {item.hotel_location_en}
-                </a>
-              </span>
-            </>
-          ) : (
-            ""
-          )}
-        </h3>
-      </div>
-    </div>
-  ));
+                  <i
+                    className="fa-solid fa-location-dot"
+                    style={{ color: "var(--yellow-color)" }}
+                  >
+                    {" "}
+                  </i>{" "}
+                  <span style={{ fontSize: "22px" }}>
+                    {" "}
+                    <a
+                      href={item.location_url}
+                      target="_blank"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {" "}
+                      {item.hotel_location_en}
+                    </a>
+                  </span>
+                </>
+              ) : (
+                ""
+              )}
+            </h3>
+          </div>
+        </div>
+      )
+  );
   return (
     <div>
       <Header />
