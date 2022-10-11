@@ -86,6 +86,19 @@ export default function Latest() {
   return (
     <div className="container pt-5 pb-5">
       <h3 className="fw-bold pt-5 text-center mb-5 title-photo">
+        <img
+          src={require("./assets/images/Asset 4@3x.png")}
+          alt="assest img"
+          style={{
+            position: "absolute",
+            top: "0",
+            width: "307px",
+            left: "51%",
+            height: "65px",
+            transform: "translate(-50%, 50%)",
+            zIndex: "-1",
+          }}
+        />
         Featured Listings
       </h3>
       <Carousel breakPoints={breakPoints} enableAutoPlay autoPlaySpeed={2000}>

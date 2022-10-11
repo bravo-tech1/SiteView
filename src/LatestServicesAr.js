@@ -85,7 +85,22 @@ export default function Latest() {
 
   return (
     <div className="container pt-5 pb-5">
-      <h3 className="fw-bold pt-5 text-center mb-5 title-photo">اخر العروض</h3>
+      <h3 className="fw-bold pt-5 text-center mb-5 title-photo">
+        <img
+          src={require("./assets/images/Asset 4@3x.png")}
+          alt="assest img"
+          style={{
+            position: "absolute",
+            top: "0",
+            width: "307px",
+            left: "51%",
+            height: "65px",
+            transform: "translate(-50%, 50%)",
+            zIndex: "-1",
+          }}
+        />
+        اخر العروض
+      </h3>
       <Carousel breakPoints={breakPoints} enableAutoPlay autoPlaySpeed={2000}>
         {datashow}
       </Carousel>

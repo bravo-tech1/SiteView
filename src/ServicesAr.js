@@ -28,8 +28,25 @@ export default function ServicesAr() {
 
   const dataDepartmentShow = dataDepartment.map((x, key) => (
     <div className="mb-5" key={key}>
-      <h1 className="text-center titel-photo-p" style={{ zIndex: "2" }}>
+      <h1
+        className="text-center titel-photo-p"
+        style={{ zIndex: "2", color: "#ff5959" }}
+      >
         {x.dep_name_ar}
+        <img
+          src={require("./assets/images/Asset 5@3x.png")}
+          alt="assest img"
+          style={{
+            position: "absolute",
+            top: "-10px",
+            width: "170px",
+            left: "50%",
+            height: "54px",
+            transform: "translate(-50%, 0%)",
+            zIndex: "-1",
+          }}
+          className="service-assest-img"
+        />
       </h1>
       {data.map((item, key) =>
         item.department_id === x.id ? (
@@ -100,7 +117,24 @@ export default function ServicesAr() {
 
   return (
     <>
-      <h1 className="text-center fw-bold mb-4 title-photo-s">الخدمات</h1>
+      <h1 className="text-center fw-bold mb-4 title-photo-s">
+        {" "}
+        <img
+          src={require("./assets/images/Asset 4@3x.png")}
+          alt="assest img"
+          style={{
+            position: "absolute",
+            top: "0",
+            width: "210px",
+            left: "50%",
+            height: "54px",
+            transform: "translate(-50%, 0%)",
+            zIndex: "-1",
+          }}
+          className="assest-img"
+        />
+        الخدمات
+      </h1>
       <div className="bg-custom">
         <div className="container" id="services">
           <div className="row" style={{ position: "relative" }}>
