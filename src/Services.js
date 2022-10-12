@@ -12,6 +12,21 @@ export default function Services() {
   const [dataDepartment, setdataDepartment] = useState([]);
   const [data, setData] = useState([]);
 
+  function getFileExtension(fileName) {
+    var fileExtension;
+    fileExtension = fileName.replace(/^.*\./, "");
+    return fileExtension;
+  }
+  function isIMage(fileName) {
+    var fileExt = getFileExtension(fileName);
+    var imagesExtension = ["mp4"];
+    if (imagesExtension.indexOf(fileExt) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/service/show")
       .then((res) => res.json())
@@ -27,27 +42,7 @@ export default function Services() {
   }, []);
 
   const dataDepartmentShow = dataDepartment.map((x, key) => (
-    <div className="mb-5" key={key}>
-      <h1
-        className="text-center titel-photo-p"
-        style={{ zIndex: "2", color: "#ff5959" }}
-      >
-        {x.dep_name_en}{" "}
-        <img
-          src={require("./assets/images/Asset 5@3x.png")}
-          alt="assest img"
-          style={{
-            position: "absolute",
-            top: "-10px",
-            width: "110px",
-            left: "50%",
-            height: "54px",
-            transform: "translate(-50%, 0%)",
-            zIndex: "-1",
-          }}
-          className="service-assest-img"
-        />
-      </h1>
+    <div key={key}>
       {data.map((item, key) =>
         item.department_id === x.id ? (
           <div key={key}>
@@ -65,8 +60,9 @@ export default function Services() {
                 }}
               >
                 <div
-                  className="card mb-5 mt-5 service-card"
+                  className="card mb-3 mt-3 service-card"
                   style={{
+                    width: "100%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -76,16 +72,33 @@ export default function Services() {
                   <Link
                     to={`/states/${item.id}`}
                     width="100%"
-                    style={{ display: "flex" }}
+                    style={{ display: "flex", width: "100%" }}
                   >
-                    <video
-                      width="900px"
-                      autoPlay
-                      muted
-                      className="service-video"
-                    >
-                      <source src={`${item.service_video}`} type="video/mp4" />
-                    </video>
+                    {isIMage(item.service_video) ? (
+                      <video
+                        width="900px"
+                        autoPlay
+                        muted
+                        className="service-video"
+                      >
+                        <source
+                          src={`${item.service_video}`}
+                          type="video/mp4"
+                        />
+                      </video>
+                    ) : (
+                      <div
+                        style={{
+                          backgroundImage: ` url(${item.service_video})`,
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat",
+                          width: "100%",
+                          backgroundSize: " cover",
+                          height: "11.25rem",
+                          position: "relative",
+                        }}
+                      ></div>
+                    )}
                     <h4
                       style={{
                         color: "gray",
@@ -118,6 +131,8 @@ export default function Services() {
   return (
     <>
       <h1 className="text-center fw-bold mb-4 title-photo-s">
+        {/*  */}
+        {/*  */}
         <img
           src={require("./assets/images/Asset 4@3x.png")}
           alt="assest img"
