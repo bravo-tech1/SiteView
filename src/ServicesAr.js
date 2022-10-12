@@ -130,6 +130,88 @@ export default function Services() {
 
   return (
     <>
+      <div className="container">
+        <div className="row some-mobile" style={{ margin: "3rem 0" }}>
+          <div
+            class=" col-md-4"
+            style={{
+              maxWidth: "31%",
+              background: "#FDEDE4",
+              fontSize: "1.625rem",
+              margin: "0.6rem",
+              textAlign: "center",
+              padding: "6.25rem 2.5rem 1.875rem",
+              position: "relative",
+            }}
+          >
+            <img
+              src={require("./assets/images/triangle_orange_0.png")}
+              style={{
+                position: "absolute",
+                top: "-20%",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+              alt="img"
+            />
+            لدينا أقوى سهولة{" "}
+            <span style={{ color: "#E26329" }}> منصة حجز وأكثرها </span>
+            لوكلاء السفر
+          </div>
+          <div
+            class=" col-md-4"
+            style={{
+              maxWidth: "31%",
+              position: "relative",
+              background: "#D9F3FC ",
+              fontSize: "1.625rem",
+              margin: "0.6rem",
+              textAlign: "center",
+              padding: "6.25rem 2.5rem 1.875rem",
+            }}
+          >
+            <img
+              src={require("./assets/images/triangle_blue_0.png")}
+              style={{
+                position: "absolute",
+                top: "-20%",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+              alt="img"
+            />
+            يمكنك الوصول إلى{" "}
+            <span style={{ color: "#00A5D3" }}> مجموعة المنتجات </span> التي
+            توفر لك كل ما <span style={{ color: "#00A5D3" }}>يطلبه عملاؤك</span>
+          </div>
+          <div
+            class=" col-md-4"
+            style={{
+              maxWidth: "31%",
+              position: "relative",
+              background: "#F7F2EB",
+              fontSize: "1.625rem",
+              margin: "0.6rem",
+              textAlign: "center",
+              padding: "6.25rem 2.5rem 1.875rem",
+            }}
+          >
+            <img
+              src={require("./assets/images/triangle_brown_0.png")}
+              style={{
+                position: "absolute",
+                top: "-20%",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+              alt="img"
+            />
+            بفضل اتفاقياتنا الحصرية ،{" "}
+            <span style={{ color: "#C8A977" }}> يمكنك الحصول على</span> أفضل
+            الفنادق بأفضل الأسعار في أكثر الوجهات رواجًا
+          </div>
+        </div>
+      </div>
       <h1 className="text-center fw-bold mb-4 title-photo-s">
         <img
           src={require("./assets/images/Asset 4@3x.png")}

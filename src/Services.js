@@ -130,9 +130,99 @@ export default function Services() {
 
   return (
     <>
+      <div className="container">
+        <div className="row some-mobile" style={{ margin: "3rem 0" }}>
+          <div
+            class=" col-md-4"
+            style={{
+              maxWidth: "31%",
+              background: "#FDEDE4",
+              fontSize: "1.625rem",
+              margin: "0.6rem",
+              textAlign: "center",
+              padding: "6.25rem 2.5rem 1.875rem",
+              position: "relative",
+            }}
+          >
+            <img
+              src={require("./assets/images/triangle_orange_0.png")}
+              style={{
+                position: "absolute",
+                top: "-20%",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+              alt="img"
+            />
+            We have the most{" "}
+            <span style={{ color: "#E26329" }}>
+              {" "}
+              powerful and user-friendly booking{" "}
+            </span>
+            platform for travel agents
+          </div>
+          <div
+            class=" col-md-4"
+            style={{
+              maxWidth: "31%",
+              position: "relative",
+              background: "#D9F3FC ",
+              fontSize: "1.625rem",
+              margin: "0.6rem",
+              textAlign: "center",
+              padding: "6.25rem 2.5rem 1.875rem",
+            }}
+          >
+            <img
+              src={require("./assets/images/triangle_blue_0.png")}
+              style={{
+                position: "absolute",
+                top: "-20%",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+              alt="img"
+            />
+            You get access to a{" "}
+            <span style={{ color: "#00A5D3" }}> product portfolio</span> that
+            provides you{" "}
+            <span style={{ color: "#00A5D3" }}>
+              {" "}
+              with everything your customers demand
+            </span>
+          </div>
+          <div
+            class=" col-md-4"
+            style={{
+              maxWidth: "31%",
+              position: "relative",
+              background: "#F7F2EB",
+              fontSize: "1.625rem",
+              margin: "0.6rem",
+              textAlign: "center",
+              padding: "6.25rem 2.5rem 1.875rem",
+            }}
+          >
+            <img
+              src={require("./assets/images/triangle_brown_0.png")}
+              style={{
+                position: "absolute",
+                top: "-20%",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+              alt="img"
+            />
+            With our exclusive agreements, you get{" "}
+            <span style={{ color: "#C8A977" }}>
+              {" "}
+              the best hotels at the best price
+            </span>{" "}
+            in the most sought-after destinations
+          </div>
+        </div>
+      </div>
       <h1 className="text-center fw-bold mb-4 title-photo-s">
-        {/*  */}
-        {/*  */}
         <img
           src={require("./assets/images/Asset 4@3x.png")}
           alt="assest img"
