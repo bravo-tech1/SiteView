@@ -206,8 +206,14 @@ body{
     width: 170px !important;
   }
 }
-
-
+@media(max-width: 668px){
+.custom-service-video{
+  height: 40vh !important;
+}
+.service-video{
+  height: 100% !important;
+}
+}
 
 
 /* End Services */

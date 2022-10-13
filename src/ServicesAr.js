@@ -131,6 +131,7 @@ export default function Services() {
   return (
     <>
       <div
+        className="custom-service-video"
         style={{
           position: "relative",
           width: "100%",
@@ -157,7 +158,7 @@ export default function Services() {
           autoPlay
           muted
           loop
-          className="service-video"
+          className="service-video "
         >
           <source
             src={require("./assets/before_service.mp4")}
