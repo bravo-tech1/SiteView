@@ -130,6 +130,9 @@ export default function Services() {
 
   return (
     <>
+      <div className="container text-center mb-3">
+        <h1>السفر حول العالم</h1>
+      </div>
       <div
         style={{
           width: "100%",
