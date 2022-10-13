@@ -94,7 +94,7 @@ export default function Services() {
                           backgroundRepeat: "no-repeat",
                           width: "100%",
                           backgroundSize: " cover",
-                          height: "11.25rem",
+                          height: "13.25rem",
                           position: "relative",
                         }}
                       ></div>
@@ -134,7 +134,7 @@ export default function Services() {
         style={{
           width: "100%",
           height: "60vh",
-          margin: "4rem 0",
+          margin: " 0 0 4rem 0",
           overflow: "hidden",
         }}
       >
