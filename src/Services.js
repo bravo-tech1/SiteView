@@ -94,7 +94,7 @@ export default function Services() {
                           backgroundRepeat: "no-repeat",
                           width: "100%",
                           backgroundSize: " cover",
-                          height: "13.25rem",
+                          height: "15.25rem",
                           position: "relative",
                         }}
                       ></div>
@@ -142,6 +142,7 @@ export default function Services() {
           width="100%"
           style={{ objectFit: "initial", height: "75vh" }}
           autoPlay
+          loop
           muted
           className="service-video"
         >
