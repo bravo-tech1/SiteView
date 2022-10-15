@@ -67,12 +67,16 @@ export default function Services() {
                     alignItems: "center",
                     justifyContent: "center",
                     flexDirection: "row",
+                    borderRadius: "12px",
                   }}
                 >
                   <Link
                     to={`/states/${item.id}`}
                     width="100%"
-                    style={{ display: "flex", width: "100%" }}
+                    style={{
+                      display: "flex",
+                      width: "100%",
+                    }}
                   >
                     {isIMage(item.service_video) ? (
                       <video
@@ -96,6 +100,7 @@ export default function Services() {
                           backgroundSize: " cover",
                           height: "15.25rem",
                           position: "relative",
+                          borderRadius: "12px",
                         }}
                       ></div>
                     )}
@@ -106,6 +111,7 @@ export default function Services() {
                         position: "absolute",
                         top: "0",
                         left: "50%",
+                        opacity: "0.8",
                         transform: "translateX(-50%)",
                         background: "white",
                         padding: "10px",
@@ -114,7 +120,8 @@ export default function Services() {
                       }}
                     >
                       {" "}
-                      {item.service_text_ar}
+                      {/* {item.service_text_ar} */}
+                      {x.dep_name_ar}
                     </h4>
                   </Link>
                 </div>
@@ -166,23 +173,7 @@ export default function Services() {
           />
         </video>
       </div>
-      <h1 className="text-center fw-bold mb-4 title-photo-s">
-        <img
-          src={require("./assets/images/Asset 4@3x.png")}
-          alt="assest img"
-          style={{
-            position: "absolute",
-            top: "0",
-            width: "210px",
-            left: "50%",
-            height: "54px",
-            transform: "translate(-50%, 0%)",
-            zIndex: "-1",
-          }}
-          className="assest-img"
-        />
-        Services
-      </h1>
+      <h1 className="text-center fw-bold mb-4 title-photo-s">الخدمات</h1>
       <div className="bg-custom">
         <div className="container" id="services">
           <div className="row" style={{ position: "relative" }}>

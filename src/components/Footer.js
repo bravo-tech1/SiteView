@@ -2,19 +2,19 @@ export default function Footer() {
   return (
     // <!-- Footer -->
     <footer
-      className=" text-lg-start bg-light text-muted"
+      className=" text-lg-start text-muted"
       style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "90vh",
+        flexDirection: "column",
       }}
     >
       <div
         className="container"
         style={{
-          backgroundColor: "white",
-          boxShadow: " 2px 6px 8px 0 rgb(22 22 26 / 18%)",
+          backgroundColor: "inherit",
+          color: "white",
           border: "none",
         }}
       >
@@ -28,16 +28,13 @@ export default function Footer() {
 
           {/* <!-- Right --> */}
           <div>
-            <a href="https://facebook.com/bravooiq" className="me-4 text-reset">
+            <a href="https://facebook.com/bravooiq" className="me-4">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="mailto:hello@bravoo.travel" className="me-4 text-reset">
+            <a href="mailto:hello@bravoo.travel" className="me-4">
               <i className="fab fa-google"></i>
             </a>
-            <a
-              href="https://instagram.com/bravoo.travel"
-              className="me-4 text-reset"
-            >
+            <a href="https://instagram.com/bravoo.travel" className="me-4">
               <i className="fab fa-instagram"></i>
             </a>
           </div>
@@ -69,19 +66,13 @@ export default function Footer() {
                 {/* <!-- Links --> */}
                 <h6 className="text-uppercase fw-bold mb-4">Pages</h6>
                 <p>
-                  <a href="/about" className="text-reset">
-                    About
-                  </a>
+                  <a href="/about">About</a>
                 </p>
                 <p>
-                  <a href="/contact" className="text-reset">
-                    Contact Us
-                  </a>
+                  <a href="/contact">Contact Us</a>
                 </p>
                 <p>
-                  <a href="/career" className="text-reset">
-                    Careers
-                  </a>
+                  <a href="/career">Careers</a>
                 </p>
               </div>
               {/* <!-- Grid column --> */}
@@ -91,14 +82,10 @@ export default function Footer() {
                 {/* <!-- Links --> */}
                 <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
                 <p>
-                  <a href="/login" className="text-reset">
-                    Login
-                  </a>
+                  <a href="/login">Login</a>
                 </p>
                 <p>
-                  <a href="/register" className="text-reset">
-                    Register
-                  </a>
+                  <a href="/register">Register</a>
                 </p>
               </div>
               {/* <!-- Grid column --> */}
@@ -107,7 +94,7 @@ export default function Footer() {
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 {/* <!-- Links --> */}
                 <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                <p className="text-reset-2">
+                <p>
                   <a
                     href="https://facebook.com/bravooiq"
                     style={{ textDecoration: "none" }}
@@ -117,7 +104,7 @@ export default function Footer() {
                     facebook.com/bravooiq
                   </a>
                 </p>
-                <p className="text-reset-2">
+                <p>
                   <a
                     href="mailto:hello@bravoo.travel"
                     style={{ textDecoration: "none" }}
@@ -126,7 +113,7 @@ export default function Footer() {
                     <i className="fab fa-google me-3"></i> hello@bravoo.travel
                   </a>
                 </p>
-                <p className="text-reset-2">
+                <p>
                   <a
                     href="https://instagram.com/bravoo.travel"
                     style={{ textDecoration: "none" }}
@@ -142,29 +129,28 @@ export default function Footer() {
           </div>
         </section>
         {/* <!-- Section: Links  --> */}
-
-        {/* <!-- Copyright --> */}
-        <div
-          className="text-center p-4"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-        >
-          BRAVOO © 2022 - All Rights Reserved. BRAVOO is registered trademark of
-          Bravoo Holidays (IRAQ) . Powered by
-          <a
-            className=" fw-bold"
-            href="https://icom-digital.com/"
-            target="__blank"
-            style={{
-              color: "#ff5959",
-              textDecoration: "none",
-              marginLeft: "5px",
-            }}
-          >
-            icom-digital.com
-          </a>
-        </div>
-        {/* <!-- Copyright --> */}
       </div>
+      {/* <!-- Copyright --> */}
+      <div
+        className="text-center p-4"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)", width: "100%" }}
+      >
+        BRAVOO © 2022 - All Rights Reserved. BRAVOO is registered trademark of
+        Bravoo Holidays (IRAQ) . Powered by
+        <a
+          className=" fw-bold"
+          href="https://icom-digital.com/"
+          target="__blank"
+          style={{
+            color: "#ff5959",
+            textDecoration: "none",
+            marginLeft: "5px",
+          }}
+        >
+          icom-digital.com
+        </a>
+      </div>
+      {/* <!-- Copyright --> */}
     </footer>
     // <!-- Footer -->
   );

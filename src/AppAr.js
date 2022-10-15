@@ -1,7 +1,8 @@
 import React, { lazy, Suspense } from "react";
-import Loading from "./components/Landing";
+import LandingAr from "./components/LandingAr";
+import Loading from "./components/Loading";
 const HeaderAr = lazy(() => import("./components/HeaderAr"));
-const LandingAr = lazy(() => import("./components/LandingAr"));
+
 const LatestAr = lazy(() => import("./LatestServicesAr"));
 const ServicesAr = lazy(() => import("./ServicesAr"));
 const FooterAr = lazy(() => import("./components/FooterAr"));

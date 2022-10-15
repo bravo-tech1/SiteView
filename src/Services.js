@@ -58,6 +58,7 @@ export default function Services() {
                   alignItems: "center",
                   justifyContent: "center",
                 }}
+                className="service-card-anim"
               >
                 <div
                   className="card mb-3 mt-3 service-card"
@@ -67,6 +68,7 @@ export default function Services() {
                     alignItems: "center",
                     justifyContent: "center",
                     flexDirection: "row",
+                    borderRadius: "12px",
                   }}
                 >
                   <Link
@@ -96,6 +98,7 @@ export default function Services() {
                           backgroundSize: " cover",
                           height: "15.25rem",
                           position: "relative",
+                          borderRadius: "12px",
                         }}
                       ></div>
                     )}
@@ -108,13 +111,15 @@ export default function Services() {
                         left: "50%",
                         transform: "translateX(-50%)",
                         background: "white",
+                        opacity: "0.8",
                         padding: "10px",
                         width: "240px",
                         textAlign: "center",
                       }}
                     >
                       {" "}
-                      {item.service_text_en}
+                      {/* {item.service_text_en} */}
+                      {x.dep_name_en}
                     </h4>
                   </Link>
                 </div>
@@ -166,23 +171,7 @@ export default function Services() {
           />
         </video>
       </div>
-      <h1 className="text-center fw-bold mb-4 title-photo-s">
-        <img
-          src={require("./assets/images/Asset 4@3x.png")}
-          alt="assest img"
-          style={{
-            position: "absolute",
-            top: "0",
-            width: "210px",
-            left: "50%",
-            height: "54px",
-            transform: "translate(-50%, 0%)",
-            zIndex: "-1",
-          }}
-          className="assest-img"
-        />
-        Services
-      </h1>
+      <h1 className="text-center fw-bold mb-4 title-photo-s">Services</h1>
       <div className="bg-custom">
         <div className="container" id="services">
           <div className="row" style={{ position: "relative" }}>

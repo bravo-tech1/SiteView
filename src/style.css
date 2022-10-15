@@ -94,6 +94,10 @@ body{
 /* Start Landing */
 .landing{
   position: relative;
+  
+}
+.landind{
+  height: 80vh;
 }
 
 .contect{
@@ -486,11 +490,16 @@ body{
   width: 100%;
 }
 footer{
-  background-image: url('./assets/images/footerImage.jpg');
+  background-color: #404754 ;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+footer p, footer a, footer i, footer h6, footer span{
+  color: white !important;
+  text-decoration: none;
+}
+
 /* End About Footer */
 /* Start Contact */
 @media (max-width: 768px) {
@@ -668,7 +677,28 @@ footer{
     width: 100% !important;
   }
 }
-
+.service-card{
+  transition: 0.3s;
+  position: relative;
+}
+.service-card-anim:hover .service-card{
+  width: 80% !important;
+  transform: translateZ(90px);
+  
+}
+.service-card-anim:hover .service-card a::after{
+  content: '';
+  background-color: #000;
+  opacity: 0.3;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+ 
+ 
+  
+}
 /* Latest Slide */
 
 
