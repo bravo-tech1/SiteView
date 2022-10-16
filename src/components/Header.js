@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -6,14 +6,29 @@ export default function Header() {
     localStorage.removeItem("email");
     window.location.href = "/";
   };
+
+  const [dark, setDark] = useState(false);
+  let handleMode = () => {
+    setDark(!dark);
+    localStorage.setItem("dark", dark);
+  };
+  useEffect(() => {
+    if (localStorage.getItem("dark") === "true") {
+      document.body.classList = "dark-theme";
+    } else {
+      document.body.classList = "";
+    }
+  }, [dark]);
+
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container d-flex .justify-content-between align-items-center">
           <img
             className="img-fluid logo"
             src={require("../assets/images/logo.png")}
           />
+
           <button
             className="navbar-toggler"
             type="button"
@@ -53,6 +68,7 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
+
             {!localStorage.getItem("email") && (
               <Link to="/login">
                 {" "}
@@ -64,6 +80,7 @@ export default function Header() {
                 </div>
               </Link>
             )}
+
             {localStorage.getItem("email") && (
               <button
                 className="btn roundrd-circle main-btn btn-login"
@@ -79,6 +96,11 @@ export default function Header() {
             <div className="lang d-flex align-items-center ms-1 text-black-50">
               <Link to="/ar">AR </Link>
             </div>
+            {localStorage.getItem("dark") === "true" ? (
+              <i class="fa-sharp fa-solid fa-sun" onClick={handleMode}></i>
+            ) : (
+              <i class="fa-solid fa-moon" onClick={handleMode}></i>
+            )}
           </div>
         </div>
       </nav>

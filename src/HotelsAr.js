@@ -82,6 +82,7 @@ export default function About() {
         </div>
       )}
       <div
+        className="wide-father"
         style={{
           display: "flex",
           alignItems: "center",

@@ -11,7 +11,12 @@ export default function About() {
       .then((dataRes) => setData(dataRes));
   }, []);
   const items = data.map((item) => (
-    <div className="card" style={{ width: "24rem" }}>
+    <div
+      className="card"
+      style={{
+        width: "24rem",
+      }}
+    >
       <img
         src={item.package_image}
         className="card-img-top featured-img"
@@ -68,22 +73,24 @@ export default function About() {
     </div>
   ));
   return (
-    <div>
+    <div className="wide-father">
       <Header />
-      <div
-        className="container"
-        style={{ marginTop: "5rem", marginBottom: "5rem" }}
-      >
+      <div>
         <div
-          style={{
-            gap: "20px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
+          className="container"
+          style={{ paddingTop: "5rem", paddingBottom: "5rem" }}
         >
-          {items}
+          <div
+            style={{
+              gap: "20px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            {items}
+          </div>
         </div>
       </div>
       <Footer />

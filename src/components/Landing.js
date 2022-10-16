@@ -3,6 +3,14 @@ import parse from "html-react-parser";
 
 export default function Landing() {
   const [section, setSection] = useState([]);
+  const [landingDark, setLandingDark] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      setLandingDark((prev) => !prev);
+    });
+  }, [landingDark]);
+  console.log(landingDark);
 
   useEffect(() => {
     let isApiSubscribed = true;
@@ -18,6 +26,7 @@ export default function Landing() {
       isApiSubscribed = false;
     };
   }, []);
+
   const SectionShow = section.map((item, key) => (
     <div key={key}>
       <div
@@ -28,7 +37,11 @@ export default function Landing() {
         }}
         className=" img-fluid images"
       ></div>
-      <div className="contect"> {parse(item.title_en)} </div>
+      {landingDark === "true" ? (
+        <div className="contect"> {parse(item.title_en_night)} </div>
+      ) : (
+        <div className="contect"> {parse(item.title_en)} </div>
+      )}
     </div>
   ));
   return <div className="landind text-center">{SectionShow}</div>;

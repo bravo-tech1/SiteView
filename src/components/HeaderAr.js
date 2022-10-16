@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -6,11 +6,23 @@ export default function Header() {
     localStorage.removeItem("email");
     window.location.href = "/ar";
   };
+  const [dark, setDark] = useState(false);
+  let handleMode = () => {
+    setDark(!dark);
+    localStorage.setItem("dark", dark);
+  };
+  useEffect(() => {
+    if (localStorage.getItem("dark") === "true") {
+      document.body.classList = "dark-theme";
+    } else {
+      document.body.classList = "";
+    }
+  }, [dark]);
 
   return (
     <div>
       <nav
-        className="navbar navbar-expand-lg navbar-light bg-light fixed-top arabic"
+        className="navbar navbar-expand-lg navbar-light  fixed-top arabic"
         dir="rtl"
       >
         <div className="container d-flex justify-content-between align-items-center">
@@ -86,6 +98,11 @@ export default function Header() {
             <div className="lang d-flex align-items-center mr-4 text-black-50">
               <Link to="/">EN</Link>
             </div>
+            {localStorage.getItem("dark") === "true" ? (
+              <i class="fa-sharp fa-solid fa-sun" onClick={handleMode}></i>
+            ) : (
+              <i class="fa-solid fa-moon" onClick={handleMode}></i>
+            )}
           </div>
         </div>
       </nav>

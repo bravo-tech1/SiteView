@@ -7,9 +7,9 @@ export default function About() {
     <div>
       <HeaderAr />
       <LandingAr />
-      <div>
+      <div className="wide-father">
         <div className="Services text-center d-column align-items-center pb-lg-5">
-          <h3 className="fw-bold pt-5 mt-lg-5">عن الشركة</h3>
+          <h3 className="fw-bold pt-5 pt-lg-5">عن الشركة</h3>
         </div>
         <div className="container">
           <div className="row" style={{ textAlign: "right" }}>

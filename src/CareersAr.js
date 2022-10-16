@@ -60,229 +60,234 @@ export default function Careers() {
   return (
     <>
       <HeaderAr />
-      <div className="container pt-4 mt-5" style={{ marginBottom: "3rem" }}>
-        <form
-          action=""
-          className="d-flex flex-wrap justify-content-between"
-          style={{ boxShadow: "0 2px 15px rgb(0 0 0 / 10%)", padding: "20px" }}
-          onSubmit={handleSubmit}
-          dir="rtl"
-        >
-          <div className="row border-bottom mb-5 pb-4">
-            <div className="col-lg-3 col-md-6">
-              <label className="d-column w-100 label-font mb-2" for="name">
-                الاسم
-              </label>
-              <input
-                required
-                className="custom-input-2 h-50 mb-4 w-75"
-                id="name"
-                type="text"
-                placeholder="الاسم..."
-                onChange={(e) => setname(e.target.value)}
-                value={name}
-              />
+      <div className="wide-father">
+        <div className="container pt-4 mt-5" style={{ paddingBottom: "3rem" }}>
+          <form
+            action=""
+            className="d-flex flex-wrap justify-content-between carrer-form"
+            style={{
+              boxShadow: "0 2px 15px rgb(0 0 0 / 10%)",
+              padding: "20px",
+            }}
+            onSubmit={handleSubmit}
+            dir="rtl"
+          >
+            <div className="row border-bottom mb-5 pb-4">
+              <div className="col-lg-3 col-md-6">
+                <label className="d-column w-100 label-font mb-2" for="name">
+                  الاسم
+                </label>
+                <input
+                  required
+                  className="custom-input-2 h-50 mb-4 w-75"
+                  id="name"
+                  type="text"
+                  placeholder="الاسم..."
+                  onChange={(e) => setname(e.target.value)}
+                  value={name}
+                />
+              </div>
+              <div className="col-lg-3 col-md-6">
+                <label
+                  className="d-column w-100 label-font mb-2"
+                  for="qualification"
+                >
+                  المؤهل العلمي
+                </label>
+                <input
+                  required
+                  className="custom-input-2 h-50 mb-4 w-75"
+                  id="qualification"
+                  type="text"
+                  placeholder="المؤهل العلمي..."
+                  onChange={(e) => setacademic_qualification(e.target.value)}
+                  value={academic_qualification}
+                />
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-12">
+                <label className="d-column w-100 label-font mb-2" for="mobile">
+                  رقم الهاتف
+                </label>
+                <input
+                  required
+                  className="custom-input-2 h-50 mb-4 w-75"
+                  id="mobile"
+                  name="mobile"
+                  type="text"
+                  placeholder="رقم الهاتف..."
+                  onChange={(e) => setmobile(e.target.value)}
+                  value={mobile}
+                />
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-12">
+                <label className="d-column w-100 label-font mb-2" for="email">
+                  البريد الالكتروني
+                </label>
+                <input
+                  required
+                  className="custom-input-2 h-50 mb-4 w-75"
+                  id="email"
+                  type="text"
+                  placeholder="البريد الالكتروني..."
+                  onChange={(e) => setemail(e.target.value)}
+                  value={email}
+                />
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-12">
+                <label className="d-column w-100 label-font mb-2" for="date">
+                  تاريخ الميلاد
+                </label>
+                <input
+                  required
+                  className="custom-input-2 h-50 mb-4 w-75"
+                  id="date"
+                  name="date"
+                  type="text"
+                  placeholder="تاريخ الميلاد..."
+                  onChange={(e) => setbirthday(e.target.value)}
+                  value={birthday}
+                />
+              </div>
+              <div className="col-lg-9 col-md-6 col-sm-12">
+                <label className="d-column w-100 label-font mb-2" for="address">
+                  العنوان
+                </label>
+                <input
+                  required
+                  className="custom-input-2 h-50 mb-4 w-75 w-lg-100 flex-grow-1"
+                  id="address"
+                  name="address"
+                  type="text"
+                  placeholder="العنوان..."
+                  onChange={(e) => setaddress(e.target.value)}
+                  value={address}
+                />
+              </div>
             </div>
-            <div className="col-lg-3 col-md-6">
-              <label
-                className="d-column w-100 label-font mb-2"
-                for="qualification"
+            <div className="row w-100 mb-5">
+              <div className="col-lg-6">
+                <label className="d-column mb-1" for="vision">
+                  1. هل لديك رؤية? كيف?
+                </label>
+                <textarea
+                  className="w-100 h-textarea mb-3"
+                  required
+                  id="vision"
+                  cols="30"
+                  rows="10"
+                  onChange={(e) => setq1(e.target.value)}
+                  value={q1}
+                ></textarea>
+              </div>
+              <div className="col-lg-6">
+                <label className="d-column mb-1" for="q2">
+                  2. هل تبحث عن تحد جديد؟ كيف؟
+                </label>
+                <textarea
+                  className="w-100 h-textarea mb-3"
+                  required
+                  id="q2"
+                  cols="30"
+                  rows="10"
+                  onChange={(e) => setq2(e.target.value)}
+                  value={q2}
+                ></textarea>
+              </div>
+              <div className="col-lg-6">
+                <label className="d-column mb-1" for="q3">
+                  3. هل تسعى للتعلم في بيئة متعددة الاستخدامات؟ كيف؟
+                </label>
+                <textarea
+                  className="w-100 h-textarea mb-3"
+                  required
+                  id="q3"
+                  cols="30"
+                  rows="10"
+                  onChange={(e) => setq3(e.target.value)}
+                  value={q3}
+                ></textarea>
+              </div>
+              <div className="col-lg-6">
+                <label className="d-column mb-1" for="q4">
+                  4. ما هي المهارات التي لديك؟
+                </label>
+                <textarea
+                  className="w-100 h-textarea mb-3"
+                  required
+                  id="q4"
+                  cols="30"
+                  rows="10"
+                  onChange={(e) => setq4(e.target.value)}
+                  value={q4}
+                ></textarea>
+              </div>
+              <div className="col-lg-6">
+                <label className="d-column mb-1" for="q5">
+                  5. هل تؤمن بجعل السفر مهما؟ كيف؟
+                </label>
+                <textarea
+                  className="w-100 h-textarea mb-3"
+                  required
+                  id="q5"
+                  cols="30"
+                  rows="10"
+                  onChange={(e) => setq5(e.target.value)}
+                  value={q5}
+                ></textarea>
+              </div>
+              <div className="col-lg-6">
+                <label className="d-column mb-1" for="q6">
+                  6. هل تؤمن بتطوير علامتنا التجارية وتنميتها؟ كيف؟
+                </label>
+                <textarea
+                  className="w-100 h-textarea mb-3"
+                  required
+                  id="q6"
+                  cols="30"
+                  rows="10"
+                  onChange={(e) => setq6(e.target.value)}
+                  value={q6}
+                ></textarea>
+              </div>
+              <div className="col-lg-6">
+                <label className="d-column mb-1" for="q7">
+                  7. ما هو الموقف الذي تعتقد أنه يناسبك مؤهلات؟
+                </label>
+                <textarea
+                  className="w-100 h-textarea mb-3"
+                  required
+                  id="q7"
+                  cols="30"
+                  rows="10"
+                  onChange={(e) => setq7(e.target.value)}
+                  value={q7}
+                ></textarea>
+              </div>
+              <div className="col-lg-6">
+                <label className="d-column mb-1" for="q8">
+                  8. ما هي الخبرة السابقة التي لديك؟
+                </label>
+                <textarea
+                  className="w-100 h-textarea"
+                  required
+                  id="q8"
+                  cols="30"
+                  rows="10"
+                  onChange={(e) => setq8(e.target.value)}
+                  value={q8}
+                ></textarea>
+              </div>
+            </div>
+            <div className="row w-100 d-flex justify-content-center pb-4 mb-5">
+              <button
+                type="submit"
+                className="btn roundrd-circle main-btn btn-business w-sub"
               >
-                المؤهل العلمي
-              </label>
-              <input
-                required
-                className="custom-input-2 h-50 mb-4 w-75"
-                id="qualification"
-                type="text"
-                placeholder="المؤهل العلمي..."
-                onChange={(e) => setacademic_qualification(e.target.value)}
-                value={academic_qualification}
-              />
+                ارسال
+              </button>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-12">
-              <label className="d-column w-100 label-font mb-2" for="mobile">
-                رقم الهاتف
-              </label>
-              <input
-                required
-                className="custom-input-2 h-50 mb-4 w-75"
-                id="mobile"
-                name="mobile"
-                type="text"
-                placeholder="رقم الهاتف..."
-                onChange={(e) => setmobile(e.target.value)}
-                value={mobile}
-              />
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-12">
-              <label className="d-column w-100 label-font mb-2" for="email">
-                البريد الالكتروني
-              </label>
-              <input
-                required
-                className="custom-input-2 h-50 mb-4 w-75"
-                id="email"
-                type="text"
-                placeholder="البريد الالكتروني..."
-                onChange={(e) => setemail(e.target.value)}
-                value={email}
-              />
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-12">
-              <label className="d-column w-100 label-font mb-2" for="date">
-                تاريخ الميلاد
-              </label>
-              <input
-                required
-                className="custom-input-2 h-50 mb-4 w-75"
-                id="date"
-                name="date"
-                type="text"
-                placeholder="تاريخ الميلاد..."
-                onChange={(e) => setbirthday(e.target.value)}
-                value={birthday}
-              />
-            </div>
-            <div className="col-lg-9 col-md-6 col-sm-12">
-              <label className="d-column w-100 label-font mb-2" for="address">
-                العنوان
-              </label>
-              <input
-                required
-                className="custom-input-2 h-50 mb-4 w-75 w-lg-100 flex-grow-1"
-                id="address"
-                name="address"
-                type="text"
-                placeholder="العنوان..."
-                onChange={(e) => setaddress(e.target.value)}
-                value={address}
-              />
-            </div>
-          </div>
-          <div className="row w-100 mb-5">
-            <div className="col-lg-6">
-              <label className="d-column mb-1" for="vision">
-                1. هل لديك رؤية? كيف?
-              </label>
-              <textarea
-                className="w-100 h-textarea mb-3"
-                required
-                id="vision"
-                cols="30"
-                rows="10"
-                onChange={(e) => setq1(e.target.value)}
-                value={q1}
-              ></textarea>
-            </div>
-            <div className="col-lg-6">
-              <label className="d-column mb-1" for="q2">
-                2. هل تبحث عن تحد جديد؟ كيف؟
-              </label>
-              <textarea
-                className="w-100 h-textarea mb-3"
-                required
-                id="q2"
-                cols="30"
-                rows="10"
-                onChange={(e) => setq2(e.target.value)}
-                value={q2}
-              ></textarea>
-            </div>
-            <div className="col-lg-6">
-              <label className="d-column mb-1" for="q3">
-                3. هل تسعى للتعلم في بيئة متعددة الاستخدامات؟ كيف؟
-              </label>
-              <textarea
-                className="w-100 h-textarea mb-3"
-                required
-                id="q3"
-                cols="30"
-                rows="10"
-                onChange={(e) => setq3(e.target.value)}
-                value={q3}
-              ></textarea>
-            </div>
-            <div className="col-lg-6">
-              <label className="d-column mb-1" for="q4">
-                4. ما هي المهارات التي لديك؟
-              </label>
-              <textarea
-                className="w-100 h-textarea mb-3"
-                required
-                id="q4"
-                cols="30"
-                rows="10"
-                onChange={(e) => setq4(e.target.value)}
-                value={q4}
-              ></textarea>
-            </div>
-            <div className="col-lg-6">
-              <label className="d-column mb-1" for="q5">
-                5. هل تؤمن بجعل السفر مهما؟ كيف؟
-              </label>
-              <textarea
-                className="w-100 h-textarea mb-3"
-                required
-                id="q5"
-                cols="30"
-                rows="10"
-                onChange={(e) => setq5(e.target.value)}
-                value={q5}
-              ></textarea>
-            </div>
-            <div className="col-lg-6">
-              <label className="d-column mb-1" for="q6">
-                6. هل تؤمن بتطوير علامتنا التجارية وتنميتها؟ كيف؟
-              </label>
-              <textarea
-                className="w-100 h-textarea mb-3"
-                required
-                id="q6"
-                cols="30"
-                rows="10"
-                onChange={(e) => setq6(e.target.value)}
-                value={q6}
-              ></textarea>
-            </div>
-            <div className="col-lg-6">
-              <label className="d-column mb-1" for="q7">
-                7. ما هو الموقف الذي تعتقد أنه يناسبك مؤهلات؟
-              </label>
-              <textarea
-                className="w-100 h-textarea mb-3"
-                required
-                id="q7"
-                cols="30"
-                rows="10"
-                onChange={(e) => setq7(e.target.value)}
-                value={q7}
-              ></textarea>
-            </div>
-            <div className="col-lg-6">
-              <label className="d-column mb-1" for="q8">
-                8. ما هي الخبرة السابقة التي لديك؟
-              </label>
-              <textarea
-                className="w-100 h-textarea"
-                required
-                id="q8"
-                cols="30"
-                rows="10"
-                onChange={(e) => setq8(e.target.value)}
-                value={q8}
-              ></textarea>
-            </div>
-          </div>
-          <div className="row w-100 d-flex justify-content-center pb-4 mb-5">
-            <button
-              type="submit"
-              className="btn roundrd-circle main-btn btn-business w-sub"
-            >
-              ارسال
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
       <FooterAr />
     </>

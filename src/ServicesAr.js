@@ -58,6 +58,7 @@ export default function Services() {
                   alignItems: "center",
                   justifyContent: "center",
                 }}
+                className="service-card-anim"
               >
                 <div
                   className="card mb-3 mt-3 service-card"
@@ -73,10 +74,7 @@ export default function Services() {
                   <Link
                     to={`/states/${item.id}`}
                     width="100%"
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                    }}
+                    style={{ display: "flex", width: "100%" }}
                   >
                     {isIMage(item.service_video) ? (
                       <video
@@ -111,16 +109,16 @@ export default function Services() {
                         position: "absolute",
                         top: "0",
                         left: "50%",
-                        opacity: "0.8",
                         transform: "translateX(-50%)",
                         background: "white",
+                        opacity: "0.8",
                         padding: "10px",
                         width: "240px",
                         textAlign: "center",
                       }}
                     >
                       {" "}
-                      {/* {item.service_text_ar} */}
+                      {/* {item.service_text_en} */}
                       {x.dep_name_ar}
                     </h4>
                   </Link>
@@ -143,11 +141,11 @@ export default function Services() {
           position: "relative",
           width: "100%",
           height: "60vh",
-          margin: " 0 0 4rem 0",
+
           overflow: "hidden",
         }}
       >
-        <h1
+        {/* <h1
           style={{
             position: "absolute",
             top: "50%",
@@ -157,24 +155,13 @@ export default function Services() {
             textAlign: "center",
           }}
         >
-          السفر حول العالم
-        </h1>
-        <video
-          width="100%"
-          style={{ objectFit: "initial", height: "75vh" }}
-          autoPlay
-          muted
-          loop
-          className="service-video "
-        >
-          <source
-            src={require("./assets/before_service.mp4")}
-            type="video/mp4"
-          />
-        </video>
+          Travelling Around The World
+        </h1> */}
+        <img src={require("./assets/images/hotels.jpg")} alt="hotel img" />
       </div>
-      <h1 className="text-center fw-bold mb-4 title-photo-s">الخدمات</h1>
+
       <div className="bg-custom">
+        <h1 className="text-center fw-bold mb-4 title-photo-s">الخدمات</h1>
         <div className="container" id="services">
           <div className="row" style={{ position: "relative" }}>
             {loading && <Loading />}

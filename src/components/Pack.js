@@ -20,8 +20,9 @@ export default function Pack() {
       });
   }, []);
 
-  const items = data.map((item) => (
+  const items = data.map((item, key) => (
     <div
+      key={key}
       style={{
         marginBottom: "2rem",
         boxShadow: "0 2px 15px rgb(0 0 0 / 10%)",
@@ -126,8 +127,10 @@ export default function Pack() {
         </div>
       )}
       <Header />
-      <div className="container" style={{ marginTop: "5rem" }}>
-        {items}
+      <div className="wide-father">
+        <div className="container" style={{ padding: "5rem 0" }}>
+          {items}
+        </div>
       </div>
       <Footer />
     </>

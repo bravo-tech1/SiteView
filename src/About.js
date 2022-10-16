@@ -7,9 +7,9 @@ export default function About() {
     <div>
       <Header />
       <Landing />
-      <div>
+      <div className="wide-father">
         <div className="Services text-center d-column align-items-center pb-lg-5">
-          <h3 className="fw-bold pt-5 mt-lg-5">About Us</h3>
+          <h3 className="fw-bold pt-5 pt-lg-5">About Us</h3>
         </div>
         <div className="container">
           <div className="row">

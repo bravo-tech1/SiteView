@@ -141,11 +141,11 @@ export default function Services() {
           position: "relative",
           width: "100%",
           height: "60vh",
-          margin: " 0 0 4rem 0",
+
           overflow: "hidden",
         }}
       >
-        <h1
+        {/* <h1
           style={{
             position: "absolute",
             top: "50%",
@@ -156,23 +156,12 @@ export default function Services() {
           }}
         >
           Travelling Around The World
-        </h1>
-        <video
-          width="100%"
-          style={{ objectFit: "initial", height: "75vh" }}
-          autoPlay
-          loop
-          muted
-          className="service-video "
-        >
-          <source
-            src={require("./assets/before_service.mp4")}
-            type="video/mp4"
-          />
-        </video>
+        </h1> */}
+        <img src={require("./assets/images/hotels.jpg")} alt="hotel img" />
       </div>
-      <h1 className="text-center fw-bold mb-4 title-photo-s">Services</h1>
+
       <div className="bg-custom">
+        <h1 className="text-center fw-bold mb-4 title-photo-s">Services</h1>
         <div className="container" id="services">
           <div className="row" style={{ position: "relative" }}>
             {loading && <Loading />}

@@ -62,12 +62,13 @@ export default function About() {
       )}
       {userA ? (
         <div
+          className="wide-father"
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             flexWrap: "wrap",
-            margin: "5rem 0",
+            padding: "5rem 0",
             gap: "20px",
           }}
         >

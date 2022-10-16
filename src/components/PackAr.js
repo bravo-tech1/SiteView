@@ -128,8 +128,10 @@ export default function Pack() {
           <Loading />
         </div>
       )}
-      <div className="container" style={{ marginTop: "5rem" }}>
-        {items}
+      <div className="wide-father">
+        <div className="container" style={{ padding: "5rem 0" }}>
+          {items}
+        </div>
       </div>
       <FooterAr />
     </>

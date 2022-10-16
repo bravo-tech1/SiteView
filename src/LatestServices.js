@@ -84,13 +84,15 @@ export default function Latest() {
   ));
 
   return (
-    <div className="container pt-5 pb-5">
-      <h3 className="fw-bold pt-5 text-center mb-5 title-photo">
-        Featured Listings
-      </h3>
-      <Carousel breakPoints={breakPoints} enableAutoPlay autoPlaySpeed={2000}>
-        {datashow}
-      </Carousel>
+    <div className="wide-father">
+      <div className="container pt-5 pb-5">
+        <h3 className="fw-bold pt-5 text-center mb-5 title-photo">
+          Featured Listings
+        </h3>
+        <Carousel breakPoints={breakPoints} enableAutoPlay autoPlaySpeed={2000}>
+          {datashow}
+        </Carousel>
+      </div>
     </div>
   );
 }
