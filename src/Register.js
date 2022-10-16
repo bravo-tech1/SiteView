@@ -76,10 +76,7 @@ export default function Register() {
               <div className="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div className="card" style={{ borderRadius: "15px" }}>
                   <div className="card-body p-5">
-                    <h2
-                      className="text-uppercase text-center mb-3"
-                      style={{ color: "black" }}
-                    >
+                    <h2 className="text-uppercase text-center mb-3">
                       Create an account
                     </h2>
 

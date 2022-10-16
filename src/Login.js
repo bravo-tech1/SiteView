@@ -53,12 +53,7 @@ export default function Register() {
               <div className="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div className="card" style={{ borderRadius: "15px" }}>
                   <div className="card-body p-5">
-                    <h2
-                      className="text-uppercase text-center mb-3"
-                      style={{ color: "black" }}
-                    >
-                      Login
-                    </h2>
+                    <h2 className="text-uppercase text-center mb-3">Login</h2>
 
                     <form onSubmit={handleSubmit}>
                       <label className="form-label" for="form3Example3cg">

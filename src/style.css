@@ -509,6 +509,9 @@ body {
   width: 55%;
   /* height: 80%; */
 }
+.mask{
+  color: var(--seconde-color);
+}
 
 .ar-content {
   margin-right: 1rem;
