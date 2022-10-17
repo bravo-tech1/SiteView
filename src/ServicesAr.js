@@ -135,30 +135,7 @@ export default function Services() {
 
   return (
     <>
-      <div
-        className="custom-service-video"
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "60vh",
-
-          overflow: "hidden",
-        }}
-      >
-        {/* <h1
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%,-50%)",
-            color: "white",
-            textAlign: "center",
-          }}
-        >
-          Travelling Around The World
-        </h1> */}
-        <img src={require("./assets/images/hotels.jpg")} alt="hotel img" />
-      </div>
+      <div className="before-services-img"></div>
 
       <div className="bg-custom">
         <h1 className="text-center fw-bold mb-4 title-photo-s">الخدمات</h1>

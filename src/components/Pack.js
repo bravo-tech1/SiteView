@@ -23,6 +23,7 @@ export default function Pack() {
   const items = data.map((item, key) => (
     <div
       key={key}
+      className="pack-card"
       style={{
         marginBottom: "2rem",
         boxShadow: "0 2px 15px rgb(0 0 0 / 10%)",
@@ -31,7 +32,7 @@ export default function Pack() {
       }}
     >
       <div
-        className="w-100"
+        className="w-100 "
         style={{
           display: "flex",
           alignItems: "center",

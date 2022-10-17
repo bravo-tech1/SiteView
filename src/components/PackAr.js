@@ -21,7 +21,7 @@ export default function Pack() {
 
   const items = data.map((item) => (
     <div
-      className="arabic"
+      className="arabic pack-card"
       style={{
         marginBottom: "2rem",
         boxShadow: "0 2px 15px rgb(0 0 0 / 10%)",
