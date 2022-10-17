@@ -16,8 +16,9 @@
   --border-color: #E3E3E3;
   --bs-navbar-active-color: rgb(0,0,0,0.9);
   --nav-color: rgb(255 255 255 / 75%);
-  --bg-footer: #404754;
+  --bg-footer: #D45369;
   --text-area: white;
+  --button-color: gray;
 }
 
 .dark-theme{
@@ -33,6 +34,7 @@
   --nav-color: rgb(44, 44, 44, 75%); 
   --bg-footer: #393939 ;
   --text-area:#2C2C2C;
+  --button-color: #393939 ;
 }
 
 body {
@@ -276,6 +278,7 @@ body {
 
 .before-services-img{
   background-image: url('./assets/images/plane.png');
+  background-color: var(--first-color);
   height: 200px;
   width: 100%;
   background-position: center;
@@ -666,6 +669,9 @@ footer span {
   color: white !important;
   text-decoration: none;
 }
+.footer-t{
+  background-color: var(--first-color);
+}
 
 /* End About Footer */
 /* Start Contact */
@@ -920,7 +926,10 @@ svg {
     justify-content: center;
   }
 }
-
+.latest-slider button{
+  background-color: var(--button-color);
+  color: white;
+}
 .custom-input {
   background-color: rgba(222, 222, 222, .3);
   border: medium none;

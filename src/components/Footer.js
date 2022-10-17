@@ -134,8 +134,10 @@ export default function Footer() {
       </div>
       {/* <!-- Copyright --> */}
       <div
-        className="text-center p-4"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)", width: "100%" }}
+        className="text-center p-4 footer-t"
+        style={{
+          width: "100%",
+        }}
       >
         BRAVOO © 2022 - All Rights Reserved. BRAVOO is registered trademark of
         Bravoo Holidays (IRAQ) . Powered by

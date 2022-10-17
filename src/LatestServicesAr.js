@@ -43,7 +43,7 @@ export default function Latest() {
         </p>
         <div>
           <p className="paragraph">
-            <span style={{ color: "var(--yellow-color)" }}>
+            <span style={{ color: "yellow" }}>
               {item.package_rate === 0 || item.package_rate === null ? (
                 ""
               ) : item.package_rate === 1 ? (
@@ -85,7 +85,7 @@ export default function Latest() {
 
   return (
     <div className="wide-father">
-      <div className="container pt-5 pb-5">
+      <div className="container latest-slider pt-5 pb-5">
         <h3 className="fw-bold pt-5 text-center mb-5 title-photo">
           اخر العروض
         </h3>
