@@ -157,6 +157,10 @@ body {
 .landind {
   height: 80vh;
 }
+.landing-img{
+  background-position:  center !important;
+            background-size: cover !important;
+}
 
 .contect {
   position: absolute;

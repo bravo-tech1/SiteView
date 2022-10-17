@@ -105,7 +105,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      <Landing />
+      {window.location.pathname === "/" && <Landing />}
     </div>
   );
 }

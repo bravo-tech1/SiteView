@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LandingAr from "./LandingAr";
 
 export default function Header() {
   let handleLogOut = () => {
@@ -106,6 +107,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
+      {window.location.pathname === "/ar" && <LandingAr />}
     </div>
   );
 }

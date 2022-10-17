@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import LandingAr from "./components/LandingAr";
+
 import Loading from "./components/Loading";
 const HeaderAr = lazy(() => import("./components/HeaderAr"));
 
@@ -23,7 +23,7 @@ export default function App() {
     >
       <div className="father arabic">
         <HeaderAr />
-        <LandingAr />
+
         <LatestAr />
         <ServicesAr />
         <FooterAr />

@@ -25,19 +25,15 @@ export default function Landing() {
         <div
           style={{
             background: `url(${item.website_image_night})`,
-            backgroundPosition: " center",
-            backgroundSize: "cover",
           }}
-          className=" img-fluid images"
+          className=" img-fluid images landing-img"
         ></div>
       ) : (
         <div
           style={{
             background: `url(${item.website_image})`,
-            backgroundPosition: " center",
-            backgroundSize: "cover",
           }}
-          className=" img-fluid images"
+          className=" img-fluid images landing-img"
         ></div>
       )}
       {localStorage.getItem("dark") === "true" ? (
