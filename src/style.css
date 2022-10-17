@@ -19,6 +19,7 @@
   --bg-footer: #D45369;
   --text-area: white;
   --button-color: gray;
+  --font-nav-color: black;
 }
 
 .dark-theme{
@@ -35,6 +36,7 @@
   --bg-footer: #393939 ;
   --text-area:#2C2C2C;
   --button-color: #393939 ;
+  --font-nav-color: white;
 }
 
 body {
@@ -85,7 +87,8 @@ body {
 }
 
 .navbar ul li a {
-  color: var(--seconde-color);
+  color: var(--font-nav-color);
+  
 }
 
 .navbar ul .nav-link:hover,
