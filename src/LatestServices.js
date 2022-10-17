@@ -43,7 +43,7 @@ export default function Latest() {
         </p>
         <div>
           <p className="paragraph">
-            <span style={{ color: "yellow" }}>
+            <span style={{ color: "#FDAC53" }}>
               {item.package_rate === 0 || item.package_rate === null ? (
                 ""
               ) : item.package_rate === 1 ? (

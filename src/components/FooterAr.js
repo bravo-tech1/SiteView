@@ -145,11 +145,10 @@ export default function Footer() {
         BRAVOO © 2022 - All Rights Reserved. BRAVOO is registered trademark of
         Bravoo Holidays (IRAQ) . Powered by
         <a
-          className=" fw-bold"
+          className=" fw-bold a-footer"
           href="https://icom-digital.com/"
           target="__blank"
           style={{
-            color: "#ff5959",
             textDecoration: "none",
             marginLeft: "5px",
           }}
