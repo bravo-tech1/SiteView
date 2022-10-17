@@ -18,8 +18,9 @@
   --nav-color: rgb(255 255 255 / 75%);
   --bg-footer: #D45369;
   --text-area: white;
-  --button-color: gray;
+  --button-color: #D45369;
   --font-nav-color: black;
+  --a-footer: #D45369;
 }
 
 .dark-theme{
@@ -37,6 +38,7 @@
   --text-area:#2C2C2C;
   --button-color: #393939 ;
   --font-nav-color: white;
+  --a-footer: white;
 }
 
 body {
@@ -673,7 +675,7 @@ footer span {
   text-decoration: none;
 }
 .a-footer{
-  color: var(--seconde-color) !important; 
+  color: var(--a-footer) !important; 
 }
 .footer-t{
   background-color: var(--first-color);
