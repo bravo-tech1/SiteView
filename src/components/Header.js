@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Landing from "./Landing";
 
 export default function Header() {
   let handleLogOut = () => {
@@ -104,6 +105,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
+      <Landing />
     </div>
   );
 }

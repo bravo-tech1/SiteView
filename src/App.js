@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import Landing from "./components/Landing";
+
 import Loading from "./components/Loading";
 
 const Header = lazy(() => import("./components/Header"));
@@ -36,7 +36,7 @@ export default function App() {
           </div>
         }
       ></Suspense>
-      <Landing />
+
       <Suspense
         fallback={
           <div
