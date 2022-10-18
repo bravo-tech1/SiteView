@@ -102,25 +102,6 @@ export default function Services() {
                         }}
                       ></div>
                     )}
-                    <h4
-                      style={{
-                        color: "gray",
-                        fontWeight: "bold",
-                        position: "absolute",
-                        top: "0",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        background: "white",
-                        opacity: "0.8",
-                        padding: "10px",
-                        width: "240px",
-                        textAlign: "center",
-                      }}
-                    >
-                      {" "}
-                      {/* {item.service_text_en} */}
-                      {x.dep_name_en}
-                    </h4>
                   </Link>
                 </div>
               </div>

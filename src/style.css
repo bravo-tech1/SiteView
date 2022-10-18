@@ -203,6 +203,11 @@ body {
   transition: 0.3s;
   background-color: var(--card-bg);
 }
+.latest-title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media(max-width:668px) {
   .latest-img {

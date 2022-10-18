@@ -26,7 +26,7 @@ export default function Latest() {
         style={{ width: "100%", height: "20vw", objectFit: "cover" }}
       />
       <div className="card-body">
-        <h5 className="card-title">{item.details_title_en}</h5>
+        <h5 className="card-title latest-title">{item.details_title_en}</h5>
         <p className="balneo">
           <i
             className="fa-solid fa-location-dot"
