@@ -128,7 +128,21 @@ export default function Services() {
         >
           Travelling Around The World
         </h1> */}
-      <div className="before-services-img"></div>
+     <div
+        style={{
+          width: "100%",
+          height: "50vh",
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "var(--first-color)",
+        }}
+      >
+        <video autoPlay muted style={{ width: "100%" }} loop>
+          <source src={require("./assets/before.mp4")} type="video/mp4" />
+        </video>
+      </div>
 
       <div className="bg-custom">
         <h1 className="text-center fw-bold mb-4 title-photo-s">Services</h1>
