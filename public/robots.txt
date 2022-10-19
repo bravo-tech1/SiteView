@@ -33,4 +33,4 @@ Disallow:
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://emkanfinance.co.com/
+Sitemap: https://bravoo.online/
