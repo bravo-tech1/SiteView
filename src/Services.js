@@ -128,7 +128,8 @@ export default function Services() {
         >
           Travelling Around The World
         </h1> */}
-     <div
+      {/* <div className="before-services-img"></div> */}
+      <div
         style={{
           width: "100%",
           height: "50vh",
