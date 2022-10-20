@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import Landing from "./Landing";
 
 export default function Header() {
+  var today = new Date();
+  var time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
   let handleLogOut = () => {
     localStorage.removeItem("email");
     window.location.href = "/";
@@ -13,6 +17,14 @@ export default function Header() {
     setDark(!dark);
     localStorage.setItem("dark", dark);
   };
+
+  useEffect(() => {
+    if (time >= "06:00:00" && time <= "18:00:00") {
+      setDark(false);
+      localStorage.setItem("dark", false);
+    }
+  }, []);
+
   useEffect(() => {
     if (localStorage.getItem("dark") === "true") {
       document.body.classList = "dark-theme";

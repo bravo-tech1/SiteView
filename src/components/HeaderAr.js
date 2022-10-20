@@ -7,11 +7,21 @@ export default function Header() {
     localStorage.removeItem("email");
     window.location.href = "/ar";
   };
+  var today = new Date();
+  var time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
   const [dark, setDark] = useState(false);
   let handleMode = () => {
     setDark(!dark);
     localStorage.setItem("dark", dark);
   };
+  useEffect(() => {
+    if (time >= "06:00:00" && time <= "18:00:00") {
+      setDark(false);
+      localStorage.setItem("dark", false);
+    }
+  }, []);
   useEffect(() => {
     if (localStorage.getItem("dark") === "true") {
       document.body.classList = "dark-theme";
