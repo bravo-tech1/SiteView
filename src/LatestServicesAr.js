@@ -35,7 +35,7 @@ export default function Latest() {
           {item.city_name_ar}
         </p>
 
-        <p className="balneo">
+        <p className="balneo latest-title">
           مدة البكج: <span style={{ fontWeight: "blod" }}> من </span>
           <span style={{ color: "#ff5959" }}> {item.period_from}</span>
           <span style={{ fontWeight: "blod" }}> الى </span>{" "}

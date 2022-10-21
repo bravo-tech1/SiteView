@@ -35,7 +35,7 @@ export default function Latest() {
           {item.city_name_en}
         </p>
 
-        <p className="balneo">
+        <p className="balneo latest-title">
           Package Period: <span style={{ fontWeight: "blod" }}> From </span>
           <span style={{ color: "#ff5959" }}> {item.period_from}</span>
           <span style={{ fontWeight: "blod" }}> To </span>{" "}
