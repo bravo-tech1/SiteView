@@ -20,6 +20,9 @@ export default function Header() {
     if (time >= "06:00:00" && time <= "18:00:00") {
       setDark(false);
       localStorage.setItem("dark", false);
+    } else {
+      setDark(true);
+      localStorage.setItem("dark", true);
     }
   }, []);
   useEffect(() => {
