@@ -84,9 +84,9 @@ export default function Latest() {
       <Link to={`deatils/${item.id}`}>
         <div
           className="btn roundrd-circle main-btn btn-login"
-          style={{ marginLeft: "10px", marginBottom: "20px" }}
+          style={{ marginRight: "10px", marginBottom: "20px" }}
         >
-          Deatils
+          التفاصيل
         </div>
       </Link>
     </div>

@@ -14,6 +14,8 @@ import Pack from "./components/Pack";
 import PackAr from "./components/PackAr";
 import Deatils from "./Deatils";
 import DeatilsAr from "./DeatilsAr";
+import LatestPack from "./LatestPack";
+import LatestPackAr from "./LatestPackAr.js";
 import About from "./About";
 import AboutAr from "./AboutAr";
 import Contact from "./ContactUs";
@@ -74,6 +76,8 @@ ReactDOM.render(
         path="/states/:statesId/cities/:citiesId/hotels/:hotelsId/packages/:packagesId/deatils/:deatilsId"
         element={<Deatils />}
       ></Route>
+      <Route path="/deatils/:deatilsId" element={<LatestPack />}></Route>
+      <Route path="ar/deatils/:deatilsId" element={<LatestPackAr />}></Route>
       <Route
         path="/states/ar/:statesId/cities/:citiesId/hotels/:hotelsId/packages/:packagesId/deatils/:deatilsId"
         element={<DeatilsAr />}
