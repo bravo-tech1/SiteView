@@ -48,6 +48,7 @@ body {
 .guIbWC,
 .jiaani {
   overflow: visible !important;
+  display: block !important;
 }
 
 .arabic {
