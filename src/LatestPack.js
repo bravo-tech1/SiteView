@@ -2,12 +2,23 @@ import { useState } from "react";
 import parse from "html-react-parser";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import { Link } from "react-router-dom";
+import Loading from "./components/Loading";
 import { useEffect } from "react";
 
 export default function Pack() {
   const [deatils, setDeatil] = useState([]);
   const [videos, setVideos] = useState([]);
+  const user = localStorage.getItem("email");
+  const [userA, setUserA] = useState("");
+
+  useEffect(() => {
+    fetch("https://test.emkanfinances.net/api/user/show")
+      .then((res) => res.json())
+      .then((dataRes) =>
+        setUserA(dataRes.find((item) => `"${item.email}"` === user).accepted)
+      );
+  }, []);
 
   const id = Number(window.location.pathname.split("/").slice(-1)[0]);
 
@@ -99,11 +110,55 @@ export default function Pack() {
   return (
     <>
       <Header />
-      <div className="container" style={{ marginTop: "10%" }}>
-        {items}
-        <div className="row">{videosI}</div>
-      </div>
-      <Footer />
+      {userA ? (
+        <div>
+          <div className="container" style={{ marginTop: "10%" }}>
+            {items}
+            <div className="row">{videosI}</div>
+          </div>
+          <Footer />
+        </div>
+      ) : !localStorage.getItem("email") ? (
+        <div
+          style={{
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          <h1 className="text-center">Register To See Deatils</h1>
+          <Link to="/Register" style={{ textAlign: "center" }}>
+            {" "}
+            <div
+              className="btn roundrd-circle main-btn btn-login text-center"
+              style={{ marginLeft: "10px" }}
+            >
+              Register
+            </div>
+          </Link>
+        </div>
+      ) : userA === 0 ? (
+        <div
+          className="text-center"
+          style={{
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div>
+            <h1>You Are Not Accepted Yet</h1>
+            <a href="/">Back To Home</a>
+          </div>
+        </div>
+      ) : (
+        <div style={{ height: "100vh" }}>
+          <Loading />
+        </div>
+      )}
     </>
   );
 }
