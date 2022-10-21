@@ -8,8 +8,7 @@ export default function Header() {
     window.location.href = "/ar";
   };
   var today = new Date();
-  var time =
-    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var time = today.getHours();
 
   const [dark, setDark] = useState(false);
   let handleMode = () => {
@@ -17,10 +16,13 @@ export default function Header() {
     localStorage.setItem("dark", dark);
   };
   useEffect(() => {
-    if (time >= "06:00:00" && time <= "18:00:00") {
+    if (time >= "6" && time <= "18") {
       setDark(false);
       localStorage.setItem("dark", false);
-    } else {
+    } else if (time < "6") {
+      setDark(true);
+      localStorage.setItem("dark", true);
+    } else if (time > "18") {
       setDark(true);
       localStorage.setItem("dark", true);
     }

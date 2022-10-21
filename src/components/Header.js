@@ -4,8 +4,7 @@ import Landing from "./Landing";
 
 export default function Header() {
   var today = new Date();
-  var time =
-    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var time = today.getHours();
 
   let handleLogOut = () => {
     localStorage.removeItem("email");
@@ -19,10 +18,13 @@ export default function Header() {
   };
 
   useEffect(() => {
-    if (time >= "06:00:00" && time <= "18:00:00") {
+    if (time >= "6" && time <= "18") {
       setDark(false);
       localStorage.setItem("dark", false);
-    } else {
+    } else if (time < "6") {
+      setDark(true);
+      localStorage.setItem("dark", true);
+    } else if (time > "18") {
       setDark(true);
       localStorage.setItem("dark", true);
     }
