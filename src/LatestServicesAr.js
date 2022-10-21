@@ -18,10 +18,10 @@ export default function Latest() {
   ];
 
   const datashow = data.map((item, key) => (
-    <div className="card arabic" dir="rtl" key={key}>
+    <div className="card" key={key} dir="rtl">
       <img
         src={item.package_image}
-        className="card-img-top  latest-img"
+        className="card-img-top latest-img"
         alt="..."
         style={{ width: "100%", height: "20vw", objectFit: "cover" }}
       />
@@ -30,15 +30,15 @@ export default function Latest() {
         <p className="balneo">
           <i
             className="fa-solid fa-location-dot"
-            style={{ paddingLeft: "5px" }}
+            style={{ paddingRight: "5px" }}
           ></i>
           {item.city_name_ar}
         </p>
 
         <p className="balneo">
-          Package Period: <span style={{ fontWeight: "blod" }}> From </span>
+          مدة البكج: <span style={{ fontWeight: "blod" }}> من </span>
           <span style={{ color: "#ff5959" }}> {item.period_from}</span>
-          <span style={{ fontWeight: "blod" }}> To </span>{" "}
+          <span style={{ fontWeight: "blod" }}> الى </span>{" "}
           <span style={{ color: "#ff5959" }}> {item.period_to}</span>
         </p>
         <div>
@@ -78,7 +78,7 @@ export default function Latest() {
             </span>
           </p>
         </div>
-        <p className="card-text">{item.city_details_text1_ar}</p>
+        <p className="card-text">{item.city_details_text1_en}</p>
       </div>
     </div>
   ));
@@ -87,7 +87,7 @@ export default function Latest() {
     <div className="wide-father">
       <div className="container latest-slider pt-5 pb-5">
         <h3 className="fw-bold pt-5 text-center mb-5 title-photo">
-          اخر العروض
+          Featured Listings
         </h3>
         <Carousel breakPoints={breakPoints} enableAutoPlay autoPlaySpeed={2000}>
           {datashow}
