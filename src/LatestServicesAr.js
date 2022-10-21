@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 
 export default function Latest() {
@@ -80,6 +81,14 @@ export default function Latest() {
         </div>
         <p className="card-text">{item.city_details_text1_en}</p>
       </div>
+      <Link to={`deatils/${item.id}`}>
+        <div
+          className="btn roundrd-circle main-btn btn-login"
+          style={{ marginLeft: "10px" }}
+        >
+          Deatils
+        </div>
+      </Link>
     </div>
   ));
 

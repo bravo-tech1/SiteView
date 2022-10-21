@@ -56,7 +56,7 @@ body {
 
 }
 .sc-eCYdqJ{
-  height: 550px;
+  height: 550px !important;
 }
 .text-reset {
   color: gray !important;
