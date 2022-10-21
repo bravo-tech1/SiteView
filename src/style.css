@@ -208,7 +208,9 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+.rec-carousel-item{
+  height: 450px;
+}
 @media(max-width:668px) {
   .latest-img {
     height: 46vw !important;
@@ -219,7 +221,7 @@ body {
     height: 45px !important;
   }
 
-  .hJJzxj {
+  .latest-slider button {
     display: none;
   }
 }
