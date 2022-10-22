@@ -8,6 +8,7 @@ import { useEffect } from "react";
 export default function Pack() {
   const [deatils, setDeatil] = useState([]);
   const [videos, setVideos] = useState([]);
+  const [data, setData] = useState([]);
 
   const id = Number(window.location.pathname.split("/").slice(-1)[0]);
 
@@ -22,6 +23,13 @@ export default function Pack() {
       .then((dataRes) => setVideos(dataRes));
   }, []);
 
+  useEffect(() => {
+    fetch("https://test.emkanfinances.net/api/package/show")
+      .then((res) => res.json())
+      .then((dataRes) =>
+        setData(dataRes.filter((x) => x.id === id)[0].package_price)
+      );
+  }, []);
   const items = deatils.map((item) => (
     <>
       <div>
@@ -102,6 +110,28 @@ export default function Pack() {
       <div className="container arabic" style={{ marginTop: "10%" }}>
         {items}
         <div className="row">{videosI}</div>
+        <div
+          className="d-flex align-items-center justify-content-between"
+          dir="rtl"
+          style={{ marginBottom: "2rem", marginTop: "1rem" }}
+        >
+          <h4
+            style={{
+              color: "#FFAD5B",
+            }}
+          >
+            سعر البكج: <span style={{ color: "#ff5959" }}>{data}$</span>
+          </h4>
+          <div
+            className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+            style={{
+              marginLeft: "10px",
+              width: "120px",
+            }}
+          >
+            حجز
+          </div>
+        </div>
       </div>
       <FooterAr />
     </>

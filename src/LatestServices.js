@@ -92,12 +92,6 @@ export default function Latest() {
             Deatils
           </div>
         </Link>
-        <div
-          className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
-          style={{ marginLeft: "10px", marginBottom: "20px", width: "80px" }}
-        >
-          Book
-        </div>
       </div>
     </div>
   ));

@@ -123,12 +123,13 @@ export default function Pack() {
           <div className="container" style={{ marginTop: "10%" }}>
             {items}
             <div className="row">{videosI}</div>
-            <div className="d-flex align-items-center justify-content-between">
+            <div
+              className="d-flex align-items-center justify-content-between"
+              style={{ marginBottom: "2rem", marginTop: "1rem" }}
+            >
               <h4
                 style={{
                   color: "#FFAD5B",
-                  marginTop: "10px",
-                  marginBottom: "10px",
                 }}
               >
                 Package Price: <span style={{ color: "#ff5959" }}>{data}$</span>

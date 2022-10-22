@@ -90,12 +90,6 @@ export default function Latest() {
             التفاصيل
           </div>
         </Link>
-        <div
-          className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
-          style={{ marginRight: "10px", marginBottom: "20px", width: "80px" }}
-        >
-          حجز
-        </div>
       </div>
     </div>
   ));

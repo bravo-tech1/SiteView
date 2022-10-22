@@ -128,12 +128,11 @@ export default function Pack() {
             <div
               className="d-flex align-items-center justify-content-between"
               dir="rtl"
+              style={{ marginBottom: "2rem", marginTop: "1rem" }}
             >
               <h4
                 style={{
                   color: "#FFAD5B",
-                  marginTop: "10px",
-                  marginBottom: "10px",
                 }}
               >
                 سعر البكج: <span style={{ color: "#ff5959" }}>{data}$</span>

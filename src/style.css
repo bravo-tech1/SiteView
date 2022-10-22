@@ -55,9 +55,9 @@ body {
   font-family: 'Tajawal', sans-serif;
 
 }
-.sc-eCYdqJ{
+/* .sc-eCYdqJ{
   height: 100vh !important;
-}
+} */
 .text-reset {
   color: gray !important;
   text-decoration: none;
@@ -1110,6 +1110,9 @@ select option:disabled {
 
 .rec-pagination {
   display: none !important;
+}
+.rec-carousel-item{
+  padding-bottom: 10px !important;
 }
 
 /* Featured  */

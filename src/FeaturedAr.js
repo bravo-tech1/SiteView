@@ -31,7 +31,7 @@ export default function About() {
           </p>
           <div dir="rtl">
             <p className="paragraph">
-              <span style={{ color: "var(--yellow-color)" }}>
+              <span style={{ color: "#FDAC53" }}>
                 {item.package_rate === 0 || item.package_rate === null ? (
                   ""
                 ) : item.package_rate === 1 ? (
@@ -78,12 +78,6 @@ export default function About() {
             التفاصيل
           </div>
         </Link>
-        <div
-          className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
-          style={{ marginRight: "10px", marginBottom: "20px", width: "80px" }}
-        >
-          حجز
-        </div>
       </div>
     </div>
   ));
