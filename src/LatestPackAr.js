@@ -21,6 +21,7 @@ export default function Pack() {
         setUserA(dataRes.find((item) => `"${item.email}"` === user).accepted)
       );
   }, []);
+  console.log(data);
 
   const id = Number(window.location.pathname.split("/").slice(-1)[0]);
 
@@ -37,7 +38,9 @@ export default function Pack() {
   useEffect(() => {
     fetch("https://test.emkanfinances.net/api/package/show")
       .then((res) => res.json())
-      .then((dataRes) => setData(dataRes.filter((x) => x.id === id)));
+      .then((dataRes) =>
+        setData(dataRes.filter((x) => x.id === id)[0].package_price)
+      );
   }, []);
 
   const items = deatils.map((item) => (
@@ -133,10 +136,7 @@ export default function Pack() {
                   marginBottom: "10px",
                 }}
               >
-                سعر البكج:{" "}
-                <span style={{ color: "#ff5959" }}>
-                  {data[0].package_price}$
-                </span>
+                سعر البكج: <span style={{ color: "#ff5959" }}>{data}$</span>
               </h4>
               <div
                 className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
