@@ -7,6 +7,7 @@ import Loading from "./components/Loading";
 import { useEffect } from "react";
 
 export default function Pack() {
+  const [data, setData] = useState([]);
   const [deatils, setDeatil] = useState([]);
   const [videos, setVideos] = useState([]);
   const user = localStorage.getItem("email");
@@ -31,6 +32,11 @@ export default function Pack() {
     fetch(`https://test.emkanfinances.net/api/video/show`)
       .then((res) => res.json())
       .then((dataRes) => setVideos(dataRes));
+  }, []);
+  useEffect(() => {
+    fetch("https://test.emkanfinances.net/api/package/show")
+      .then((res) => res.json())
+      .then((dataRes) => setData(dataRes.filter((x) => x.id === id)));
   }, []);
 
   const items = deatils.map((item) => (
@@ -115,6 +121,29 @@ export default function Pack() {
           <div className="container" style={{ marginTop: "10%" }}>
             {items}
             <div className="row">{videosI}</div>
+            <div className="d-flex align-items-center justify-content-between">
+              <h4
+                style={{
+                  color: "#FFAD5B",
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                }}
+              >
+                Package Price:{" "}
+                <span style={{ color: "#ff5959" }}>
+                  {data[0].package_price}$
+                </span>
+              </h4>
+              <div
+                className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+                style={{
+                  marginLeft: "10px",
+                  width: "120px",
+                }}
+              >
+                Book
+              </div>
+            </div>
           </div>
           <Footer />
         </div>
