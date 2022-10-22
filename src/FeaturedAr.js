@@ -1,5 +1,6 @@
 import HeaderAr from "./components/HeaderAr";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import FooterAr from "./components/FooterAr";
 
 export default function About() {
@@ -67,6 +68,22 @@ export default function About() {
           </div>
         </p>
         <p className="card-text">{item.city_details_text1_ar}</p>
+      </div>
+      <div>
+        <Link to={`/ar/deatils/${item.id}`}>
+          <div
+            className="btn roundrd-circle main-btn btn-login"
+            style={{ marginRight: "10px", marginBottom: "20px" }}
+          >
+            التفاصيل
+          </div>
+        </Link>
+        <div
+          className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+          style={{ marginRight: "10px", marginBottom: "20px", width: "80px" }}
+        >
+          حجز
+        </div>
       </div>
     </div>
   ));

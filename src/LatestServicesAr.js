@@ -81,14 +81,22 @@ export default function Latest() {
         </div>
         <p className="card-text">{item.city_details_text1_en}</p>
       </div>
-      <Link to={`deatils/${item.id}`}>
+      <div>
+        <Link to={`deatils/${item.id}`}>
+          <div
+            className="btn roundrd-circle main-btn btn-login"
+            style={{ marginRight: "10px", marginBottom: "20px" }}
+          >
+            التفاصيل
+          </div>
+        </Link>
         <div
-          className="btn roundrd-circle main-btn btn-login"
-          style={{ marginRight: "10px", marginBottom: "20px" }}
+          className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+          style={{ marginRight: "10px", marginBottom: "20px", width: "80px" }}
         >
-          التفاصيل
+          حجز
         </div>
-      </Link>
+      </div>
     </div>
   ));
 

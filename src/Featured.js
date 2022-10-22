@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Footer from "./components/Footer";
 
 export default function About() {
@@ -69,6 +70,22 @@ export default function About() {
           </p>
         </div>
         <p className="card-text">{item.city_details_text1_en}</p>
+      </div>
+      <div>
+        <Link to={`/deatils/${item.id}`}>
+          <div
+            className="btn roundrd-circle main-btn btn-login"
+            style={{ marginLeft: "10px", marginBottom: "20px" }}
+          >
+            Deatils
+          </div>
+        </Link>
+        <div
+          className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+          style={{ marginLeft: "10px", marginBottom: "20px", width: "80px" }}
+        >
+          Book
+        </div>
       </div>
     </div>
   ));
