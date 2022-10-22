@@ -126,25 +126,37 @@ export default function Pack() {
             {items}
             <div className="row">{videosI}</div>
             <div
-              className="d-flex align-items-center justify-content-between"
-              dir="rtl"
-              style={{ marginBottom: "2rem", marginTop: "1rem" }}
+              style={{
+                position: "sticky",
+                bottom: "0px",
+                backgroundColor: "var(--first-color)",
+                opacity: "0.8",
+              }}
             >
-              <h4
-                style={{
-                  color: "#FFAD5B",
-                }}
-              >
-                سعر البكج: <span style={{ color: "#ff5959" }}>{data}$</span>
-              </h4>
               <div
-                className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+                className="d-flex align-items-center justify-content-between container"
                 style={{
-                  marginLeft: "10px",
-                  width: "120px",
+                  paddingBottom: "1rem",
+                  paddingTop: "1rem",
                 }}
+                dir="rtl"
               >
-                حجز
+                <h4
+                  style={{
+                    color: "#FFAD5B",
+                  }}
+                >
+                  سعر البكج: <span style={{ color: "#ff5959" }}>{data}$</span>
+                </h4>
+                <div
+                  className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+                  style={{
+                    marginLeft: "10px",
+                    width: "120px",
+                  }}
+                >
+                  حجز
+                </div>
               </div>
             </div>
           </div>
