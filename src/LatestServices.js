@@ -22,12 +22,14 @@ export default function Latest() {
 
   const datashow = data.map((item, key) => (
     <div className="card" key={key}>
-      <img
-        src={item.package_image}
-        className="card-img-top latest-img"
-        alt="..."
-        style={{ width: "100%", height: "20vw", objectFit: "cover" }}
-      />
+      <Link to={`deatils/${item.id}`}>
+        <img
+          src={item.package_image}
+          className="card-img-top latest-img"
+          alt="..."
+          style={{ width: "100%", height: "20vw", objectFit: "cover" }}
+        />
+      </Link>
       <div className="card-body">
         <h5 className="card-title latest-title">{item.details_title_en}</h5>
         <p className="balneo">

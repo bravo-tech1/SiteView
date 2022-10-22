@@ -31,7 +31,7 @@ export default function Pack() {
   }, []);
 
   const items = deatils.map((item) => (
-    <>
+    <div className="container">
       <div>
         <div className="WordStyle">{parse(item.text_en)}</div>
       </div>
@@ -94,7 +94,7 @@ export default function Pack() {
       <div>
         <div className="WordStyle">{parse(item.text2_en)}</div>
       </div>
-    </>
+    </div>
   ));
 
   const videosI = videos.map((item) => (
@@ -107,28 +107,40 @@ export default function Pack() {
   return (
     <>
       <Header />
-      <div className="container" style={{ marginTop: "10%" }}>
+      <div style={{ marginTop: "10%" }}>
         {items}
-        <div className="row">{videosI}</div>
+        <div className="row container">{videosI}</div>
         <div
-          className="d-flex align-items-center justify-content-between"
-          style={{ marginBottom: "2rem", marginTop: "1rem" }}
+          style={{
+            position: "sticky",
+            bottom: "0px",
+            backgroundColor: "var(--first-color)",
+            opacity: "0.8",
+          }}
         >
-          <h4
-            style={{
-              color: "#FFAD5B",
-            }}
-          >
-            Package Price: <span style={{ color: "#ff5959" }}>{data}$</span>
-          </h4>
           <div
-            className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+            className="d-flex align-items-center justify-content-between container"
             style={{
-              marginLeft: "10px",
-              width: "120px",
+              paddingBottom: "1rem",
+              paddingTop: "1rem",
             }}
           >
-            Book
+            <h4
+              style={{
+                color: "#FFAD5B",
+              }}
+            >
+              Package Price: <span style={{ color: "#ff5959" }}>{data}$</span>
+            </h4>
+            <div
+              className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+              style={{
+                marginLeft: "10px",
+                width: "120px",
+              }}
+            >
+              Book
+            </div>
           </div>
         </div>
       </div>

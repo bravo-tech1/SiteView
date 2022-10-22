@@ -44,7 +44,7 @@ export default function Pack() {
   }, []);
 
   const items = deatils.map((item) => (
-    <>
+    <div className="container">
       <div>
         <div className="WordStyle">{parse(item.text_ar)}</div>
       </div>
@@ -107,7 +107,7 @@ export default function Pack() {
       <div>
         <div className="WordStyle">{parse(item.text2_ar)}</div>
       </div>
-    </>
+    </div>
   ));
 
   const videosI = videos.map((item) => (
@@ -122,9 +122,9 @@ export default function Pack() {
       <HeaderAr />
       {userA ? (
         <div>
-          <div className="container arabic" style={{ marginTop: "10%" }}>
+          <div className="arabic" style={{ marginTop: "10%" }}>
             {items}
-            <div className="row">{videosI}</div>
+            <div className="row container">{videosI}</div>
             <div
               style={{
                 position: "sticky",

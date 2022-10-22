@@ -880,7 +880,7 @@ svg {
 
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: var(--yellow-color);
+  background-color: #fdac53;
   width: 5vh;
   height: 5vh;
   border-radius: 50%;

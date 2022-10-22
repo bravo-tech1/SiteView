@@ -31,7 +31,7 @@ export default function Pack() {
       );
   }, []);
   const items = deatils.map((item) => (
-    <>
+    <div className="container">
       <div>
         <div className="WordStyle">{parse(item.text_ar)}</div>
       </div>
@@ -94,7 +94,7 @@ export default function Pack() {
       <div>
         <div className="WordStyle">{parse(item.text2_ar)}</div>
       </div>
-    </>
+    </div>
   ));
 
   const videosI = videos.map((item) => (
@@ -107,29 +107,41 @@ export default function Pack() {
   return (
     <>
       <HeaderAr />
-      <div className="container arabic" style={{ marginTop: "10%" }}>
+      <div className="arabic" style={{ marginTop: "10%" }}>
         {items}
-        <div className="row">{videosI}</div>
+        <div className="row container">{videosI}</div>
         <div
-          className="d-flex align-items-center justify-content-between"
-          dir="rtl"
-          style={{ marginBottom: "2rem", marginTop: "1rem" }}
+          style={{
+            position: "sticky",
+            bottom: "0px",
+            backgroundColor: "var(--first-color)",
+            opacity: "0.8",
+          }}
         >
-          <h4
-            style={{
-              color: "#FFAD5B",
-            }}
-          >
-            سعر البكج: <span style={{ color: "#ff5959" }}>{data}$</span>
-          </h4>
           <div
-            className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+            className="d-flex align-items-center justify-content-between container"
             style={{
-              marginLeft: "10px",
-              width: "120px",
+              paddingBottom: "1rem",
+              paddingTop: "1rem",
             }}
+            dir="rtl"
           >
-            حجز
+            <h4
+              style={{
+                color: "#FFAD5B",
+              }}
+            >
+              سعر البكج: <span style={{ color: "#ff5959" }}>{data}$</span>
+            </h4>
+            <div
+              className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
+              style={{
+                marginLeft: "10px",
+                width: "120px",
+              }}
+            >
+              حجز
+            </div>
           </div>
         </div>
       </div>
