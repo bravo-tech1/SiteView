@@ -107,7 +107,9 @@ export default function Pack() {
               className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
               style={{ marginLeft: "10px" }}
             >
-              حجز الحزمة
+              <a href="https://40.87.158.147/reseller/auth/" className="b2b">
+                حجز الحزمة
+              </a>
             </div>
           </div>
         </div>

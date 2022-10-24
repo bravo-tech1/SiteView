@@ -155,7 +155,12 @@ export default function Pack() {
                     width: "120px",
                   }}
                 >
-                  حجز
+                  <a
+                    href="https://40.87.158.147/reseller/auth/"
+                    className="b2b"
+                  >
+                    حجز
+                  </a>
                 </div>
               </div>
             </div>

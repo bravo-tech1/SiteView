@@ -109,7 +109,9 @@ export default function Header() {
               </button>
             )}
             <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0">
-              Business B2B
+              <a href="https://40.87.158.147/reseller/auth/" className="b2b">
+                Business B2B
+              </a>
             </div>
             <div className="lang d-flex align-items-center ms-1 text-black-50">
               <Link to="/ar">AR </Link>

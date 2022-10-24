@@ -153,7 +153,12 @@ export default function Pack() {
                     width: "120px",
                   }}
                 >
-                  Book
+                  <a
+                    href="https://40.87.158.147/reseller/auth/"
+                    className="b2b"
+                  >
+                    Book
+                  </a>
                 </div>
               </div>
             </div>
