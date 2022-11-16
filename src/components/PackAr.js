@@ -19,7 +19,7 @@ export default function Pack() {
       });
   }, []);
 
-  const items = data.map((item) => (
+  const items = data.map((item, key) => (
     <div
       className="arabic pack-card"
       style={{
@@ -28,6 +28,7 @@ export default function Pack() {
         borderRadius: "10px",
         padding: "10px",
       }}
+      key={key}
     >
       <div
         className="w-100"

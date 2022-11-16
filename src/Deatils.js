@@ -15,7 +15,9 @@ export default function Pack() {
   useEffect(() => {
     fetch(`https://test.emkanfinances.net/api/detail/show`)
       .then((res) => res.json())
-      .then((dataRes) => setDeatil(dataRes.filter((x) => x.package_id === id)));
+      .then((dataRes) => {
+        setDeatil(dataRes.filter((x) => x.package_id === id));
+      });
   }, []);
   useEffect(() => {
     fetch(`https://test.emkanfinances.net/api/video/show`)
@@ -30,67 +32,69 @@ export default function Pack() {
       );
   }, []);
 
-  const items = deatils.map((item) => (
-    <div className="container">
+  const items = deatils.map((item, key) => (
+    <div className="container" key={key}>
       <div>
         <div className="WordStyle">{parse(item.text_en)}</div>
       </div>
-      <div
-        id="carouselExampleControls"
-        className="carousel slide custom-detail"
-        data-bs-ride="carousel"
-        style={{ width: "70%", margin: "0 auto" }}
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img
-              src={item.detailimages[0].image}
-              className="d-block w-100"
-              height={"600px"}
-              alt="img"
-            />
+      {item.detailimages.length !== 0 && (
+        <div
+          id="carouselExampleControls"
+          className="carousel slide custom-detail"
+          data-bs-ride="carousel"
+          style={{ width: "70%", margin: "0 auto" }}
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img
+                src={item.detailimages[0].image}
+                className="d-block w-100"
+                height={"600px"}
+                alt="img"
+              />
+            </div>
+            {deatils
+              .map((item) => item.detailimages)[0]
+              .slice(1)
+              .map((nice) => (
+                <div className="carousel-item">
+                  <img
+                    src={nice.image}
+                    className="d-block w-100"
+                    height={"600px"}
+                    alt="img"
+                  />
+                </div>
+              ))}
           </div>
-          {deatils
-            .map((item) => item.detailimages)[0]
-            .slice(1)
-            .map((nice) => (
-              <div className="carousel-item">
-                <img
-                  src={nice.image}
-                  className="d-block w-100"
-                  height={"600px"}
-                  alt="img"
-                />
-              </div>
-            ))}
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+            style={{ left: "-10%" }}
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+            style={{ right: "-10%", color: "var(--yellow-color)" }}
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
         </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev"
-          style={{ left: "-10%" }}
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next"
-          style={{ right: "-10%", color: "var(--yellow-color)" }}
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
+      )}
       <div>
         <div className="WordStyle">{parse(item.text2_en)}</div>
       </div>

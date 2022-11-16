@@ -117,9 +117,9 @@ export default function Header() {
               <Link to="/ar">AR </Link>
             </div>
             {localStorage.getItem("dark") === "true" ? (
-              <i class="fa-sharp fa-solid fa-sun" onClick={handleMode}></i>
+              <i className="fa-sharp fa-solid fa-sun" onClick={handleMode}></i>
             ) : (
-              <i class="fa-solid fa-moon" onClick={handleMode}></i>
+              <i className="fa-solid fa-moon" onClick={handleMode}></i>
             )}
           </div>
         </div>
