@@ -50,7 +50,13 @@ export default function Register() {
       <div className="pop-up-content">
         <Popup
           trigger={
-            <button className="button clicked-button"> Open Modal </button>
+            <button
+              className="button clicked-button"
+              style={{ display: "none" }}
+            >
+              {" "}
+              Open Modal{" "}
+            </button>
           }
           modal
           nested
