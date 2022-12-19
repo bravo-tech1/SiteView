@@ -11,33 +11,6 @@ export default function Header() {
     window.location.href = "/";
   };
 
-  const [dark, setDark] = useState(false);
-  let handleMode = () => {
-    setDark(!dark);
-    localStorage.setItem("dark", dark);
-  };
-
-  useEffect(() => {
-    if (time >= "6" && time <= "18") {
-      setDark(false);
-      localStorage.setItem("dark", false);
-    } else if (time < "6") {
-      setDark(true);
-      localStorage.setItem("dark", true);
-    } else if (time > "18") {
-      setDark(true);
-      localStorage.setItem("dark", true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (localStorage.getItem("dark") === "true") {
-      document.body.classList = "dark-theme";
-    } else {
-      document.body.classList = "";
-    }
-  }, [dark]);
-
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -116,11 +89,6 @@ export default function Header() {
             <div className="lang d-flex align-items-center ms-1 text-black-50">
               <Link to="/ar">AR </Link>
             </div>
-            {localStorage.getItem("dark") === "true" ? (
-              <i className="fa-sharp fa-solid fa-sun" onClick={handleMode}></i>
-            ) : (
-              <i className="fa-solid fa-moon" onClick={handleMode}></i>
-            )}
           </div>
         </div>
       </nav>
