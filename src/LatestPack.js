@@ -26,34 +26,7 @@ export default function Pack() {
   const showEx = dataMap.filter((it) => it.type === "Excluded");
   const showlocation = dataMap.filter((it) => it.type === "Location");
 
-  const showItData = showIt.map((item) => (
-    <div>
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button
-              class="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              {item.title_en}
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">{item.description_en}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  ));
+  const showItData = showIt.map((item) => <div></div>);
 
   const showIncData = showInc.map((item) => (
     <div>
@@ -234,7 +207,7 @@ export default function Pack() {
           <div style={{ marginTop: "10%" }}>
             {items}
             <div className="row container">{videosI}</div>
-            <div className="container" style={{ marginTop: "1rem" }}>
+            {/* <div className="container" style={{ marginTop: "1rem" }}>
               <div>
                 <h1>Itinerary</h1>
                 {showItData}
@@ -250,7 +223,7 @@ export default function Pack() {
                   {showExData}
                 </div>
               </div>
-            </div>
+            </div> */}
             <div
               style={{
                 position: "sticky",
