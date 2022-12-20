@@ -4,13 +4,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
 import Loading from "./components/Loading";
-import { useEffect } from "react";
-
-import {
-  AccordionBody,
-  AccordionHeader,
-  AccordionItem,
-} from "react-headless-accordion";
+import { useEffect, useRef, useCallback } from "react";
+import Accordion from "react-bootstrap/Accordion";
+import { LoadScript, GoogleMap, Polygon } from "@react-google-maps/api";
 
 export default function Pack() {
   const [data, setData] = useState([]);
@@ -26,63 +22,107 @@ export default function Pack() {
   const showEx = dataMap.filter((it) => it.type === "Excluded");
   const showlocation = dataMap.filter((it) => it.type === "Location");
 
-  const showItData = showIt.map((item) => <div></div>);
+  const upPath = showlocation.map((item) => {
+    return {
+      lat: Number(item.description_ar),
+      lng: Number(item.description_en),
+    };
+  });
+  useEffect(() => {
+    setPath(upPath);
+  }, []);
 
-  const showIncData = showInc.map((item) => (
-    <div>
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button
-              class="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne2"
-              aria-expanded="true"
-              aria-controls="collapseOne2"
-            >
-              {item.title_en}
-            </button>
-          </h2>
-          <div
-            id="collapseOne2"
-            class="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">{item.description_en}</div>
-          </div>
-        </div>
+  console.log(upPath);
+
+  // Store Polygon path in state
+  const [path, setPath] = useState([
+    { lat: 52.52549080781086, lng: 13.398118538856465 },
+    { lat: 52.48578559055679, lng: 13.36653284549709 },
+    { lat: 52.48871246221608, lng: 13.44618372440334 },
+  ]);
+
+  // Define refs for Polygon instance and listeners
+  const polygonRef = useRef(null);
+  const listenersRef = useRef([]);
+
+  // Call setPath with new edited path
+  const onEdit = useCallback(() => {
+    if (polygonRef.current) {
+      const nextPath = polygonRef.current
+        .getPath()
+        .getArray()
+        .map((latLng) => {
+          return { lat: latLng.lat(), lng: latLng.lng() };
+        });
+      setPath(nextPath);
+    }
+  }, [setPath]);
+
+  // Bind refs to current Polygon and listeners
+  const onLoad = useCallback(
+    (polygon) => {
+      polygonRef.current = polygon;
+      const path = polygon.getPath();
+      listenersRef.current.push(
+        path.addListener("set_at", onEdit),
+        path.addListener("insert_at", onEdit),
+        path.addListener("remove_at", onEdit)
+      );
+    },
+    [onEdit]
+  );
+
+  // Clean up refs
+  const onUnmount = useCallback(() => {
+    listenersRef.current.forEach((lis) => lis.remove());
+    polygonRef.current = null;
+  }, []);
+
+  console.log(showlocation);
+
+  const showItData = showIt.map((item, index) => (
+    <Accordion.Item eventKey={index}>
+      <div className="d-flex align-items-center gap-1">
+        {index === 0 ? (
+          <i
+            class="fa-solid fa-location-dot"
+            style={{ color: "green", fontSize: "20px" }}
+          ></i>
+        ) : (
+          <i
+            class="fa-sharp fa-solid fa-location-pin"
+            style={{ color: "green", fontSize: "20px" }}
+          ></i>
+        )}
+        <Accordion.Header>{item.title_en}</Accordion.Header>
       </div>
-    </div>
+      <Accordion.Body>{item.description_en}</Accordion.Body>
+    </Accordion.Item>
+  ));
+
+  const showIncData = showInc.map((item, index) => (
+    <Accordion.Item eventKey={index}>
+      <div className="d-flex align-items-center gap-1">
+        <i
+          class="fa-solid fa-check"
+          style={{ color: "green", fontSize: "20px" }}
+        ></i>
+        <Accordion.Header>{item.title_en}</Accordion.Header>
+      </div>
+      <Accordion.Body>{item.description_en}</Accordion.Body>
+    </Accordion.Item>
   ));
   const showExData = showEx.map((item, index) => (
-    <div>
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button
-              class="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne3"
-              aria-expanded="true"
-              aria-controls="collapseOne3"
-            >
-              {item.title_en}
-            </button>
-          </h2>
-          <div
-            id="collapseOne3"
-            class="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">{item.description_en}</div>
-          </div>
-        </div>
+    <Accordion.Item eventKey={index}>
+      <div className="d-flex align-items-center gap-1">
+        <i
+          class="fa-solid fa-xmark"
+          style={{ color: "red", fontSize: "20px" }}
+        ></i>
+        <Accordion.Header>{item.title_en}</Accordion.Header>
       </div>
-    </div>
+      <Accordion.Body>{item.description_en}</Accordion.Body>
+    </Accordion.Item>
   ));
 
   useEffect(() => {
@@ -99,7 +139,6 @@ export default function Pack() {
     fetch(`https://test.emkanfinances.net/api/detail/show`)
       .then((res) => res.json())
       .then((dataRes) => {
-        console.log(dataRes);
         setDeatil(dataRes.filter((x) => x.package_id === id));
       });
   }, []);
@@ -107,7 +146,7 @@ export default function Pack() {
     fetch(`https://test.emkanfinances.net/api/otherdetail/show`)
       .then((res) => res.json())
       .then((data) => {
-        setDataMap(data);
+        setDataMap(data.filter((item) => item.package_id === id));
       });
   }, []);
   useEffect(() => {
@@ -207,23 +246,53 @@ export default function Pack() {
           <div style={{ marginTop: "10%" }}>
             {items}
             <div className="row container">{videosI}</div>
-            {/* <div className="container" style={{ marginTop: "1rem" }}>
+            <div className="container" style={{ marginTop: "1rem" }}>
               <div>
-                <h1>Itinerary</h1>
-                {showItData}
+                <h3 className="color-black">Itinerary</h3>
+                <Accordion>{showItData}</Accordion>
               </div>
+              <div className="w-100">
+                <h2 style={{ color: "#1a2b48" }}>
+                  <i class="fa-solid fa-map-location-dot pe-1"></i>Location
+                </h2>
+                <LoadScript
+                  id="script-loader"
+                  googleMapsApiKey=""
+                  language="en"
+                  region="us"
+                >
+                  <GoogleMap
+                    mapContainerClassName="App-map"
+                    center={{ lat: 52.52047739093263, lng: 13.36653284549709 }}
+                    zoom={12}
+                    version="weekly"
+                    on
+                  >
+                    <Polygon
+                      // Make the Polygon editable / draggable
 
-              <div className="d-flex align-items-center justify-content-between">
-                <div>
-                  <h1>Included</h1>
-                  {showIncData}
+                      draggable
+                      path={path}
+                      onLoad={onLoad}
+                    />
+                  </GoogleMap>
+                </LoadScript>
+              </div>
+              <div className="d-flex flex-wrap justify-content-between">
+                <div className="col-12 col-md-4 ">
+                  <h3 style={{ color: "green" }} className="my-1 text-center">
+                    Included
+                  </h3>
+                  <Accordion>{showIncData}</Accordion>
                 </div>
-                <div>
-                  <h1>Excluded</h1>
-                  {showExData}
+                <div className="col-12 col-md-4">
+                  <h3 style={{ color: "red" }} className="my-1 text-center">
+                    Excluded
+                  </h3>
+                  <Accordion>{showExData}</Accordion>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div
               style={{
                 position: "sticky",
