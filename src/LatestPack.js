@@ -32,8 +32,6 @@ export default function Pack() {
     setPath(upPath);
   }, []);
 
-  console.log(upPath);
-
   // Store Polygon path in state
   const [path, setPath] = useState([
     { lat: 52.52549080781086, lng: 13.398118538856465 },
