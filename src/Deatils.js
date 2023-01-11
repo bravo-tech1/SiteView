@@ -17,20 +17,25 @@ export default function Details() {
 
   // Map
   const [dataMap, setDataMap] = useState([]);
+  const [useE, runUseEffect] = useState(0);
+  const [lat, setlat] = useState(52.52047739093263);
+  const [lng, setlng] = useState(13.36653284549709);
   const showIt = dataMap.filter((it) => it.type === "Itinerary");
   const showInc = dataMap.filter((it) => it.type === "Included");
   const showEx = dataMap.filter((it) => it.type === "Excluded");
   const showlocation = dataMap.filter((it) => it.type === "Location");
 
-  const upPath = showlocation.map((item) => {
-    return {
-      lat: Number(item.description_ar),
-      lng: Number(item.description_en),
-    };
-  });
   useEffect(() => {
+    const upPath = showlocation.map((item) => {
+      return {
+        lat: Number(item.description_ar),
+        lng: Number(item.description_en),
+      };
+    });
+    setlat(upPath[0] && upPath[0].lat);
+    setlng(upPath[0] && upPath[0].lng);
     setPath(upPath);
-  }, []);
+  }, [useE]);
 
   // Store Polygon path in state
   const [path, setPath] = useState([
@@ -75,8 +80,6 @@ export default function Details() {
     listenersRef.current.forEach((lis) => lis.remove());
     polygonRef.current = null;
   }, []);
-
-  console.log(showlocation);
 
   const showItData = showIt.map((item, index) => (
     <Accordion.Item eventKey={index}>
@@ -145,6 +148,7 @@ export default function Details() {
       .then((res) => res.json())
       .then((data) => {
         setDataMap(data.filter((item) => item.package_id === id));
+        runUseEffect((prev) => prev + 1);
       });
   }, []);
   useEffect(() => {
@@ -261,7 +265,7 @@ export default function Details() {
                 >
                   <GoogleMap
                     mapContainerClassName="App-map"
-                    center={{ lat: 52.52047739093263, lng: 13.36653284549709 }}
+                    center={{ lat: lat, lng: lng }}
                     zoom={12}
                     version="weekly"
                     on
@@ -269,9 +273,11 @@ export default function Details() {
                     <Polygon
                       // Make the Polygon editable / draggable
 
-                      draggable
-                      path={path}
+                      // Event used when dragging the whole Polygon
+                      onDragEnd={onEdit}
                       onLoad={onLoad}
+                      onUnmount={onUnmount}
+                      path={path}
                     />
                   </GoogleMap>
                 </LoadScript>
